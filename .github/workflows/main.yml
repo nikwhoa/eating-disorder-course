@@ -28,5 +28,6 @@ jobs:
           cd /var/www/eating-disorder-course.norenko.net.ua
           git pull origin main
           git status
-          npm install
+          npm install --production
+          npm run build
           pm2 restart eating-disorder-course.norenko.net.ua
