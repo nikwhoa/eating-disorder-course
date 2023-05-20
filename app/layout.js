@@ -1,8 +1,52 @@
 import './globals.scss'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import Head from 'next/head'
 
-const inter = Inter({ subsets: ['latin'] })
+const Raleway = localFont({
+  src: [
+    {
+      path: './fonts/Raleway-Regular.ttf',
+      format: 'truetype',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Raleway-SemiBold.ttf',
+      format: 'truetype',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Raleway-Medium.ttf',
+      format: 'truetype',
+      weight: '500',
+      style: 'normal',
+    }
+  ],
+})
+
+const Playfair = localFont({
+  src: [
+    {
+      path: './fonts/PlayfairDisplaySC-Regular.ttf',
+      format: 'truetype',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/PlayfairDisplaySC-BoldItalic.ttf',
+      format: 'truetype',
+      weight: '700',
+      style: 'italic',
+    },
+    {
+      path: './fonts/PlayfairDisplaySC-Italic.ttf',
+      format: 'truetype',
+      weight: '400',
+      style: 'italic',
+    }
+  ]
+})
 
 export const metadata = {
   title: 'Розбираємося з РПП: Онлайн Курс',
@@ -22,8 +66,9 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={Playfair.className}>{children}</body>
 
     </html>
+
   )
 }
