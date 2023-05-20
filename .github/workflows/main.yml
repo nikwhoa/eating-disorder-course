@@ -29,4 +29,4 @@ jobs:
           git pull origin main
           git status
           npm install
-          pm2 restart node1
+          pm2 restart eating-disorder-course.norenko.net.ua
