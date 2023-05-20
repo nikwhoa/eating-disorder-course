@@ -1,23 +1,18 @@
 name: Deploy to VPS
-
-on:
-  push:
-    branches:
-      - main
-
+on: [push]
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
 
+  build:
+    name: Build
+    runs-on: ubuntu-latest
     steps:
-      - name: Execute remote ssh commands to deploy
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          script: |
-            cd /var/www/eating-disorder-course.norenko.net.ua
-            git pull
-            npm install
-            pm2 restart all
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: |
+          whoami
+          ls -al
+          pwd
