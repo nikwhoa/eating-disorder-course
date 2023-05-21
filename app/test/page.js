@@ -1,7 +1,7 @@
 // http://localhost:4000/api/questions
 
 async function getData() {
-  const res = await fetch('http://localhost:4000/api/questions');
+  const res = await fetch(`http://${process.env.DB_HOST}:4000/api/questions`);
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
