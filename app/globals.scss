@@ -8,19 +8,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: rgb(245, 245, 245);
+    --background-color: rgb(66, 66, 66);
   }
 }
 
 body {
   color: rgb(51, 51, 51);
-  // background: var(--background-color);
-  background-image: url('blob-scene-haikei-2.svg');
+  background-color: var(--background-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
-  @media (max-width: 560px) {
-    background-image: url('blob-scene-haikei-2-mob.svg');
+  @media (prefers-color-scheme: dark) {
+    color: rgb(245, 245, 245);
   }
 }
