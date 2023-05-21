@@ -1,22 +1,6 @@
 // http://localhost:4000/api/questions
 
-async function getData() {
-  const res = await fetch(`http://${process.env.DB_HOST}:4000/api/questions`);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  // Recommendation: handle errors
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data');
-  }
-
-  return res.json();
-}
-
 export default async function Page() {
-  const data = await getData();
-  console.log(data);
   return (
     <div className="lg:max-w-lg">
       <p className="text-base font-semibold leading-7 text-indigo-600">Розбираємося з РПП</p>
