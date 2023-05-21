@@ -4,8 +4,8 @@ const cors = require('@fastify/cors');
 const fastify = require('fastify')({
   logger: true,
   https: {
-    key: fs.readFileSync(path.join(__dirname, '.privkey.pem')),
-    cert: fs.readFileSync(path.join(__dirname, '.fullchain.pem')),
+    key: fs.readFileSync(path.join(__dirname, '.privkey-norenko.net.ua.pem')),
+    cert: fs.readFileSync(path.join(__dirname, '.fullchain-norenko.net.ua.pem')),
   },
   http2: true,
 });
