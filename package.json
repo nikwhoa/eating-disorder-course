@@ -12,7 +12,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fastify": "node server.js --watch"
+    "fastify": "node server.js"
   },
   "dependencies": {
     "@fastify/cors": "^8.2.1",

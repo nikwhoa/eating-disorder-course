@@ -1,19 +1,23 @@
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const cors = require('@fastify/cors');
-require('dotenv').config();
-const fastify = require('fastify')({
-  logger: true,
-});
+let fastify = require('fastify');
+
+let fastifyOptions = { logger: true };
 
 if (process.env.NODE_ENV === 'production') {
-  fastify.options.https = {
+  console.info('Production mode');
+  console.log('Production mode');
+  fastifyOptions.https = {
     key: fs.readFileSync(path.join(__dirname, '.privkey-norenko.net.ua.pem')),
     cert: fs.readFileSync(path.join(__dirname, '.fullchain-norenko.net.ua.pem')),
   };
 
-  fastify.options.http2 = true;
+  fastifyOptions.http2 = true;
 }
+
+fastify = fastify(fastifyOptions);
 
 fastify.register(cors, {
   origin: true,
