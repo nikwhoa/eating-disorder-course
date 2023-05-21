@@ -8,7 +8,7 @@ export default function Page() {
 
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `http://${process.env.DB_HOST}:4000/api/questions`,
+    `${process.env.DB_HOST}:4000/api/questions`,
     fetcher
   );
 
