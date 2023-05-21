@@ -24,7 +24,7 @@ export default async function Page() {
       <p className="mt-6 text-base leading-7 text-gray-700 md:text-lg md:leading-9">
         Розлади харчової поведінки - це не просто проблеми зі столовою ложкою чи вагами. Це серйозні, часто приховані, психологічні та фізіологічні лиха, що подібні до крижаних айсбергів в океані життя.
 
-        Немов невидимі ланцюги, вони утримують людей у полоні страху і самовіддачі, отруюючи їхнє ставлення до власного тіла і свого здоров'я. Руйнування цих ланцюгів важливе, щоб повернути людям їхню внутрішню свободу і дозволити їм повністю насолоджуватися життям.
+        Немов невидимі ланцюги, вони утримують людей у полоні страху і самовіддачі, отруюючи їхнє ставлення до власного тіла і свого здоров&apos;я. Руйнування цих ланцюгів важливе, щоб повернути людям їхню внутрішню свободу і дозволити їм повністю насолоджуватися життям.
       </p>
       <button className="mt-8 w-full px-4 py-2 text-base font-medium leading-6 text-center text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo md:py-3 md:text-lg md:px-8">
         Почати тест
