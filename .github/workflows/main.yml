@@ -30,4 +30,4 @@ jobs:
           git status
           npm install --production
           npm run build
-          pm2 restart eating-disorder-course.norenko.net.ua
+          pm2 restart all
