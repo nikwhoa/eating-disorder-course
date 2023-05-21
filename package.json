@@ -15,6 +15,7 @@
     "fastify": "node server.js"
   },
   "dependencies": {
+    "@fastify/http-proxy": "^9.1.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
