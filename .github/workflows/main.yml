@@ -26,9 +26,10 @@ jobs:
         port: 22
         script: |
           cd /var/www/eating-disorder-course.norenko.net.ua
-          pm2 stop ecosystem.config.js
+          pm2 stop eating-disorder-course.norenko.net.ua
           git pull origin main
           git status
+          pm2 restart eating-disorder-course.norenko.net.ua-fastify
           npm run build
-          pm2 start ecosystem.config.js
+          pm2 restart eating-disorder-course.norenko.net.ua
           pm2 save
