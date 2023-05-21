@@ -66,7 +66,9 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={Playfair.className}>{children}</body>
+      <body className={Playfair.className}>
+        {children}
+      </body>
 
     </html>
 

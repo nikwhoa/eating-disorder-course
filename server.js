@@ -1,5 +1,12 @@
+const cors = require('@fastify/cors')
 const fastify = require('fastify')({
   logger: true
+})
+
+fastify.register(cors, {
+  origin: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 })
 
 fastify.get('/api/questions', async (request, reply) => {
