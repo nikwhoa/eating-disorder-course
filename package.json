@@ -12,12 +12,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fastify": "node server.js"
+    "fastify": "node server.js --watch NODE_ENV=development"
   },
   "dependencies": {
     "@fastify/cors": "^8.2.1",
     "@fastify/http-proxy": "^9.1.0",
     "autoprefixer": "10.4.14",
+    "dotenv": "^16.0.3",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "fastify": "^4.17.0",
