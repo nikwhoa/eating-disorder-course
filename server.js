@@ -4,8 +4,8 @@ const cors = require('@fastify/cors');
 const fastify = require('fastify')({
   logger: true,
   https: {
-    key: fs.readFileSync(path.join('/etc/letsencrypt/live/eating-disorder-course.norenko.net.ua/privkey.pem')),
-    cert: fs.readFileSync(path.join('/etc/letsencrypt/live/eating-disorder-course.norenko.net.ua/fullchain.pem')),
+    key: fs.readFileSync(path.join(__dirname, '.privkey.pem')),
+    cert: fs.readFileSync(path.join(__dirname, '.fullchain.pem')),
   },
   http2: true,
 });
