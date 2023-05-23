@@ -24,6 +24,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  pointer-events: auto;
 
   @media (prefers-color-scheme: dark) {
     color: rgb(245, 245, 245);

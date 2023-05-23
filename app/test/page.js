@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Question from './Question';
 
 export default function Page() {
   return (
