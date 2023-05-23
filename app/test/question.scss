@@ -1,0 +1,182 @@
+.question {
+  font-size: 1.5rem;
+  position: relative;
+  width: 100%;
+  // overflow: hidden;
+}
+.fade-enter, .fade-exit {
+  position: absolute;  /* Children are absolutely positioned */
+  width: 100%;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 500ms, transform 500ms;
+}
+.question-number {
+  color: var(--yellow-color);
+  font-size: 0.9rem;
+  .number {
+    font-size: 1.4rem;
+  }
+}
+.answer {
+  font-size: 1.2rem;
+  // box-shadow: 1px 2px 3px rgb(102, 102, 102, 0.2);
+  background-color: transparent;
+  border-radius: 6px;
+  display: block;
+  border: 1px solid rgb(102, 102, 102, 0.2);
+  cursor: pointer;
+  color: #1a1a1a;
+  font-weight: bold;
+  padding: 10px 20px;
+  width: 100%;
+  margin: 1.5rem auto;
+  text-decoration: none;
+  text-align: left;
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    width: 70%;
+  }
+
+  &:hover {
+    background-color: #d4c5d4;
+    color: #1a1a1a;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.control {
+  display: block;
+  position: relative;
+  font-weight: 700;
+  padding-left: 30px;
+  padding-top: 0px;
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control_indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: transparent;
+  border: 1px solid #aaaaaa;
+  border-radius: undefinedpx;
+}
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: #cccccc;
+}
+
+.control input:checked ~ .control_indicator {
+  background: #2aa1c0;
+}
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+  background: #0e6647;
+}
+.control input:disabled ~ .control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control_indicator:after {
+  box-sizing: unset;
+  content: "";
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control_indicator:after {
+  display: block;
+}
+.control-radio .control_indicator {
+  border-radius: 50%;
+}
+
+.control-radio .control_indicator:after {
+  left: 7px;
+  top: 7px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: background 250ms;
+}
+.control-radio input:disabled ~ .control_indicator:after {
+  background: #7b7b7b;
+}
+.control-radio .control_indicator::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-left: -1.3rem;
+  margin-top: -1.3rem;
+  background: #2aa1c0;
+  border-radius: 3rem;
+  opacity: 0.6;
+  z-index: 99999;
+  transform: scale(0);
+}
+@keyframes s-ripple {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.01;
+    transform: scale(1);
+  }
+}
+@keyframes s-ripple-dup {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+.control-radio input + .control_indicator::before {
+  animation: s-ripple 250ms ease-out;
+}
+.control-radio input:checked + .control_indicator::before {
+  animation-name: s-ripple-dup;
+}

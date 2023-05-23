@@ -2,26 +2,6 @@ import Link from 'next/link';
 import Question from './Question';
 
 export default function Page() {
-  // useEffect(() => {
-  //   // const questions = fetch(`http://${process.env.DB_HOST}:4000/api/questions`).then(res => res.json()).then(data => setQuestions(data));
-  //   console.log('use effect');
-  // }, []);
-
-  // const res = await fetch(`http://${process.env.DB_HOST}:4000/api/questions`, {
-  //   next: {
-  //     revalidate: false
-  //   }
-  // });
-
-  // if (res.status !== 200) {
-  //   return {
-
-  //   }
-  // }
-
-  // const data = await res.json();
-
-  // console.log(questions);
   return (
     <div className="lg:max-w-lg">
       <p className="text-base font-semibold leading-7 text-indigo-600">Розбираємося з РПП</p>
@@ -31,7 +11,9 @@ export default function Page() {
         ставлення до власного тіла і свого здоров&apos;я. Руйнування цих ланцюгів важливе, щоб повернути людям їхню внутрішню свободу і дозволити їм повністю насолоджуватися життям.
       </p>
       <button className="mt-8 w-full px-4 py-2 text-base font-medium leading-6 text-center text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo md:py-3 md:text-lg md:px-8">
-        <Link href="/test/questions">Почати тест</Link>
+        <Link href="/test/questions" style={{ width: '100%', display: 'inline-block' }}>
+          Почати тест
+        </Link>
       </button>
     </div>
   );
