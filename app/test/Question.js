@@ -59,7 +59,7 @@ export default function Question() {
 
   useEffect(() => {
     if (!ISSERVER) {
-      setUserAnswers(JSON.parse(localStorage.getItem('userAnswers')));
+      setUserAnswers(JSON.parse(localStorage.getItem('userAnswers')) || []);
     }
   }, [ISSERVER]);
 
