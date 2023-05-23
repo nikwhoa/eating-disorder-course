@@ -1,6 +1,5 @@
 import './globals.scss'
 import localFont from 'next/font/local'
-import Head from 'next/head'
 
 const Raleway = localFont({
   src: [
