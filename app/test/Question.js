@@ -7,19 +7,32 @@ import { v4 as uuidv4 } from 'uuid';
 import questions from './questions/questions';
 import './question.scss';
 import AnswerButton from './AnswerButton';
+import IconLoader from '../utils/loader';
+import Result from './Result';
 
 export default function Question() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   const userId = uuidv4();
 
   const ISSERVER = typeof window === 'undefined';
 
-  // useEffect(() => {
-  //   // Perform localStorage action
-  //   const item = localStorage.getItem('key');
-  // }, []);
+  useEffect(() => {
+    if (!ISSERVER) {
+      const storedAnswers = JSON.parse(localStorage.getItem('userAnswers')) || [];
+      setUserAnswers(storedAnswers);
+      setCurrentQuestionIndex(storedAnswers.length);
+      // setUserAnswers(JSON.parse(localStorage.getItem('userAnswers')) || []);
+      // setCurrentQuestionIndex(JSON.parse(localStorage.getItem('userAnswers')).length);
+      // setLoading(false);
+      setLoading(false);
+      setInterval(() => {
+        document.body.classList.remove('no-transition');
+      }, 300);
+    }
+  }, [ISSERVER, loading]);
 
   const handleAnswer = (answer) => {
     // Generate a new answer object
@@ -57,47 +70,47 @@ export default function Question() {
     setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
-  useEffect(() => {
-    if (!ISSERVER) {
-      setUserAnswers(JSON.parse(localStorage.getItem('userAnswers')) || []);
-    }
-  }, [ISSERVER]);
-
   if (currentQuestionIndex >= questions.length) {
-    return <div>Ви відповіли на усі питання!</div>;
+    localStorage.clear('userAnswers');
+    return (
+      <Result userAnswers={userAnswers} />
+    );
   }
 
-  // console.log('userAnswers', userAnswers);
-  // console.log(localStorage.getItem('userAnswers'));
-  // console.log(currentQuestionIndex >= userAnswers.length);
   return (
     <>
-      <div className="mt-6 text-sm">На питання може бути лише одна відповідь. Проходячи тест ви даєте згоду на обробку персональних даних.</div>
-      <div className="question">
-        <TransitionGroup>
-          <CSSTransition key={currentQuestionIndex} timeout={500} classNames="fade">
-            <div className="mt-6">
-              <div className="question-number">
-                Питання <span className="number">{currentQuestionIndex + 1}</span> <span>з</span> <span className="number">{questions.length}</span>
+      <div className="mt-2 text-sm">На питання може бути лише одна відповідь. Проходячи тест ви даєте згоду на обробку персональних даних.</div>
+      <div className="question-wrapper">
+        {loading ? (
+          <IconLoader />
+        ) : (
+          <TransitionGroup>
+            <CSSTransition key={currentQuestionIndex} timeout={200} classNames="fade">
+              <div className="">
+                <div className="question-number">
+                  Питання <span className="number">{currentQuestionIndex + 1}</span> <span>з</span> <span className="number">{questions.length}</span>
+                </div>
+                <div className="font-bold question">{questions[currentQuestionIndex].question}</div>
+                <div className="mt-6">
+                  {questions[currentQuestionIndex].answers.map((answer, i) => (
+                    <AnswerButton id={answer.text + (i + 1)} key={`${questions[currentQuestionIndex].id}_${answer.text}`} userAnswer={userAnswers} currentQuestionIndex={currentQuestionIndex} answer={answer} onClick={handleAnswer} />
+                  ))}
+                </div>
               </div>
-              <div className="font-bold question">{questions[currentQuestionIndex].question}</div>
-              <div className="mt-6">
-                {questions[currentQuestionIndex].answers.map((answer, i) => (
-                  <AnswerButton id={answer.text + (i + 1)} key={`${questions[currentQuestionIndex].id}_${answer.text}`} userAnswer={userAnswers} currentQuestionIndex={currentQuestionIndex} answer={answer} onClick={handleAnswer} />
-                ))}
-              </div>
-              <div className="mt-2 flex justify-between">
-                {/* buttons back and forward */}
-                <button type="button" className="back-button text-sm" onClick={() => setCurrentQuestionIndex(currentQuestionIndex - 1)} hidden={currentQuestionIndex === 0} disabled={currentQuestionIndex === 0}>
-                  Назад
-                </button>
-                <button type="button" className="next-button text-sm" onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)} hidden={currentQuestionIndex >= userAnswers.length} disabled={currentQuestionIndex === questions.length - 1}>
-                  Далі
-                </button>
-              </div>
-            </div>
-          </CSSTransition>
-        </TransitionGroup>
+            </CSSTransition>
+          </TransitionGroup>
+        )}
+      </div>
+      <div className="buttons">
+        <div className="mt-2 flex justify-between">
+          {/* buttons back and forward */}
+          <button type="button" className="back-button text-sm" onClick={() => setCurrentQuestionIndex(currentQuestionIndex - 1)} hidden={currentQuestionIndex === 0} disabled={currentQuestionIndex === 0}>
+            Назад
+          </button>
+          <button type="button" className="next-button text-sm" onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)} hidden={currentQuestionIndex >= userAnswers.length} disabled={currentQuestionIndex === questions.length - 1}>
+            Далі
+          </button>
+        </div>
       </div>
     </>
   );
