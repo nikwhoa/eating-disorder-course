@@ -80,7 +80,7 @@ export default function Question() {
   return (
     <>
       <div className="mt-2 text-sm">На питання може бути лише одна відповідь. Проходячи тест ви даєте згоду на обробку персональних даних.</div>
-      <div className="question-wrapper">
+      <div className="question-wrapper mt-6">
         {loading ? (
           <IconLoader />
         ) : (
@@ -88,7 +88,7 @@ export default function Question() {
             <CSSTransition key={currentQuestionIndex} timeout={200} classNames="fade">
               <div className="">
                 <div className="question-number">
-                  Питання <span className="number">{currentQuestionIndex + 1}</span> <span>з</span> <span className="number">{questions.length}</span>
+                  Питання <span className="number">{currentQuestionIndex + 1}</span>/<span className="number">{questions.length}</span>
                 </div>
                 <div className="font-bold question">{questions[currentQuestionIndex].question}</div>
                 <div className="mt-6">
