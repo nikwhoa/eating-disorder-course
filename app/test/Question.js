@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { v4 as uuidv4 } from 'uuid';
-import questions from './questions/questions';
+import questions from './questions';
 import './question.scss';
 import AnswerButton from './AnswerButton';
 import IconLoader from '../utils/loader';
@@ -14,6 +14,7 @@ export default function Question() {
   const [userAnswers, setUserAnswers] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [hideButtons, setHideButtons] = useState(false);
 
   const userId = uuidv4();
 
@@ -35,6 +36,8 @@ export default function Question() {
   }, [ISSERVER, loading]);
 
   const handleAnswer = (answer) => {
+    // Disable buttons
+    setHideButtons(true);
     // Generate a new answer object
     const newAnswer = {
       questionId: questions[currentQuestionIndex].id,
@@ -75,41 +78,71 @@ export default function Question() {
     return <Result userAnswers={userAnswers} />;
   }
 
+  const handleButtonClick = (button) => {
+    // setHideButtons(true)
+    if (button === 'back') {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    } else if (button === 'next') {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
+  };
+
+
   return (
     <>
-      <div className="mt-2 text-sm">На питання може бути лише одна відповідь. Проходячи тест ви даєте згоду на обробку персональних даних.</div>
+      <div className="mt-2 text-sm pl-5 pr-5 p-3 pt-6">На питання може бути лише одна відповідь. Проходячи тест ви даєте згоду на обробку персональних даних.</div>
       <div className="question-wrapper mt-6">
         {loading ? (
           <IconLoader />
         ) : (
           <TransitionGroup>
-            <CSSTransition key={currentQuestionIndex} timeout={200} classNames="fade">
+            <CSSTransition key={currentQuestionIndex} timeout={200} classNames="fade" onEnter={() => setHideButtons(true)} onExited={() => setHideButtons(false)}>
               <div className="">
-                <div className="question-number">
+                <div className="question-number pl-5 pr-5 p-3 pt-1">
                   Питання <span className="number">{currentQuestionIndex + 1}</span>/<span className="number">{questions.length}</span>
                 </div>
-                <div className="font-bold question">{questions[currentQuestionIndex].question}</div>
-                <div className="mt-6">
-                    {questions[currentQuestionIndex].answers.map((answer, i) => (
-                      <AnswerButton id={answer.text + (i + 1)} key={`${questions[currentQuestionIndex].id}_${answer.text}`} userAnswer={userAnswers} currentQuestionIndex={currentQuestionIndex} answer={answer} onClick={handleAnswer} />
-                    ))}
+                <div className="font-bold question pl-5 pr-5 p-3">{questions[currentQuestionIndex].question}</div>
+                <div className="">
+                  {questions[currentQuestionIndex].answers.map((answer, i) => (
+                    <AnswerButton id={answer.text + (i + 1)} key={`${questions[currentQuestionIndex].id}_${answer.text}`} userAnswer={userAnswers} currentQuestionIndex={currentQuestionIndex} answer={answer} onClick={handleAnswer} />
+                  ))}
                 </div>
               </div>
             </CSSTransition>
           </TransitionGroup>
         )}
       </div>
-      <div className="buttons">
-        <div className="mt-2 flex justify-between">
-          {/* buttons back and forward */}
-          <button type="button" className="back-button text-sm" onClick={() => setCurrentQuestionIndex(currentQuestionIndex - 1)} hidden={currentQuestionIndex === 0} disabled={currentQuestionIndex === 0}>
-            Назад
-          </button>
-          <button type="button" className="next-button text-sm" onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)} hidden={currentQuestionIndex >= userAnswers.length} disabled={currentQuestionIndex === questions.length - 1}>
-            Далі
-          </button>
+      {!hideButtons && (
+        <div className="buttons">
+          <div className="mt-2 flex justify-between">
+            <button type="button" className="back-button text-sm" onClick={() => handleButtonClick('back')} hidden={currentQuestionIndex === 0} disabled={currentQuestionIndex === 0}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 -6.5 36 36">
+                <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                  <g fill="#252528" fillRule="nonzero" transform="translate(-342 -159)">
+                    <g transform="translate(50 120)">
+                      <path
+                        d="M317.108 39.29l10.542 10.452.059.054c.18.179.277.408.291.642v.124a.984.984 0 01-.291.642l-.052.044-10.549 10.462a1.005 1.005 0 01-1.413 0 .985.985 0 010-1.402l9.008-8.934h-31.704c-.552 0-.999-.443-.999-.99a.995.995 0 011-.992h31.468l-8.773-8.7a.985.985 0 010-1.402 1.005 1.005 0 011.413 0zm10.007 11.093l-10.714 10.626L327.002 50.5v-.004l-.059-.053-.06-.06h.232z"
+                        transform="matrix(-1 0 0 1 620 0)"
+                      ></path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </button>
+            <button type="button" className="next-button text-sm" onClick={() => handleButtonClick('next')} hidden={currentQuestionIndex >= userAnswers.length} disabled={currentQuestionIndex === questions.length - 1}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 -6.5 36 36">
+                <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                  <g fill="#252528" fillRule="nonzero" transform="translate(-212 -159)">
+                    <g transform="translate(50 120)">
+                      <path d="M187.108 39.29l10.542 10.452.059.054c.18.179.277.408.291.642v.124a.984.984 0 01-.291.642l-.052.044-10.549 10.462a1.005 1.005 0 01-1.413 0 .985.985 0 010-1.402l9.008-8.934h-31.704c-.552 0-.999-.443-.999-.99a.995.995 0 011-.992h31.468l-8.773-8.7a.985.985 0 010-1.402 1.005 1.005 0 011.413 0zm10.007 11.093l-10.714 10.626L197.002 50.5v-.004l-.059-.053-.06-.06h.232z"></path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
