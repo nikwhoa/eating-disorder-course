@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 
 export default function Page() {
@@ -5,7 +6,7 @@ export default function Page() {
     <div className="lg:max-w-lg">
       <p className="text-base font-semibold leading-7 text-indigo-600">Розбираємося з РПП</p>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Тест ставлення до прийому їжі</h1>
-      <p className="mt-6 text-base leading-7 text-gray-700 md:text-lg md:leading-9">
+      <p className="mt-6 text-base leading-7 text-gray-700 md:text-lg md:leading-9 test-welcome-text">
         Розлади харчової поведінки - це не просто проблеми зі столовою ложкою чи вагами. Це серйозні, часто приховані, психологічні та фізіологічні лиха, що подібні до крижаних айсбергів в океані життя. Немов невидимі ланцюги, вони утримують людей у полоні страху і самовіддачі, отруюючи їхнє
         ставлення до власного тіла і свого здоров&apos;я. Руйнування цих ланцюгів важливе, щоб повернути людям їхню внутрішню свободу і дозволити їм повністю насолоджуватися життям.
       </p>
