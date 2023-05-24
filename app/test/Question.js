@@ -72,9 +72,7 @@ export default function Question() {
 
   if (currentQuestionIndex >= questions.length) {
     localStorage.clear('userAnswers');
-    return (
-      <Result userAnswers={userAnswers} />
-    );
+    return <Result userAnswers={userAnswers} />;
   }
 
   return (
@@ -92,9 +90,9 @@ export default function Question() {
                 </div>
                 <div className="font-bold question">{questions[currentQuestionIndex].question}</div>
                 <div className="mt-6">
-                  {questions[currentQuestionIndex].answers.map((answer, i) => (
-                    <AnswerButton id={answer.text + (i + 1)} key={`${questions[currentQuestionIndex].id}_${answer.text}`} userAnswer={userAnswers} currentQuestionIndex={currentQuestionIndex} answer={answer} onClick={handleAnswer} />
-                  ))}
+                    {questions[currentQuestionIndex].answers.map((answer, i) => (
+                      <AnswerButton id={answer.text + (i + 1)} key={`${questions[currentQuestionIndex].id}_${answer.text}`} userAnswer={userAnswers} currentQuestionIndex={currentQuestionIndex} answer={answer} onClick={handleAnswer} />
+                    ))}
                 </div>
               </div>
             </CSSTransition>
