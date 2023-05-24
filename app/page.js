@@ -18,7 +18,7 @@ export default function Home() {
         </div>
         <div className="p-5 text-center">
           <button className="start-test-btn">
-            <Link href="/test/questions" style={{ width: '100%', display: 'inline-block' }}>
+            <Link href="/test" style={{ width: '100%', display: 'inline-block' }}>
               Почати тест
             </Link>
           </button>
