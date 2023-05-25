@@ -162,12 +162,13 @@
 
   // center the content
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 1000;
 
   @media (min-width: 768px) {
     padding: 0 20%;
+    justify-content: center;
   }
-  padding: 10% 10%;
+  padding: 0 10%;
 }
