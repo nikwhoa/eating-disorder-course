@@ -4,7 +4,7 @@ const questions = [
     id: 1,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -16,7 +16,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -34,7 +34,7 @@ const questions = [
     id: 2,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -46,7 +46,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -64,7 +64,7 @@ const questions = [
     id: 3,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -76,7 +76,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -94,7 +94,7 @@ const questions = [
     id: 4,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -106,7 +106,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -124,7 +124,7 @@ const questions = [
     id: 5,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -136,7 +136,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -154,7 +154,7 @@ const questions = [
     id: 6,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -166,7 +166,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -184,7 +184,7 @@ const questions = [
     id: 7,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -196,7 +196,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -214,7 +214,7 @@ const questions = [
     id: 8,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -226,7 +226,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -244,7 +244,7 @@ const questions = [
     id: 9,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -256,7 +256,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -274,7 +274,7 @@ const questions = [
     id: 10,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -286,7 +286,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -304,7 +304,7 @@ const questions = [
     id: 11,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -316,7 +316,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -334,7 +334,7 @@ const questions = [
     id: 12,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -346,7 +346,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -364,7 +364,7 @@ const questions = [
     id: 13,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -376,7 +376,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -394,7 +394,7 @@ const questions = [
     id: 14,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -406,7 +406,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -424,7 +424,7 @@ const questions = [
     id: 15,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -436,7 +436,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -454,7 +454,7 @@ const questions = [
     id: 16,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -466,7 +466,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -484,7 +484,7 @@ const questions = [
     id: 17,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -496,7 +496,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -514,7 +514,7 @@ const questions = [
     id: 18,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -526,7 +526,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -544,7 +544,7 @@ const questions = [
     id: 19,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -556,7 +556,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -574,7 +574,7 @@ const questions = [
     id: 20,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -586,7 +586,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -604,7 +604,7 @@ const questions = [
     id: 21,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -616,7 +616,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -634,7 +634,7 @@ const questions = [
     id: 22,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -646,7 +646,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -664,7 +664,7 @@ const questions = [
     id: 23,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -676,7 +676,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -694,7 +694,7 @@ const questions = [
     id: 24,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -706,7 +706,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -724,7 +724,7 @@ const questions = [
     id: 25,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 3,
       },
       {
@@ -736,7 +736,7 @@ const questions = [
         value: 1,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 0,
       },
       {
@@ -754,7 +754,7 @@ const questions = [
     id: 26,
     answers: [
       {
-        text: 'Завжди',
+        text: 'Постійно',
         value: 0,
       },
       {
@@ -766,7 +766,7 @@ const questions = [
         value: 0,
       },
       {
-        text: 'Іноді',
+        text: 'Періодично',
         value: 1,
       },
       {
