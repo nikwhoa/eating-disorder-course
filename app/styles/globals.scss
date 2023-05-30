@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'fonts';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;900&display=swap');
+@import 'test/test';
+
+// .no-transition * {
+//   -webkit-transition: none !important;
+//   -moz-transition: none !important;
+//   -ms-transition: none !important;
+//   -o-transition: none !important;
+//   transition: none !important;
+// }
+
+* {
+  font-size: 16px;
+}
+
+:root {
+  --background-color: rgba(255, 255, 255, 1);
+  --background-color-pink: rgba(219, 195, 219, 1);
+  --black-color: #202020;
+  --raleway-regular: 'Raleway', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: rgb(66, 66, 66);
+  }
+}
+
+body {
+  font-family: var(--raleway-regular);
+  color: rgb(51, 51, 51);
+  background-color: var(--background-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  pointer-events: auto;
+
+  @media (prefers-color-scheme: dark) {
+    color: rgb(245, 245, 245);
+  }
+}
+
+.btn-default {
+  background-color: var(--background-color-pink);
+  border-radius: 64px;
+  color: var(--black-color);
+  font-family: var(--raleway-regular);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+

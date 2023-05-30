@@ -1,4 +1,4 @@
-import './globals.scss'
+import './styles/globals.scss'
 
 export const metadata = {
   title: 'Розбираємося з РПП: Онлайн Курс',
@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#707070" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={'no-transition'}>
         {children}
