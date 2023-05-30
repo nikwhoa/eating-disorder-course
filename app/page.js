@@ -36,7 +36,7 @@ export default function Home() {
           <div className='subtitle'>Тест складається із 26 питань та дозволяє визначити наявність розладу харчової поведінки</div>
         </div>
         <div className='ellipse-element-second' />
-        <div className='mt-28 p-5 text-center'>
+        <div className='mt-16 p-5 text-center start-test-btn-wrapper'>
           <button className='btn-default start-test-btn'>
             <Link href='/test' style={{ width: '100%', display: 'inline-block' }}>
               Почати тест
