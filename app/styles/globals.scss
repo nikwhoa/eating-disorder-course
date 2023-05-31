@@ -21,12 +21,67 @@
   --background-color: rgba(255, 255, 255, 1);
   --background-color-pink: rgba(219, 195, 219, 1);
   --black-color: #202020;
+  --yellow-color: rgba(247, 247, 235, 1);
   --raleway-regular: 'Raleway', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: rgb(66, 66, 66);
+    // invert colors
+    --background-color: rgb(51, 51, 51);
+    --black-color: rgb(245, 245, 245);
+    --yellow-color: rgb(51, 51, 51);
+    --background-color-pink: rgba(219, 195, 219, 1);
+  }
+
+  body {
+    background-color: rgb(51, 51, 51) !important;
+  }
+
+  .test-container .title-container::after {
+    background-color: rgb(245, 245, 245);
+  }
+
+  .btn-default {
+    color: rgb(51, 51, 51) !important;
+  }
+
+  .question-container .answer {
+    color: rgb(51, 51, 51) !important;
+  }
+
+  .question-container .answer {
+    background-color: rgb(159, 159, 159) !important;
+  }
+
+  .question-container .answer .circle {
+    border: 2px solid rgb(51, 51, 51) !important;
+  }
+
+  .question-container .answer-answered {
+    background-color: rgb(245, 245, 245) !important;
+    color: rgb(51, 51, 51) !important;
+  }
+
+  .question-container .answer .circle-checked {
+    background-color: rgb(51, 51, 51) !important;
+    border: 2px solid rgb(51, 51, 51) !important;
+  }
+
+  .question-container .answer .circle-checked::after {
+    border: 2px solid rgb(51, 51, 51) !important;
+  }
+
+  .test-container .ellipse-element-first {
+    background-color: rgb(219, 195, 219, .5) !important;
+  }
+
+  .test-container .ellipse-element-second {
+    background-color: rgb(247, 247, 235, .2) !important;
+  }
+
+  .result-container .result a button {
+    color: rgb(51, 51, 51) !important;
   }
 }
 

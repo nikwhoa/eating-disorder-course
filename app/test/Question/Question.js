@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { v4 as uuidv4 } from 'uuid';
 import questions from '../questions';
@@ -44,8 +43,8 @@ export default function Question() {
       question: questions[currentQuestionIndex].question,
       answer: {
         answerWeight: answer.value,
-        answerText: answer.text,
-      },
+        answerText: answer.text
+      }
     };
 
     // Get the stored data
@@ -68,9 +67,13 @@ export default function Question() {
 
     // Save the updated data back to localStorage
     if (!ISSERVER) localStorage.setItem('userAnswers', JSON.stringify(storedAnswers));
+    // smooth scroll to the bottom of the screen
+    window.scrollTo(0, document.body.scrollHeight, 'smooth');
 
     // Переход к следующему вопросу
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
+    setTimeout(() => {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }, 400);
   };
 
   if (currentQuestionIndex >= questions.length) {
@@ -90,21 +93,47 @@ export default function Question() {
 
   return (
     <>
-      <div className="mt-2 text-sm pl-5 pr-5 p-3 pt-6">На питання може бути лише одна відповідь. Проходячи тест ви даєте згоду на обробку персональних даних.</div>
-      <div className="question-wrapper mt-6">
+
+      <div className='top-container scrol'>
+        <div className='left-column current-question'>
+          <span className='number'>{currentQuestionIndex + 1}</span>/<span className='number'>{questions.length}</span>
+        </div>
+        <div className='right-column'>Питання</div>
+      </div>
+
+      <div className='mt-2 text-sm pl-5 pr-5 p-3 pt-6 info-text'>
+        На питання може бути лише одна відповідь. Проходячи тест ви даєте згоду на обробку персональних
+        даних.
+      </div>
+      <div className='ellipse-element-second' />
+      <div className='question-wrapper'>
         {loading ? (
           <IconLoader />
         ) : (
           <TransitionGroup>
-            <CSSTransition key={currentQuestionIndex} timeout={200} classNames="fade" onEnter={() => setHideButtons(true)} onExited={() => setHideButtons(false)}>
-              <div className="">
-                <div className="question-number pl-5 pr-5 p-3 pt-1">
-                  Питання <span className="number">{currentQuestionIndex + 1}</span>/<span className="number">{questions.length}</span>
-                </div>
-                <div className="font-bold question pl-5 pr-5 p-3">{questions[currentQuestionIndex].question}</div>
-                <div className="">
+            <CSSTransition key={currentQuestionIndex} timeout={200} classNames='fade' onEnter={() => {
+              setHideButtons(true);
+              // document.body.style.overflowX = 'visible';
+              document.body.querySelector('.question-container').style.overflowX = 'visible';
+              document.body.querySelector('.question-wrapper').style.position = 'absolute';
+              document.body.querySelector('.question-wrapper').style.height = '100vh';
+
+
+            }}
+                           onExited={() => {
+                             setHideButtons(false);
+                             document.body.querySelector('.question-container').style.overflowX = 'hidden';
+                             document.body.querySelector('.question-wrapper').style.position = 'relative';
+                             document.body.querySelector('.question-wrapper').style.height = 'initial';
+
+                           }}>
+              <div className=''>
+                <div className={`font-bold question pl-5 pr-5`}
+                     style={{ height: `${currentQuestionIndex === 6 || currentQuestionIndex === 3 ? '220px' : ''}` }}>{questions[currentQuestionIndex].question}</div>
+                <div className=''>
                   {questions[currentQuestionIndex].answers.map((answer, i) => (
-                    <AnswerButton id={answer.text + (i + 1)} key={`${questions[currentQuestionIndex].id}_${answer.text}`} userAnswer={userAnswers} currentQuestionIndex={currentQuestionIndex} answer={answer} onClick={handleAnswer} />
+                    <AnswerButton id={answer.text + (i + 1)} key={`${questions[currentQuestionIndex].id}_${answer.text}`} userAnswer={userAnswers}
+                                  currentQuestionIndex={currentQuestionIndex} answer={answer} onClick={handleAnswer} />
                   ))}
                 </div>
               </div>
@@ -113,28 +142,31 @@ export default function Question() {
         )}
       </div>
       {!hideButtons && (
-        <div className="buttons">
-          <div className="mt-2 flex justify-between">
-            <button type="button" className="back-button text-sm" onClick={() => handleButtonClick('back')} hidden={currentQuestionIndex === 0} disabled={currentQuestionIndex === 0}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 -6.5 36 36">
-                <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                  <g fill="#252528" fillRule="nonzero" transform="translate(-342 -159)">
-                    <g transform="translate(50 120)">
+        <div className='buttons'>
+          <div className='mt-1 flex justify-between'>
+            <button type='button' className='back-button text-sm' onClick={() => handleButtonClick('back')} hidden={currentQuestionIndex === 0}
+                    disabled={currentQuestionIndex === 0}>
+              <svg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 -6.5 36 36'>
+                <g fill='none' fillRule='evenodd' stroke='none' strokeWidth='1'>
+                  <g fill='#252528' fillRule='nonzero' transform='translate(-342 -159)'>
+                    <g transform='translate(50 120)'>
                       <path
-                        d="M317.108 39.29l10.542 10.452.059.054c.18.179.277.408.291.642v.124a.984.984 0 01-.291.642l-.052.044-10.549 10.462a1.005 1.005 0 01-1.413 0 .985.985 0 010-1.402l9.008-8.934h-31.704c-.552 0-.999-.443-.999-.99a.995.995 0 011-.992h31.468l-8.773-8.7a.985.985 0 010-1.402 1.005 1.005 0 011.413 0zm10.007 11.093l-10.714 10.626L327.002 50.5v-.004l-.059-.053-.06-.06h.232z"
-                        transform="matrix(-1 0 0 1 620 0)"
+                        d='M317.108 39.29l10.542 10.452.059.054c.18.179.277.408.291.642v.124a.984.984 0 01-.291.642l-.052.044-10.549 10.462a1.005 1.005 0 01-1.413 0 .985.985 0 010-1.402l9.008-8.934h-31.704c-.552 0-.999-.443-.999-.99a.995.995 0 011-.992h31.468l-8.773-8.7a.985.985 0 010-1.402 1.005 1.005 0 011.413 0zm10.007 11.093l-10.714 10.626L327.002 50.5v-.004l-.059-.053-.06-.06h.232z'
+                        transform='matrix(-1 0 0 1 620 0)'
                       ></path>
                     </g>
                   </g>
                 </g>
               </svg>
             </button>
-            <button type="button" className="next-button text-sm" onClick={() => handleButtonClick('next')} hidden={currentQuestionIndex >= userAnswers.length} disabled={currentQuestionIndex === questions.length - 1}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 -6.5 36 36">
-                <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                  <g fill="#252528" fillRule="nonzero" transform="translate(-212 -159)">
-                    <g transform="translate(50 120)">
-                      <path d="M187.108 39.29l10.542 10.452.059.054c.18.179.277.408.291.642v.124a.984.984 0 01-.291.642l-.052.044-10.549 10.462a1.005 1.005 0 01-1.413 0 .985.985 0 010-1.402l9.008-8.934h-31.704c-.552 0-.999-.443-.999-.99a.995.995 0 011-.992h31.468l-8.773-8.7a.985.985 0 010-1.402 1.005 1.005 0 011.413 0zm10.007 11.093l-10.714 10.626L197.002 50.5v-.004l-.059-.053-.06-.06h.232z"></path>
+            <button type='button' className='next-button text-sm' onClick={() => handleButtonClick('next')}
+                    hidden={currentQuestionIndex >= userAnswers.length} disabled={currentQuestionIndex === questions.length - 1}>
+              <svg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 -6.5 36 36'>
+                <g fill='none' fillRule='evenodd' stroke='none' strokeWidth='1'>
+                  <g fill='#252528' fillRule='nonzero' transform='translate(-212 -159)'>
+                    <g transform='translate(50 120)'>
+                      <path
+                        d='M187.108 39.29l10.542 10.452.059.054c.18.179.277.408.291.642v.124a.984.984 0 01-.291.642l-.052.044-10.549 10.462a1.005 1.005 0 01-1.413 0 .985.985 0 010-1.402l9.008-8.934h-31.704c-.552 0-.999-.443-.999-.99a.995.995 0 011-.992h31.468l-8.773-8.7a.985.985 0 010-1.402 1.005 1.005 0 011.413 0zm10.007 11.093l-10.714 10.626L197.002 50.5v-.004l-.059-.053-.06-.06h.232z'></path>
                     </g>
                   </g>
                 </g>

@@ -31,9 +31,8 @@ export default function AnswerButton({ answer, onClick, userAnswer, currentQuest
   return (
     <div className='button-test-wrapper pl-5 pr-5'>
       <button type="button" key={answer.text} className={`answer ${hover ? 'answer-hover' : ''} ${isAnswered()}`} onClick={handleClick} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onTouchStart={() => setHover(true)} onTouchEnd={() => setHover(false)}>
-        {answer.text}
-        {/* create circle like radio button */}
         <div className={`circle${isAnswered() ? '-checked' : ''}`}></div>
+        {answer.text}
       </button>
     </div>
   );

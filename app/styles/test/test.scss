@@ -112,7 +112,7 @@
     width: 130px;
     height: 130px;
     right: 20px;
-    bottom: 420px;
+    bottom: 385px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,8 +151,16 @@
   }
 
   .start-test-btn {
-    padding: .7rem 6.3rem;
+    //padding: .7rem .1rem;
     font-size: 1.2rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 312px;
+      height: 47px;
+    }
   }
 
 
