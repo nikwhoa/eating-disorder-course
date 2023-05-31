@@ -129,7 +129,7 @@ export default function Question() {
                            }}>
               <div className=''>
                 <div className={`font-bold question pl-5 pr-5`}
-                     style={{ height: `${currentQuestionIndex === 6 || currentQuestionIndex === 3 ? '220px' : ''}` }}>{questions[currentQuestionIndex].question}</div>
+                     style={{ fontSize: `${currentQuestionIndex === 6 || currentQuestionIndex === 3 ? '1.2rem' : ''}` }}>{questions[currentQuestionIndex].question}</div>
                 <div className=''>
                   {questions[currentQuestionIndex].answers.map((answer, i) => (
                     <AnswerButton id={answer.text + (i + 1)} key={`${questions[currentQuestionIndex].id}_${answer.text}`} userAnswer={userAnswers}
