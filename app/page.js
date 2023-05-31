@@ -5,7 +5,7 @@ import dashaPhoto from './images/dasha.jpg';
 export default function Home() {
   return (
     <main className='flex flex-col items-center justify-between'>
-      <div className='lg:max-w-lg test-container'>
+      <div className='w-full test-container'>
         <div className='top-container'>
           <div className='left-column'></div>
           <div className='right-column'>тест</div>
