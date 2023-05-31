@@ -2,7 +2,7 @@ import  '../styles/globals.scss'
 
 export default function RootLayout({ children }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className='justify-center flex'>
       {children}
     </div>
   )

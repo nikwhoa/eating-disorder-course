@@ -37,8 +37,8 @@ export default function Home() {
         </div>
         <div className='ellipse-element-second' />
         <div className='mt-16 p-5 text-center start-test-btn-wrapper'>
-          <button className='btn-default start-test-btn'>
-            <Link href='/test' style={{ width: '100%', display: 'inline-block' }}>
+          <button type='button' className='btn-default start-test-btn'>
+            <Link href='/test'>
               Почати тест
             </Link>
           </button>
