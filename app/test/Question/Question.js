@@ -15,7 +15,7 @@ export default function Question() {
   const [loading, setLoading] = useState(true);
   const [hideButtons, setHideButtons] = useState(false);
 
-  const userId = uuidv4();
+  // const userId = uuidv4();
 
   const ISSERVER = typeof window === 'undefined';
 
