@@ -87,7 +87,7 @@ export default function Question() {
     // Переход к следующему вопросу
     setTimeout(() => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }, 400);
+    }, 800);
   };
 
   if (currentQuestionIndex >= questions.length) {
@@ -115,7 +115,7 @@ export default function Question() {
         <div className='right-column'>Питання</div>
       </div>
 
-      <div className='mt-2 text-sm pl-5 pr-5 p-3 pt-6 info-text'>
+      <div className='mt-2 pl-5 pr-5 p-3 pt-6 info-text'>
         На питання може бути лише одна відповідь. Проходячи тест ви даєте згоду на обробку персональних
         даних.
       </div>

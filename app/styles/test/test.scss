@@ -40,9 +40,18 @@
     .photo {
       margin: 0 auto;
       max-width: 312px;
+      @media screen and (min-width: 920px) {
+        //width: 100%;
+        max-width: 512px;
+      }
 
       img {
         //max-width: 312px;
+
+        @media screen and (min-width: 920px) {
+          max-width: 512px;
+          width: 100%;
+        }
       }
     }
   }
@@ -84,6 +93,10 @@
           font-size: 1.75rem;
           line-height: 32px;
         }
+
+        @media screen and (min-width: 920px) {
+          font-size: 3.5rem;
+        }
       }
     }
 
@@ -100,6 +113,13 @@
       @media screen and (max-width: 343px) {
         font-size: .9rem;
         line-height: 20px;
+      }
+
+      @media screen and (min-width: 920px) {
+        font-size: 1.5rem;
+        line-height: 32px;
+        padding-left: 20%;
+        padding-right: 20%;
       }
     }
   }
@@ -153,8 +173,10 @@
   .start-test-btn {
     //padding: .7rem .1rem;
     font-size: 1.2rem;
-
     a {
+      @media screen and (min-width: 920px) {
+        font-size: 1.5rem;
+      }
       display: flex;
       align-items: center;
       justify-content: center;
@@ -162,7 +184,6 @@
       height: 47px;
     }
   }
-
 
 
 }
