@@ -21,6 +21,19 @@ export default function Question() {
 
   useEffect(() => {
     if (!ISSERVER) {
+
+      // check how long key userAnswers is in localStorage
+      const userAnswersFromLocalStorage = JSON.parse(localStorage.getItem('userAnswers'));
+      if (userAnswersFromLocalStorage) {
+        const timeNow = new Date().getTime();
+        const timeInLocalStorage = userAnswersFromLocalStorage[0].time;
+        const timeDifference = timeNow - timeInLocalStorage;
+        const timeDifferenceInHours = Math.floor(timeDifference / 1000 / 60 / 60);
+        if (timeDifferenceInHours > 1) {
+          localStorage.removeItem('userAnswers');
+        }
+      }
+
       const storedAnswers = JSON.parse(localStorage.getItem('userAnswers')) || [];
       setUserAnswers(storedAnswers);
       setCurrentQuestionIndex(storedAnswers.length);
@@ -44,7 +57,8 @@ export default function Question() {
       answer: {
         answerWeight: answer.value,
         answerText: answer.text
-      }
+      },
+      time: new Date().getTime()
     };
 
     // Get the stored data
