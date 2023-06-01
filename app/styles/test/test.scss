@@ -56,13 +56,59 @@
     }
   }
 
+  .title {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1004;
+    width: 100%;
+    padding: 0 50px;
+    // align center horizontally
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: 582px) and (max-width: 920px) {
+      margin-top: 60px !important;
+    }
+
+    @media screen and (min-width: 920px) {
+      margin-top: 40px !important;
+    }
+
+    h1 {
+      font-family: var(--raleway-regular);
+      font-weight: 900;
+      font-style: normal;
+      font-size: 2.25rem;
+      line-height: 48px;
+      text-align: center;
+      color: var(--black-color);
+
+      @media screen and (max-width: 360px) {
+        font-size: 1.75rem;
+        //line-height: 32px;
+      }
+
+      @media screen and (min-width: 920px) {
+        font-size: 3.5rem;
+      }
+    }
+  }
+
   .title-container {
-    padding: 0 39px 57px;
+    padding: 0 39px;
     border-top: 1px solid var(--black-color);
     border-bottom: 1px solid var(--black-color);
     position: relative;
     text-align: center;
+    height: 301px;
     z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(245, 245, 220, .8);
 
     &::after {
       content: '';
@@ -72,32 +118,6 @@
       bottom: 0;
       width: 1px; /* This is your border width */
       background: black; /* This is your border color */
-    }
-
-    .title {
-      margin-top: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      h1 {
-        font-family: var(--raleway-regular);
-        font-weight: 900;
-        font-style: normal;
-        font-size: 2.25rem;
-        line-height: 48px;
-        text-align: center;
-        color: var(--black-color);
-
-        @media screen and (max-width: 360px) {
-          font-size: 1.75rem;
-          line-height: 32px;
-        }
-
-        @media screen and (min-width: 920px) {
-          font-size: 3.5rem;
-        }
-      }
     }
 
     .subtitle {
@@ -126,7 +146,7 @@
 
   .ellipse-element-first {
     position: absolute;
-    z-index: 1000;
+    z-index: 1002;
     background: #DBC3DB;
     border-radius: 50%;
     width: 130px;
@@ -173,9 +193,14 @@
   .start-test-btn {
     //padding: .7rem .1rem;
     font-size: 1.2rem;
+
     a {
       @media screen and (min-width: 920px) {
         font-size: 1.5rem;
+      }
+      @media screen and (max-width: 343px) {
+        max-width: 280px;
+        width: 100%;
       }
       display: flex;
       align-items: center;
