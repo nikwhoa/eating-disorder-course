@@ -29,10 +29,10 @@ export default function Home() {
             ></path>
           </svg>
         </div>
+        <div className='title'>
+          <h1>Ставлення до прийому їжі</h1>
+        </div>
         <div className='title-container'>
-          <div className='title'>
-            <h1>Ставлення до прийому їжі</h1>
-          </div>
           <div className='subtitle'>Тест складається із 26 питань та дозволяє визначити наявність розладу харчової поведінки</div>
         </div>
         <div className='ellipse-element-second' />
