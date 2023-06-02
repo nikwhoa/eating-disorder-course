@@ -17,9 +17,6 @@ export default function Result({ userAnswers }) {
           Ви закінчили тест!
         </div>
         <div className='flex flex-col pl-9 pr-9 justify-center items-center mt-6 text-result'>
-          {/*<p className='text-xl'>*/}
-          {/*  Ваш результат: <span className='font-bold text-3xl'>{testResult}</span>*/}
-          {/*</p>*/}
           <p className='leading-7 mt-6'>
             {testResult < 20 && (
               <>
