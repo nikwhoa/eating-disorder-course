@@ -31,6 +31,8 @@ export default function Home() {
         </div>
         <div className='title'>
           <h1>Ставлення до прийому їжі</h1>
+          <br />
+          <h3>Eating Attitudes Test (EAT-26)</h3>
         </div>
         <div className='title-container'>
           <div className='subtitle'>Тест складається із 26 питань та дозволяє визначити наявність розладу харчової поведінки</div>
