@@ -23,7 +23,7 @@ export default function Result({ userAnswers }) {
           <p className='leading-7 mt-6'>
             {testResult < 20 && (
               <>
-                <b>Ваш результат <span className='font-bold text-xl'>{testResult}. <br /><br /> Причини для хвилювання немає. За
+                <b>Ваш результат <span className='font-bold text-xl'>{testResult}, причини для хвилювання немає. За
                 результатами тесту у вас низька ймовірність розладу харчової поведінки.</span></b>
                 <br /><br />
                 Але якщо в процесі тестування ви серйозно задумались над деякими питаннями, то рекомендуємо перейти до нашого телеграм каналу, де ви
