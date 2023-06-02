@@ -116,9 +116,8 @@ export default function Question() {
       </div>
 
       <div className='mt-2 pl-5 pr-5 p-3 pt-6 info-text'>
-        На питання може бути лише одна відповідь. Проходячи тест ви даєте згоду на обробку персональних
-        даних.
         Прочитайте та оберіть, будь ласка, відповідь нижче, що найбільше відповідає вашому стану.
+        Проходячи тест ви даєте згоду на обробку персональних даних.
       </div>
       <div className='ellipse-element-second' />
       <div className='question-wrapper'>
