@@ -98,10 +98,13 @@
     }
 
     h3 {
-      font-size: 1.1rem;
+      font-size: .9rem;
       text-align: center;
+      span {
+        font-size: .75rem;
+      }
       @media screen and (max-width: 360px) {
-        font-size: 1rem;
+        font-size: .8rem;
         //line-height: 32px;
       }
 
