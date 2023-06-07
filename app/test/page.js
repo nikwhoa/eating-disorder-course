@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import dashaPhoto from '@/app/eat-26/images/dasha.jpg';
+import dashaPhoto from '@/app/test/images/dasha.jpg';
 
 export default function Home() {
   return (
@@ -40,10 +40,10 @@ export default function Home() {
         <div className='ellipse-element-second' />
         <div className='mt-16 p-5 text-center start-test-btn-wrapper'>
           <button type='button' className='btn-default start-test-btn'>
-            {/*<Link href='eat-26/test'>*/}
+            {/*<Link href='questions/questions'>*/}
             {/*  Почати тест*/}
             {/*</Link>*/}
-            <Link href={'/eat-26/test'}>
+            <Link href={'/test/questions'}>
             Почати тест
             </Link>
           </button>

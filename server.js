@@ -27,7 +27,7 @@ fastify.register(cors, {
 
 fastify.get('/api/questions', async (request, reply) => {
   // send json data from file to client
-  reply.code(200).header('Content-Type', 'application/json; charset=utf-8').send(require('@/app/eat-26/questions/questions.json'));
+  reply.code(200).header('Content-Type', 'application/json; charset=utf-8').send(require('@/app/test/questions/questions.json'));
 });
 
 fastify.listen({ port: 4000, host: '0.0.0.0' }, function (err, address) {
