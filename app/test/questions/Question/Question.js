@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import questions from './questions';
 import '../styles/question.scss';
 import AnswerButton from '../utils/AnswerButton';
-import IconLoader from '@/app/eat-26/utils/loader';
+import IconLoader from '@/app/test/utils/loader';
 import Result from '../Result/Result';
 
 export default function Question() {

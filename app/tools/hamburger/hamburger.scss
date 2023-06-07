@@ -1,0 +1,36 @@
+.hamburger {
+
+  &-open {
+    justify-content: center;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+
+  &__line {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #333;
+    transition: all 0.2s linear;
+    position: relative;
+  }
+
+  .rotate45 {
+    transform: rotate(45deg);
+    transform-origin: 6px;
+  }
+
+  .rotate-45 {
+    transform: rotate(-45deg);
+    transform-origin: 7px;
+  }
+
+  .fade-out {
+    opacity: 0;
+  }
+}
