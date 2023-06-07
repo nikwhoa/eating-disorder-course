@@ -1,4 +1,4 @@
-import './styles/globals.scss';
+// import '@/app/eat-26/styles/globals.scss';
 
 export const metadata = {
   title: 'Ставлення до прийому їжі (EAT-26)',
