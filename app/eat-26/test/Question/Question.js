@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { v4 as uuidv4 } from 'uuid';
-import questions from '../questions';
+import questions from './questions';
 import '../styles/question.scss';
 import AnswerButton from '../utils/AnswerButton';
-import IconLoader from '../../utils/loader';
+import IconLoader from '@/app/eat-26/utils/loader';
 import Result from '../Result/Result';
 
 export default function Question() {
