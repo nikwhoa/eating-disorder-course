@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { v4 as uuidv4 } from 'uuid';
 import questions from './questions';
 import '../styles/question.scss';
 import AnswerButton from '../utils/AnswerButton';
