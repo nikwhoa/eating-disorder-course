@@ -1,0 +1,30 @@
+@import '/app/styles/variables.scss';
+
+.benefits {
+  padding: 2rem 3rem; // change after liqpay
+  &__title {
+    font-family: $secondary-font;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+  }
+
+  &__text {
+    margin: 2rem;
+
+    li {
+      font-family: $primary-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      color: $primary-text;
+
+      b {
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
