@@ -1,0 +1,85 @@
+@import 'app/styles/variables.scss';
+
+.course-format {
+  border-top: 1px solid $primary-text;
+  padding: 2rem 0 0;
+
+  &__title {
+    font-family: $secondary-font;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.6rem;
+    color: $primary-text;
+    border-bottom: 1px solid $primary-text;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .course-format__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .grid__item {
+      background: $primary-block;
+      padding: 3rem;
+
+      &:nth-child(odd) {
+        border-right: 1px solid $primary-text;
+        border-bottom: 1px solid $primary-text;
+      }
+
+      &:nth-child(even) {
+        border-bottom: 1px solid $primary-text;
+      }
+
+      &__title {
+        font-family: $primary-font;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: $primary-text;
+      }
+    }
+  }
+
+  .course-format__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+      padding: 2.5rem 0;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      border-bottom: 1px solid $primary-text;
+    }
+
+    &__title {
+      font-family: $primary-font;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      color: $primary-text;
+      text-align: left;
+    }
+
+    &__text {
+      font-family: $primary-font;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      text-align: left;
+      color: $primary-text;
+    }
+  }
+}
