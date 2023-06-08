@@ -8,6 +8,7 @@ import CourseStructure from '@/app/kursrhp/components/course-structure/course-st
 import Prices from '@/app/kursrhp/components/prices/prices';
 import Faq from '@/app/kursrhp/components/faq/faq';
 import Support from "./components/support/support";
+import Footer from "./components/footer/footer";
 
 export default function KursRHPPage() {
   return (
@@ -21,6 +22,7 @@ export default function KursRHPPage() {
       <Prices />
       <Faq />
       <Support />
+      <Footer />
     </>
   );
 }
