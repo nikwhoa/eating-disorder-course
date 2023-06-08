@@ -2,6 +2,7 @@ import "@/app/kursrhp/styles.scss";
 import Main from '@/app/kursrhp/components/main/main';
 import CourseFor from '@/app/kursrhp/components/course-for/course-for';
 import CourseFormat from '@/app/kursrhp/components/course-format/course-format';
+import Benefits from '@/app/kursrhp/components/benefits/benefits';
 
 export default function KursRHPPage() {
   return (
@@ -9,6 +10,7 @@ export default function KursRHPPage() {
       <Main />
       <CourseFor />
       <CourseFormat />
+      <Benefits />
     </>
   );
 }
