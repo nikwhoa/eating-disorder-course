@@ -2,7 +2,7 @@ import './course-format.scss';
 
 export default function CourseFormat() {
   return (
-    <section className='course-format'>
+    <section className='course-format' id='course-format'>
       <div className='course-format__title'>
         В якому форматі проходитиме курс
       </div>

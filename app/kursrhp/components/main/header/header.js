@@ -19,33 +19,33 @@ export default function Header() {
       <nav className={`navigation${isOpen ? '-show' : '-hide'}`}>
         <ul className='navigation__list'>
           <li className='navigation__item'>
-            <Link className='navigation__link' href='#' onClick={() => setIsOpen(!isOpen)}>
+            <Link className='navigation__link' href='/kursrhp/#course-for' onClick={() => setIsOpen(!isOpen)}>
               Для кого курс
               <MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' href='#' onClick={() => setIsOpen(!isOpen)}>
+            <Link className='navigation__link' href='/kursrhp/#course-format' onClick={() => setIsOpen(!isOpen)}>
               В якому форматі проходитиме курс <MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' href='#' onClick={() => setIsOpen(!isOpen)}>
+            <Link className='navigation__link' href='/kursrhp/#benefits' onClick={() => setIsOpen(!isOpen)}>
               Що я отримаю <MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' href='#' onClick={() => setIsOpen(!isOpen)}>
+            <Link className='navigation__link' href='/kursrhp/#course-structure' onClick={() => setIsOpen(!isOpen)}>
               Структура курсу<MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' href='#' onClick={() => setIsOpen(!isOpen)}>
+            <Link className='navigation__link' href='/kursrhp/#prices' onClick={() => setIsOpen(!isOpen)}>
               Тарифи <MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' href='#' onClick={() => setIsOpen(!isOpen)}>
+            <Link className='navigation__link' href='/kursrhp/#faq' onClick={() => setIsOpen(!isOpen)}>
               Часті питання <MobileMenuIcon />
             </Link>
           </li>

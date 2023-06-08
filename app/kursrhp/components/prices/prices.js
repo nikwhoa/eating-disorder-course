@@ -3,7 +3,7 @@ import { RightArrow } from '@/app/tools/icons/icons';
 
 export default function Prices() {
   return (
-    <section className='prices'>
+    <section className='prices' id='prices'>
       <div className='prices__title title-primary'>
         Тарифи
       </div>
