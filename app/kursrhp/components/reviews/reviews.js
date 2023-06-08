@@ -2,13 +2,13 @@
 import { register } from 'swiper/element/bundle';
 import './reviews.scss';
 import Image from 'next/image';
-import slide1 from './images/1.JPG';
-import slide2 from './images/2.JPG';
-import slide3 from './images/3.JPG';
-import slide4 from './images/4.JPG';
-import slide5 from './images/5.JPG';
-import slide6 from './images/6.JPG';
-import slide7 from './images/7.JPG';
+import slide1 from '@/app/kursrhp/components/reviews/images/review-one.jpg';
+import slide2 from '@/app/kursrhp/components/reviews/images/review-two.jpg';
+import slide3 from '@/app/kursrhp/components/reviews/images/review-three.jpg';
+import slide4 from '@/app/kursrhp/components/reviews/images/review-four.jpg';
+import slide5 from '@/app/kursrhp/components/reviews/images/review-five.jpg';
+import slide6 from '@/app/kursrhp/components/reviews/images/review-six.jpg';
+import slide7 from '@/app/kursrhp/components/reviews/images/review-seven.jpg';
 
 export default function Reviews() {
   register();
