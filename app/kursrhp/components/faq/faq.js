@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './faq.scss';
 import { CloseIcon, OpenIcon } from '@/app/tools/icons/icons';
 
