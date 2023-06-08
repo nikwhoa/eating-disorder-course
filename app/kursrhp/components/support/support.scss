@@ -1,0 +1,50 @@
+@import '/app/styles/variables.scss';
+
+.support {
+  margin: 2rem 0;
+  padding: 3rem 5rem;
+  text-align: center;
+
+  &-title {
+    font-family: $primary-font;
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    // padding: 0 3rem 2rem;
+    text-transform: uppercase;
+  }
+
+  &-subtitle {
+    margin: 1.5rem 0;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: $second-text;
+  }
+
+  &-button {
+    border-bottom: 1px solid $primary-text;
+    padding-bottom: 3rem;
+  }
+
+  .btn {
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        margin-left: 1.4rem;
+    }
+  }
+
+  &-social {
+    margin: 2rem 0;
+    a {
+        margin: 0 1rem;
+    }
+  }
+}
