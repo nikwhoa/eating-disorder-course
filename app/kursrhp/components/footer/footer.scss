@@ -1,1 +1,17 @@
 @import '/app/styles/variables.scss';
+
+.footer {
+    margin: 1rem 0;
+    &__container {
+        padding: 0 3rem;
+        color: $second-text;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+    a {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $second-text;
+    }
+}

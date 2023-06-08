@@ -2,7 +2,7 @@ import './benefits.scss';
 
 export default function Benefits() {
   return (
-    <section className='benefits'>
+    <section className='benefits' id='benefits'>
       <div className='benefits_photo'>
         {/*  todo: photo */}
       </div>
