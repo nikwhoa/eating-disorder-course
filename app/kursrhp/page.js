@@ -5,6 +5,8 @@ import CourseFormat from '@/app/kursrhp/components/course-format/course-format';
 import Benefits from '@/app/kursrhp/components/benefits/benefits';
 import Reviews from '@/app/kursrhp/components/reviews/reviews';
 import CourseStructure from '@/app/kursrhp/components/course-structure/course-structure';
+import Prices from '@/app/kursrhp/components/prices/prices';
+import Faq from '@/app/kursrhp/components/faq/faq';
 
 export default function KursRHPPage() {
   return (
@@ -15,6 +17,8 @@ export default function KursRHPPage() {
       <Benefits />
       <Reviews />
       <CourseStructure />
+      <Prices />
+      <Faq />
     </>
   );
 }
