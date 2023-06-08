@@ -17,8 +17,6 @@ export default function Faq() {
     }
   };
 
-  console.log(questionIndex, 'questionIndex');
-
   return (
     <section className='faq'>
       <div className='faq__title title-primary'>

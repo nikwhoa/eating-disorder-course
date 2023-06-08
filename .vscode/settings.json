@@ -1,4 +1,21 @@
 {
   "cSpell.language": "en,ru,uk",
-  "scss.validate": false
+  "scss.validate": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.github": true,
+    "**/.history": true,
+    "**/.idea": true,
+    "**/.next": true,
+    "**/.vscode": true,
+    "**/node_modules": true,
+  },
+  "cSpell.words": [
+    "kursrhp"
+  ]
 }
