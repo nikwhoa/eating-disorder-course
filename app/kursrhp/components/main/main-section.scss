@@ -58,16 +58,16 @@
 
 .about-me {
   margin-top: 1.6rem;
-  padding: 0 1.5rem;
+  padding: 1rem 1.5rem 0 1.5rem;
 
   font-family: $primary-font;
   color: $primary-text;
 
   display: flex;
   flex-direction: row;
-  flex: 1 1 auto;
 
   &__text {
+
     padding-right: 1.5rem;
 
     &__name {
@@ -86,9 +86,9 @@
     }
 
     &__degree {
-      margin-top: 1.5rem;
+      margin-top: .5rem;
       position: absolute;
-      width: 50%;
+      width: 45%;
       z-index: 1;
 
       .open-degree-info-btn {
@@ -135,8 +135,8 @@
         }
 
         li {
-          margin-top: 1rem;
-          font-size: 1.4rem;
+          margin-top: .5rem;
+          font-size: 1.2rem;
         }
       }
     }
