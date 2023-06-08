@@ -52,6 +52,7 @@ export default function CourseFor() {
                 <BulIcon />
               </div>
               <div className='text__container__item--text'>
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
                 позбавитись від нав'язливих думок про їжу та схуднення
               </div>
             </div>
