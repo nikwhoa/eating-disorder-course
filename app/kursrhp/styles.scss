@@ -239,6 +239,13 @@ body {
       &:hover {
         background: $secondary-green;
       }
+
+    //  disabled button
+      &:disabled {
+        background: #F2F2F2;
+        color: #BFBFBF;
+        cursor: not-allowed;
+      }
     }
   }
 }

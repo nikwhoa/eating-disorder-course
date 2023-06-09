@@ -27,7 +27,7 @@ export default function Page() {
   };
 
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const { id, value } = e.target;
 
     let updatedValue = value;
@@ -64,25 +64,52 @@ export default function Page() {
       ...formData,
       [id]: updatedValue
     };
+
     setFormData(updatedFormData);
+
+    // check if all fields are filled
+    if (formData.name && formData.email && formData.phone) {
+      setIsFormSubmitted(true);
+
+      try {
+        const res = await fetch('http://localhost:4000/api/payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.phone, tariff: tariff, price: price })
+        });
+
+        if (!res.ok) throw new Error('Error while registering');
+
+        const data = await res.json();
+        if (data) {
+          setIsFormSubmitted(true);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+
+    } else {
+      setIsFormSubmitted(false);
+    }
   };
 
   const collectFormData = async () => {
-    try {
-      const res = await fetch('http://localhost:4000/api/payment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.email, tariff: tariff, price: price })
-      });
-
-      if (!res.ok) throw new Error('Error while registering');
-
-      const data = await res.json();
-      console.log(data);
-      setIsFormSubmitted(true);
-    } catch (error) {
-      console.error(error);
-    }
+    console.log('formData', formData);
+    // try {
+    //   const res = await fetch('http://localhost:4000/api/payment', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.email, tariff: tariff, price: price })
+    //   });
+    //
+    //   if (!res.ok) throw new Error('Error while registering');
+    //
+    //   const data = await res.json();
+    //   console.log(data);
+    //   setIsFormSubmitted(true);
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   return (
@@ -126,10 +153,9 @@ export default function Page() {
               <input type='hidden' name='data'
                      value={liqpay.soloTariff.data} />
               <input type='hidden' name='signature' value={liqpay.soloTariff.signature} />
-              <button type='button' className='pay-button' name='btn_submit'>
+              <button type='submit' disabled={!isFormSubmitted} className='pay-button' onClick={collectFormData}>
                 Оплатити
               </button>
-              {/*<input type='submit' onSubmit={}/>*/}
             </form>
           </div>
         </div>
