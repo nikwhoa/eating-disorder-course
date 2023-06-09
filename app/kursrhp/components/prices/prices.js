@@ -1,13 +1,9 @@
 import './prices.scss';
 import { RightArrow } from '@/app/tools/icons/icons';
-
+import Link from 'next/link';
+// TODO: check "early-bird" prices
 export default function Prices() {
-  const liqpay = {
-    "soloTariff": {
-      data: 'eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOjAuMSwiY3VycmVuY3kiOiJVU0QiLCJkZXNjcmlwdGlvbiI6ItCi0LDRgNC40YQg0KHQvtC70L4iLCJwdWJsaWNfa2V5IjoiaTMyOTI1NjgzMzU2IiwibGFuZ3VhZ2UiOiJ1ayIsIm9yZGVyX2lkIjoiNTY1MTE2NTQ0IiwicGF5dHlwZXMiOiJwYXlwYXJ0LCBhcGF5LCBncGF5LCBjYXJkLCBwcml2YXQyNCIsInJlc3VsdF91cmwiOiJodHRwczovL2VhdGluZy1kaXNvcmRlci1jb3Vyc2Uubm9yZW5rby5uZXQudWEva3Vyc3JocC9jb21wbGV0ZWQifQ==',
-      signature: 'WcXY/KyZAe5Zc07l2wkiRnISKYs='
-    }
-  };
+
   return (
     <section className='prices' id='prices'>
       <div className='prices__title title-primary'>
@@ -47,31 +43,20 @@ export default function Prices() {
           <div className='tariff__price'>
             350 / 500$
           </div>
-          <div className='tariff__buttons'>
-            <div>
-              <form method='POST' action='https://www.liqpay.ua/api/3/checkout' accept-charset='utf-8'>
-                <input type='hidden' name='data'
-                       value={liqpay.soloTariff.data} />
-                <input type='hidden' name='signature' value={liqpay.soloTariff.signature} />
-                <input type='image' hidden={true} src='//static.liqpay.ua/buttons/p1ru.radius.png' />
-                <button type='submit' className='pay-button' name='btn_submit'>
-                  ХОЧУ НА КУРС
-                  <RightArrow />
-                </button>
-              </form>
-            </div>
-            <div>
-              <form method='POST' action='https://www.liqpay.ua/api/3/checkout' accept-charset='utf-8'>
-                <input type='hidden' name='data'
-                       value={liqpay.soloTariff.data} />
-                <input type='hidden' name='signature' value={liqpay.soloTariff.signature} />
-                <input type='image' hidden={true} src='//static.liqpay.ua/buttons/p1ru.radius.png' />
-                <button type='submit' className='pay-button' name='btn_submit' style={{ borderTop: '1px solid white' }}>
-                  оплата частинами
-                  <RightArrow />
-                </button>
-              </form>
-            </div>
+          <div className='payment__buttons'>
+            <Link href={{
+              pathname: '/kursrhp/payment',
+              query: { tariff: 'solo', price: 350 }
+            }}>
+              ХОЧУ НА КУРС
+              <RightArrow />
+            </Link>
+            <Link href={{
+              pathname: '/kursrhp/payment',
+              query: { tariff: 'solo', price: 500 }
+            }} style={{ borderTop: '1px solid white' }}>
+              оплата частинами
+            </Link>
           </div>
         </div>
 

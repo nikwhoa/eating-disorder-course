@@ -13,12 +13,12 @@ import Footer from './components/footer/footer';
 export default function KursRHPPage() {
   return (
     <>
-      <Main />
-      <CourseFor />
-      <CourseFormat />
-      <Benefits />
-      <Reviews />
-      <CourseStructure />
+      {/*<Main />*/}
+      {/*<CourseFor />*/}
+      {/*<CourseFormat />*/}
+      {/*<Benefits />*/}
+      {/*<Reviews />*/}
+      {/*<CourseStructure />*/}
       <Prices />
       <Faq />
       <Support />
