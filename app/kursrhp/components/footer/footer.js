@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className='footer'>
       <div className='footer__container'>
-        Фізична особа-підприємець Рибак Анжеліка Олександрівна <br /> РНОКПП: 3277014105
+        Фізична особа-підприємець Харченко Дарина Вiкторiвна <br /> РНОКПП: 3277014105
         <br /><br/>
         <a href='#'>
           Політика конфіденційності

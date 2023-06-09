@@ -2,6 +2,10 @@ import './prices.scss';
 import { RightArrow } from '@/app/tools/icons/icons';
 
 export default function Prices() {
+  const liqpay = {
+    data: 'eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOjAuMSwiY3VycmVuY3kiOiJVU0QiLCJkZXNjcmlwdGlvbiI6ItCi0LDRgNC40YQg0KHQvtC70L4iLCJwdWJsaWNfa2V5IjoiaTMyOTI1NjgzMzU2IiwibGFuZ3VhZ2UiOiJ1ayIsIm9yZGVyX2lkIjoiNTY1MTE2NTQ0IiwicGF5dHlwZXMiOiJwYXlwYXJ0LCBhcGF5LCBncGF5LCBjYXJkLCBwcml2YXQyNCJ9',
+    signature: 'jmDWQqNVkNRcwI3hpNsRialKzzw='
+  };
   return (
     <section className='prices' id='prices'>
       <div className='prices__title title-primary'>
@@ -42,11 +46,19 @@ export default function Prices() {
             350 / 500$
           </div>
           <div className='tariff__buttons'>
-            <a href='#'>
-              ХОЧУ НА КУРС
-              <RightArrow />
-            </a>
-            <a href='#' style={{borderTop: '1px solid white'}}>
+            <div>
+              <form method='POST' action='https://www.liqpay.ua/api/3/checkout' accept-charset='utf-8'>
+                <input type='hidden' name='data'
+                       value={liqpay.data} />
+                <input type='hidden' name='signature' value={liqpay.signature} />
+                <input type='image' hidden={true} src='//static.liqpay.ua/buttons/p1ru.radius.png' />
+                <button type='submit' className='pay-button' name='btn_submit'>
+                  ХОЧУ НА КУРС
+                  <RightArrow />
+                </button>
+              </form>
+            </div>
+            <a href='#' style={{ borderTop: '1px solid white' }}>
               оплата частинами
             </a>
           </div>
@@ -88,7 +100,7 @@ export default function Prices() {
               ХОЧУ НА КУРС
               <RightArrow />
             </a>
-            <a href='#' style={{borderTop: '1px solid white'}}>
+            <a href='#' style={{ borderTop: '1px solid white' }}>
               оплата частинами
             </a>
           </div>
@@ -129,7 +141,7 @@ export default function Prices() {
               ХОЧУ НА КУРС
               <RightArrow />
             </a>
-            <a href='#' style={{borderTop: '1px solid white'}}>
+            <a href='#' style={{ borderTop: '1px solid white' }}>
               оплата частинами
             </a>
           </div>
@@ -170,7 +182,7 @@ export default function Prices() {
               ХОЧУ НА КУРС
               <RightArrow />
             </a>
-            <a href='#' style={{borderTop: '1px solid white'}}>
+            <a href='#' style={{ borderTop: '1px solid white' }}>
               оплата частинами
             </a>
           </div>

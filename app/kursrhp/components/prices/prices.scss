@@ -92,6 +92,36 @@
     }
 
     &__buttons {
+      .pay-button {
+        width: 100%;
+        cursor: pointer;
+        display: inline-block;
+        background: $primary-text;
+        text-align: center;
+        font-family: $primary-font;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        border: none;
+        line-height: 2.4rem;
+        color: #FFFFFF;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        transition: all 0.3ms ease;
+
+        &:hover {
+          background: #ffffff;
+          color: $primary-text;
+          svg path {
+            fill: $primary-text;;
+          }
+        }
+
+        svg {
+          margin-left: 3rem;
+        }
+      }
       a {
         width: 100%;
         display: inline-block;
