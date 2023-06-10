@@ -155,7 +155,7 @@ export default function Prices() {
           </div>
         </div>
 
-        <div className='tariff bg-primary-element'>
+        <div className='tariff bg-primary-element' style={{position: 'relative', zIndex: 1}}>
           <div className='tariff-container'>
             <div className='tariff__title'>Я з Дашею</div>
             <div className='tariff__description'>
@@ -200,6 +200,14 @@ export default function Prices() {
               оплата частинами
             </Link>
           </div>
+        </div>
+        <div className='prices__container-text'>
+          Відновлення від рхп - довготривалий сеанс глубинної терапії.
+          <br /><br />
+          Замість взаємодії з психологом загальної практики - ти зможеш попрацювати з експертом з розладів харчової поведінки
+          Отримати підтримуюче ком’юніті однодумців, і спробувати на собі різні терапевтичні техніки.
+          <br /><br />
+          Саме такий комплексний підхід допомагає прийти до глобальних змін в найкоротший терміни.
         </div>
       </div>
     </section>
