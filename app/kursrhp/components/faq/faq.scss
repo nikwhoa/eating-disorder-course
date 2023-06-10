@@ -75,3 +75,12 @@
     }
   }
 }
+
+@media (min-width: 768px) {
+  .faq {
+    border-bottom: 1px solid $primary-text;
+  }
+  .faq__item:nth-last-of-type(1) {
+    border-bottom: none !important;
+  }
+}
