@@ -1,5 +1,5 @@
 import './prices.scss';
-import { RightArrow } from '@/app/tools/icons/icons';
+import { Dollar, RightArrow } from '@/app/tools/icons/icons';
 import Link from 'next/link';
 // TODO: check "early-bird" prices
 export default function Prices() {
@@ -41,7 +41,7 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__price'>
-            350 / 500$
+            350 / 500<Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
@@ -89,16 +89,22 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__price'>
-            590 / 700$
+            590 / 700<Dollar />
           </div>
-          <div className='tariff__buttons'>
-            <a href='#'>
+          <div className='payment__buttons'>
+            <Link href={{
+              pathname: '/kursrhp/payment',
+              query: { tariff: 'group', price: 590 }
+            }}>
               ХОЧУ НА КУРС
               <RightArrow />
-            </a>
-            <a href='#' style={{ borderTop: '1px solid white' }}>
+            </Link>
+            <Link href={{
+              pathname: '/kursrhp/payment',
+              query: { tariff: 'group', price: 700 }
+            }} style={{ borderTop: '1px solid white' }}>
               оплата частинами
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -130,16 +136,22 @@ export default function Prices() {
             Залишилось <b>40</b> місць
           </div>
           <div className='tariff__price'>
-            950 / 1150$
+            950 / 1150<Dollar />
           </div>
-          <div className='tariff__buttons'>
-            <a href='#'>
+          <div className='payment__buttons'>
+            <Link href={{
+              pathname: '/kursrhp/payment',
+              query: { tariff: 'with-psychologist', price: 950 }
+            }}>
               ХОЧУ НА КУРС
               <RightArrow />
-            </a>
-            <a href='#' style={{ borderTop: '1px solid white' }}>
+            </Link>
+            <Link href={{
+              pathname: '/kursrhp/payment',
+              query: { tariff: 'with-psychologist', price: 1150 }
+            }} style={{ borderTop: '1px solid white' }}>
               оплата частинами
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -171,16 +183,22 @@ export default function Prices() {
             Залишилось <b>10</b> місць
           </div>
           <div className='tariff__price'>
-            2500 / 3150$
+            2500 / 3150<Dollar />
           </div>
-          <div className='tariff__buttons'>
-            <a href='#'>
+          <div className='payment__buttons'>
+            <Link href={{
+              pathname: '/kursrhp/payment',
+              query: { tariff: 'with-dasha', price: 2500 }
+            }}>
               ХОЧУ НА КУРС
               <RightArrow />
-            </a>
-            <a href='#' style={{ borderTop: '1px solid white' }}>
+            </Link>
+            <Link href={{
+              pathname: '/kursrhp/payment',
+              query: { tariff: 'with-dasha', price: 3150 }
+            }} style={{ borderTop: '1px solid white' }}>
               оплата частинами
-            </a>
+            </Link>
           </div>
         </div>
       </div>

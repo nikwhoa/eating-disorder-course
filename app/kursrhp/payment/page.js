@@ -2,7 +2,8 @@
 import { RightArrow } from '@/app/tools/icons/icons';
 import '@/app/kursrhp/styles.scss';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function Page() {
 
@@ -13,64 +14,120 @@ export default function Page() {
     }
   );
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isPostSuccessful, setIsPostSuccessful] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [tariffTitle, setTariffTitle] = useState('');
 
   const router = useRouter();
   const params = useSearchParams();
   const tariff = params.get('tariff');
   const price = params.get('price');
 
+  if (!tariff || !price) {
+    router.push('/kursrhp');
+  }
+
   const liqpay = {
-    'soloTariff': {
-      data: 'eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXkiLCJhbW91bnQiOjAuMSwiY3VycmVuY3kiOiJVU0QiLCJkZXNjcmlwdGlvbiI6ItCi0LDRgNC40YQg0KHQvtC70L4iLCJwdWJsaWNfa2V5IjoiaTMyOTI1NjgzMzU2IiwibGFuZ3VhZ2UiOiJ1ayIsIm9yZGVyX2lkIjoiNTY1MTE2NTQ0IiwicGF5dHlwZXMiOiJwYXlwYXJ0LCBhcGF5LCBncGF5LCBjYXJkLCBwcml2YXQyNCIsInJlc3VsdF91cmwiOiJodHRwczovL2VhdGluZy1kaXNvcmRlci1jb3Vyc2Uubm9yZW5rby5uZXQudWEva3Vyc3JocC9jb21wbGV0ZWQifQ==',
-      signature: 'WcXY/KyZAe5Zc07l2wkiRnISKYs='
-    }
+    data: '',
+    signature: ''
   };
 
+  if (tariff === 'solo') {
+    // liqpay.data = process.env.NEXT_PUBLIC_SOLO_TARIFF_DATA;
+    // liqpay.signature = process.env.NEXT_PUBLIC_SOLO_TARIFF_SIGNATURE;
+    liqpay.data = process.env.NEXT_PUBLIC_SOLO_TARIFF_DATA_TEST;
+    liqpay.signature = process.env.NEXT_PUBLIC_SOLO_TARIFF_SIGNATURE_TEST;
+    useEffect(() => {
+      setTariffTitle('Соло');
+    }, [tariff]);
+  }
+
+  if (tariff === 'group') {
+    liqpay.data = process.env.NEXT_PUBLIC_GROUP_TARIFF_DATA;
+    liqpay.signature = process.env.NEXT_PUBLIC_GROUP_TARIFF_SIGNATURE;
+    useEffect(() => {
+      setTariffTitle('Я в групі');
+    }, [tariff]);
+  }
+
+  if (tariff === 'with-psychologist') {
+    liqpay.data = process.env.NEXT_PUBLIC_WITH_PSYCHOLOGIST_TARIFF_DATA;
+    liqpay.signature = process.env.NEXT_PUBLIC_WITH_PSYCHOLOGIST_TARIFF_SIGNATURE;
+    useEffect(() => {
+      setTariffTitle('Я з психологом');
+    }, [tariff]);
+  }
+
+  if (tariff === 'with-dasha') {
+    liqpay.data = process.env.NEXT_PUBLIC_WITH_DASHA_TARIFF_DATA;
+    liqpay.signature = process.env.NEXT_PUBLIC_WITH_DASHA_TARIFF_SIGNATURE;
+    useEffect(() => {
+      setTariffTitle('Я з Дашею');
+    }, [tariff]);
+  }
+
+
+  const validateName = value => {
+    // Perform validation for the name field
+    return value.length > 20 ? value.slice(0, 20) : value;
+  };
+
+  const validatePhone = value => {
+    const numericValue = value.replace(/\D/g, '');
+    // Limit the phone field to a maximum of 10 digits
+    return numericValue.length > 14 ? numericValue.slice(0, 14) : numericValue;
+  };
+
+  const validateEmail = value => {
+    // validation for the email field
+    return value.length > 30 ? value.slice(0, 30) : value;
+  };
 
   const handleInputChange = async (e) => {
     const { id, value } = e.target;
+    let validatedValue = value;
 
-    let updatedValue = value;
-
-    if (id === 'name') {
-      // Perform validation for the name field
-      if (value.length > 20) {
-        updatedValue = value.slice(0, 20);
-      }
-      // Other validation rules for the name field can be added here
-    } else if (id === 'phone') {
-      const numericValue = value.replace(/\D/g, '');
-
-      // Limit the phone field to a maximum of 10 digits
-      if (numericValue.length > 14) {
-        updatedValue = numericValue.slice(0, 14);
-      } else {
-        updatedValue = numericValue;
-      }
-
-    } else if (id === 'email') {
-      // Perform validation for the email field
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const isValidEmail = emailRegex.test(value);
-      if (!isValidEmail && value !== '') {
-        // Clear the value if it is not a valid email address
-        updatedValue = '';
-      }
-      updatedValue = value;
-      // Other validation rules for the email field can be added here
+    switch (id) {
+      case 'name':
+        validatedValue = validateName(value);
+        break;
+      case 'phone':
+        validatedValue = validatePhone(value);
+        break;
+      case 'email':
+        validatedValue = validateEmail(value);
+        break;
+      default:
+        break;
     }
 
     const updatedFormData = {
       ...formData,
-      [id]: updatedValue
+      [id]: validatedValue
     };
 
     setFormData(updatedFormData);
 
-    // check if all fields are filled
-    if (formData.name && formData.email && formData.phone) {
+    // check if all fields are filled and valid
+    const { name, email, phone } = updatedFormData;
+    if (name && email && phone) {
       setIsFormSubmitted(true);
+    } else {
+      setIsFormSubmitted(false);
+    }
+  };
 
+  useEffect(() => {
+    if (isPostSuccessful) {
+      // Now we can submit the form
+      document.getElementById('payment-form').submit();
+    }
+  }, [isPostSuccessful]);
+
+  const handleButtonClick = async (e) => {
+    e.preventDefault(); // Prevent the form from submitting
+
+    if (!isPostSuccessful) {
       try {
         const res = await fetch('http://localhost:4000/api/payment', {
           method: 'POST',
@@ -82,34 +139,13 @@ export default function Page() {
 
         const data = await res.json();
         if (data) {
-          setIsFormSubmitted(true);
+          setIsPostSuccessful(true);
         }
       } catch (error) {
         console.error(error);
+        setIsError(true);
       }
-
-    } else {
-      setIsFormSubmitted(false);
     }
-  };
-
-  const collectFormData = async () => {
-    console.log('formData', formData);
-    // try {
-    //   const res = await fetch('http://localhost:4000/api/payment', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.email, tariff: tariff, price: price })
-    //   });
-    //
-    //   if (!res.ok) throw new Error('Error while registering');
-    //
-    //   const data = await res.json();
-    //   console.log(data);
-    //   setIsFormSubmitted(true);
-    // } catch (error) {
-    //   console.error(error);
-    // }
   };
 
   return (
@@ -120,7 +156,7 @@ export default function Page() {
       <div className='payment__container'>
         <div className='payment__description'>
           <div className='payment__description-title'>
-            Тариф: <b>{tariff}</b>
+            Тариф: <b>{tariffTitle}</b>
           </div>
           <div className='payment__description-price'>
             Ціна: <b>{price}$</b>
@@ -149,16 +185,36 @@ export default function Page() {
             <input type='text' id='email' value={formData.email} onChange={handleInputChange} placeholder='Електронна пошта' />
           </div>
           <div className='payment__form-field'>
-            <form method='POST' action='https://www.liqpay.ua/api/3/checkout' acceptCharset='utf-8' onSubmit={collectFormData}>
+            {/*  error */}
+            <div className='payment__form-error'>
+              {isError && <div style={{
+                color: 'red',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                border: '1px solid #e06b5b',
+                padding: '10px',
+                borderRadius: '5px'
+              }}>Нажаль виникла помилка. Спробуйте пізніше</div>}
+            </div>
+          </div>
+          <div className='payment__form-field'>
+            <form method='POST' action='https://www.liqpay.ua/api/3/checkout' acceptCharset='utf-8' id='payment-form'>
               <input type='hidden' name='data'
-                     value={liqpay.soloTariff.data} />
-              <input type='hidden' name='signature' value={liqpay.soloTariff.signature} />
-              <button type='submit' disabled={!isFormSubmitted} className='pay-button' onClick={collectFormData}>
+                     value={liqpay.data} />
+              <input type='hidden' name='signature' value={liqpay.signature} />
+              <button type='button' disabled={!isFormSubmitted} onClick={handleButtonClick} className='pay-button'>
                 Оплатити
               </button>
             </form>
           </div>
         </div>
+        {/*  return button */}
+        <div className='payment__return'>
+          <Link href='/kursrhp'>
+            Повернутись на головну
+          </Link>
+        </div>
+
       </div>
     </div>
   );

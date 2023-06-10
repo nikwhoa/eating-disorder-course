@@ -89,6 +89,13 @@
       line-height: 3.6rem;
       text-align: center;
       color: $primary-text;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      svg {
+        transform: rotateZ(6deg);
+      }
     }
 
     .tariff-container {
