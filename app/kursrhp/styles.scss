@@ -97,7 +97,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 2rem 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  //height: 100vh;
 
   &__title {
     font-family: $secondary-font;
@@ -129,6 +132,7 @@ body {
       font-weight: 300;
       font-size: 2.4rem;
       line-height: 2.4rem;
+      width: 100%;
       color: $primary-text;
       margin-bottom: 1rem;
 
@@ -155,13 +159,13 @@ body {
 
     &-text {
       p {
-      font-family: $primary-font;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      color: $primary-text;
-      margin-bottom: 1rem;
+        font-family: $primary-font;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $primary-text;
+        margin-bottom: 1rem;
       }
 
       a {
@@ -178,15 +182,25 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
-
+  width: 100%;
   &-container {
-    width: 100%;
-    max-width: 40rem;
     padding: 3rem;
+    width: 60%;
+    max-width: 40rem;
     background: #ffffff;
     border-radius: 1.6rem;
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  &-title {
+    padding: 0 3rem;
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 3.6rem;
+    color: $primary-text;
+    margin-bottom: 1rem;
   }
 
   &-field {
@@ -240,12 +254,31 @@ body {
         background: $secondary-green;
       }
 
-    //  disabled button
+      //  disabled button
       &:disabled {
         background: #F2F2F2;
         color: #BFBFBF;
         cursor: not-allowed;
       }
+    }
+  }
+}
+
+.payment__return {
+  text-align: center;
+  margin-top: 2rem;
+  a {
+    font-family: $primary-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: $primary-text;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $secondary-green;
     }
   }
 }
