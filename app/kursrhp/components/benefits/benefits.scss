@@ -1,7 +1,18 @@
 @import '/app/styles/variables.scss';
 
 .benefits {
-  padding: 2rem 3rem; // change after liqpay
+  padding: 0 0 0 5rem;
+
+  &__container {
+    border-left: 1px solid $primary-text;
+    background: $primary-block;
+    padding: 2rem 0 0 0;
+  }
+
+  .padding-left {
+    padding-left: 3rem;
+  }
+
   &__title {
     font-family: $secondary-font;
     font-style: italic;
@@ -26,5 +37,55 @@
         font-size: 1.4rem;
       }
     }
+  }
+
+  &-photo {
+    width: 100%;
+    margin: 1.5rem 0 2.5rem;
+    //height: 152px;
+    text-align: center;
+
+    img {
+      max-width: 264px;
+      width: 100%;
+      height: auto;
+      max-height: 152px;
+      object-fit: cover;
+      border-radius: 100px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .benefits__container {
+    padding-bottom: 3rem !important;
+  }
+  .benefits {
+    padding: 0!important;
+  }
+  .benefits__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-left: none !important;
+  }
+
+  .benefits__text li {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  .benefits-photo {
+    img {
+      max-height: 270px !important;
+      //width: 80% !important;
+      max-width: 528px !important;
+      border-radius: 200px !important;
+    }
+  }
+
+  .padding-left {
+    padding-left: 0 !important;
   }
 }

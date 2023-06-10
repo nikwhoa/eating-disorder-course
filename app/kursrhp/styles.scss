@@ -10,6 +10,60 @@ body {
   background: #ffffff;
 }
 
+// main wrapper styles
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+  }
+}
+
+section, header, footer {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+
+  //.navigation-desktop {
+  //  display: block !important;
+  //}
+
+  .desktop-container {
+    flex-direction: row !important;
+    height: 100vh;
+  }
+
+  .container {
+    width: 90% !important;
+    margin: 0 auto !important;
+    border-left: 1px solid $primary-text;
+    border-right: 1px solid $primary-text;
+  }
+
+  header, section, footer {
+    width: 100%;
+  }
+
+  .main-section, .about-me {
+    width: 50%;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 920px) {
+  .desktop-container {
+    height: initial !important;
+  }
+}
+
 .btn {
   background: $primary-element;
   border-radius: 64px;
@@ -42,6 +96,11 @@ body {
   font-size: 3rem;
   line-height: 3.6rem;
   color: $primary-text;
+
+  @media (min-width: 768px) {
+    font-size: 4rem !important;
+    text-align: center;
+  }
 }
 
 .bg-primary-block {
@@ -183,6 +242,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+
   &-container {
     padding: 3rem;
     width: 60%;
@@ -267,6 +327,7 @@ body {
 .payment__return {
   text-align: center;
   margin-top: 2rem;
+
   a {
     font-family: $primary-font;
     font-style: normal;

@@ -59,10 +59,8 @@
 .about-me {
   margin-top: 1.6rem;
   padding: 1rem 1.5rem 0 1.5rem;
-
   font-family: $primary-font;
   color: $primary-text;
-
   display: flex;
   flex-direction: row;
 
@@ -108,6 +106,10 @@
             fill: $primary-element;
           }
         }
+
+        @media (max-width: 330px) {
+          width: 40%;
+        }
       }
 
       .degree-header {
@@ -145,18 +147,18 @@
 
   &__photo {
     position: relative;
-
     img {
       min-width: 160px;
       width: 100%;
-      height: auto;
+      height: 305px;
+      object-fit: cover;
       position: relative;
       z-index: 0;
     }
 
     &__circle {
       position: absolute;
-      bottom: -15px;
+      bottom: -5px;
       left: -20px;
       width: 72px;
       height: 72px;
@@ -180,5 +182,83 @@
     bottom: -90px;
     left: -60px;
     z-index: -1;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .main-section {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1rem !important;
+    border-bottom: none !important;
+  }
+
+  .course-title {
+    text-align: center !important;
+    font-size: 4rem !important;
+    line-height: 6.6rem !important;
+    padding: 0 1rem !important;
+  }
+  .course-info {
+    margin: 3rem 0 !important;
+  }
+  .course-button {
+    padding: 0 6rem !important;
+  }
+  .about-me {
+    margin-top: 0;
+    flex-direction: column-reverse !important;
+    border-left: 1px solid $primary-text;
+    padding: 0 !important;
+    justify-content: space-between;
+  }
+  .about-me__photo {
+    height: 65%;
+
+    img {
+      min-width: initial !important;
+      object-fit: cover;
+      height: 100% !important;
+    }
+  }
+
+  .about-me__text {
+    //height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem 1rem 3rem !important;
+  }
+  .about-me__text__name {
+    font-size: 3rem !important;
+    line-height: 3.6rem !important;
+  }
+  .about-me__text__description {
+    margin-top: 0.5rem !important;
+    font-size: 1.4rem !important;
+    line-height: 1.8rem !important;
+  }
+  .about-me__text__degree {
+    position: static;
+    width: 100%;
+    //margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-section {
+    padding: 0 3rem !important;
+  }
+  .course-title {
+    font-size: 6rem !important;
+    line-height: 6.6rem !important;
+  }
+  .subtitle {
+    font-size: 1.6rem !important;
+    line-height: 2.2rem !important;
   }
 }
