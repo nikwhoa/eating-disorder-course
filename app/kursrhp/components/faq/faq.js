@@ -18,7 +18,7 @@ export default function Faq() {
   };
 
   return (
-    <section className='faq' id='faq'>
+    <section className='faq container' id='faq'>
       <div className='faq__title title-primary'>
         Часті питання
         {/*  icon */}

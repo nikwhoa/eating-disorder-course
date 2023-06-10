@@ -16,7 +16,7 @@ export default function Header() {
           <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </header>
-      <nav className={`navigation${isOpen ? '-show' : '-hide'}`}>
+      <nav className={`navigation${isOpen ? '-show' : '-hide'} navigation-desktop`}>
         <ul className='navigation__list'>
           <li className='navigation__item'>
             <Link className='navigation__link' href='/kursrhp/#course-for' onClick={() => setIsOpen(!isOpen)}>

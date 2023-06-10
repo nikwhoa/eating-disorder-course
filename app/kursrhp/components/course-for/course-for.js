@@ -5,8 +5,8 @@ import dashaHarchenkoCourseFor from './images/dasha-harchenko-course-for.jpeg';
 
 export default function CourseFor() {
   return (
-    <section className='course-for' id='course-for'>
-      <div className='course-for__title'>
+    <section className='course-for container' id='course-for'>
+      <div className='course-for__title title-primary'>
         Для кого курс
       </div>
       <div className='course-for-container'>

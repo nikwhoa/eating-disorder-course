@@ -24,6 +24,10 @@
     .grid__item {
       background: $primary-block;
       padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      //align-items: center;
+      justify-content: center;
 
       &:nth-child(odd) {
         border-right: 1px solid $primary-text;
@@ -41,6 +45,20 @@
         font-size: 1.4rem;
         line-height: 1.6rem;
         color: $primary-text;
+        position: relative;
+        top: -35px;
+        left: 20px;
+      }
+
+      &__ellipse {
+        z-index: 0;
+        //top: 15px;
+        position: relative;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background: $primary-element;
+
       }
     }
   }
@@ -55,11 +73,43 @@
       padding: 2.5rem 0;
       display: flex;
       width: 100%;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
 
       border-bottom: 1px solid $primary-text;
+    }
+
+    &__icon {
+      width: 84px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 4rem;
+        height: 6rem;
+
+        path {
+          opacity: 1;
+          fill: #000000;
+        }
+      }
+    }
+
+    .left-column {
+      display: flex;
+      width: 30%;
+      justify-content: flex-end;
+      //margin-right: 2rem;
+    }
+
+    .right-column {
+      display: flex;
+      width: 70%;
+      flex-direction: column;
+      //display: flex;
     }
 
     &__title {
@@ -79,7 +129,41 @@
       font-size: 1.2rem;
       line-height: 1.6rem;
       text-align: left;
+      margin-top: .5rem;
       color: $primary-text;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .grid__item {
+    align-items: center !important;
+  }
+
+  .grid__item__title {
+    min-width: 120px;
+    font-size: 1.6rem !important;
+  }
+
+  .course-format__column__title {
+    font-size: 1.6rem !important;
+  }
+
+  .grid__item__ellipse {
+    left: -35px;
+  }
+
+  .course-format__column {
+    flex-direction: row !important;
+  }
+
+  .course-format__column__item {
+    height: 120px;
+    padding: 1rem !important;
+    //  odd item
+    &:nth-child(even) {
+      border-left: 1px solid $primary-text;
+      border-right: 1px solid $primary-text;
     }
   }
 }

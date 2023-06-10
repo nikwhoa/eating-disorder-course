@@ -8,6 +8,7 @@
   .course-for-container {
     padding: 0 3rem;
   }
+
   .course-for__title {
     font-family: $secondary-font;
     font-style: italic;
@@ -84,11 +85,60 @@
   }
 
   // TODO: change it after responsive design
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 500px) {
     .course-for-container {
-      width: 90%;
+      width: 70%;
       max-width: 600px;
       margin: 2rem auto;
+    }
+  }
+  @media screen and (min-width: 700px) {
+    .course-for-container {
+      width: 60%;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    .text__container__item {
+      margin: 0 !important;
+      height: 50px;
+    }
+
+    .course-for__text {
+      padding-bottom: 8rem !important;
+    }
+
+    .course-for-container {
+      //width: 50%;
+      max-width: 600px;
+      margin: 2rem auto -3px;
+    }
+
+    .course-for__text__container {
+      width: 75%;
+      margin: 0 auto;
+    }
+
+
+  }
+
+  @media screen and (min-width: 768px) {
+    .course-for__photo {
+      margin-top: -5rem !important;
+      top: 0 !important;
+      text-align: center;
+      img {
+        //width: 496px !important;
+        height: 540px !important;
+        object-fit: cover;
+      }
+    }
+  }
+  @media screen and (min-width: 900px) {
+    .course-for__photo {
+      img {
+        width: 496px !important;
+      }
     }
   }
 }

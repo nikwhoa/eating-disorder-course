@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Prices() {
 
   return (
-    <section className='prices' id='prices'>
+    <section className='prices container' id='prices'>
       <div className='prices__title title-primary'>
         Тарифи
       </div>

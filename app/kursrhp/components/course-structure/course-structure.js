@@ -2,7 +2,7 @@ import './course-structure.scss';
 
 export default function CourseStructure() {
   return (
-    <section className='course-structure' id='course-structure'>
+    <section className='course-structure container' id='course-structure'>
       <div className='course-structure__title title-primary'>
         Структура курсу
         <div className='course-structure__title-icon'></div>
