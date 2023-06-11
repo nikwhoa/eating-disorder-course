@@ -75,6 +75,7 @@
       color: $primary-text;
       line-height: 2.4rem;
       text-decoration: none;
+      cursor: pointer;
     }
 
     &:hover {
@@ -82,4 +83,42 @@
     }
   }
 
+}
+
+.navigation__link.active {
+  font-weight: 700;
+}
+
+@media (min-width: 920px) {
+  .header {
+    height: 60px;
+  }
+  .navigation__list {
+    position: fixed;
+    top: 0;
+    z-index: 1001;
+    height: 64px;
+    flex-direction: row;
+    align-items: normal !important;
+    left: 50%;
+    width: 80% !important;
+    transform: translateX(-50%);
+  }
+  .navigation__item {
+    padding: 1rem 0;
+    border: none !important;
+  }
+  .navigation__item a {
+    font-size: 1.4rem;
+    justify-content: center !important;
+
+    &:hover {
+      font-weight: 700;
+    }
+  }
+  .navigation__link {
+    svg {
+      display: none !important;
+    }
+  }
 }
