@@ -135,6 +135,55 @@
   }
 }
 
+@media (min-width: 1130px) {
+
+  .prices {
+    padding-bottom: 0 !important;
+  }
+  .prices__container {
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: row;
+  }
+
+  .prices__container-text {
+    grid-column: span 4;
+  }
+  .prices__container-text {
+    z-index: -1;
+  }
+  .tariff {
+    margin: 0 .3rem !important;
+    height: 650px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .payment__buttons {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .prices .tariff__description {
+    padding: 2rem 1rem !important;
+  }
+  .prices .tariff__title {
+    height: 70px;
+  }
+  .tariff__description {
+    height: 270px;
+  }
+
+  .prices .tariff__counter {
+    width: 100%;
+    position: absolute;
+    bottom: 240px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
 @media (min-width: 1200px) {
   .prices__container-text {
     padding: 5rem 8rem 8rem;
