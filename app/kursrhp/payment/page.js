@@ -129,7 +129,7 @@ export default function Page() {
 
     if (!isPostSuccessful) {
       try {
-        const res = await fetch('http://localhost:4000/api/payment', {
+        const res = await fetch('https://localhost:4000/api/payment', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name: formData.name, email: formData.email, phone: formData.phone, tariff: tariff, price: price })
