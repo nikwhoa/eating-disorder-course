@@ -41,7 +41,7 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__price'>
-            350 / 500<Dollar />
+            350/500<Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
@@ -89,7 +89,7 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__price'>
-            590 / 700<Dollar />
+            590/700<Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
@@ -136,7 +136,7 @@ export default function Prices() {
             Залишилось <b>40</b> місць
           </div>
           <div className='tariff__price'>
-            950 / 1150<Dollar />
+            950/1150<Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
@@ -183,7 +183,7 @@ export default function Prices() {
             Залишилось <b>10</b> місць
           </div>
           <div className='tariff__price'>
-            2500 / 3150<Dollar />
+            2500/3150<Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{

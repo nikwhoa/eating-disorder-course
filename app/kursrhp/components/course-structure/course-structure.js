@@ -1,14 +1,24 @@
+'use client';
 import './course-structure.scss';
-import { BranchIcon } from '@/app/tools/icons/icons';
+import { ArrowUp, BranchIcon, MobileMenuIcon } from '@/app/tools/icons/icons';
+import { useState } from 'react';
 
 export default function CourseStructure() {
+  const [expand, setExpand] = useState(true);
   return (
     <section className='course-structure container' id='course-structure'>
-      <div className='course-structure__title title-primary'>
+      <div className='course-structure__title title-primary' style={{
+        borderBottom: expand ? 'none' : ''
+      }}>
         Структура курсу
-        <div className='course-structure__title-icon'></div>
+        <div className='course-structure__title-icon' onClick={() => setExpand(!expand)}>
+          {!expand ? <ArrowUp /> : <MobileMenuIcon />}
+        </div>
       </div>
-      <div className='course-structure__content'>
+      <div className={`course-structure__content ${expand ? '' : 'animate'}`} style={{
+        // display: expand ? 'none' : ''
+        // height: expand ? 0 : ''
+      }}>
         <div className='course-structure__content-item'>
           <div className='course-structure__content-item-number'>01/</div>
           <div className='course-structure__content-item-title'>Мені страшно (проробка страхів перед початком відновлення)</div>
@@ -64,10 +74,10 @@ export default function CourseStructure() {
         </div>
         <div className='course-structure-text'>
           Відновлення від рхп - довготривалий сеанс глубинної терапії.
-          <br/><br/>
+          <br /><br />
           Замість взаємодії з психологом загальної практики - ти зможеш попрацювати з експертом з розладів харчової поведінки
           Отримати підтримуюче ком’юніті однодумців, і спробувати на собі різні терапевтичні техніки.
-          <br/><br/>
+          <br /><br />
           Саме такий комплексний підхід допомагає прийти до глобальних змін в найкоротший терміни.
           <div className='course-structure-text-icon'>
             <BranchIcon />

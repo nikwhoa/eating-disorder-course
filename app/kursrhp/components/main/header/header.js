@@ -5,12 +5,12 @@ import { useState } from 'react';
 import Hamburger from '@/app/tools/hamburger/hamburger';
 import './header.scss';
 import { MobileMenuIcon } from '@/app/tools/icons/icons';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import Link from 'next/link';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [showBurgerIcon, setShowBurgerIcon] = useState(false);
-  const [offset, setOffset] = useState(0)
+  const [offset, setOffset] = useState(0);
 
   useEffect(() => {
 
@@ -53,8 +53,7 @@ export default function Header() {
 
   useEffect(() => {
     if (showBurgerIcon && isOpen) {
-      scroll.scrollToTop({ duration: 0 });
-
+      window.scrollTo(0, 0)
     }
   }, [isOpen, showBurgerIcon]);
 
@@ -63,8 +62,6 @@ export default function Header() {
       setIsOpen(!isOpen);
     }
   };
-
-  console.log(-offset);
 
   return (
     <>
@@ -79,39 +76,38 @@ export default function Header() {
       <nav className={`navigation${isOpen ? '-show' : '-hide'} navigation-desktop`}>
         <ul className='navigation__list'>
           <li className='navigation__item'>
-            <Link className='navigation__link' duration={500} delay={200} smooth={true} spy={true} hashSpy={true} isDynamic={true}
-                  offset={-offset} to='course-for' onClick={handleTouch}>
+            <Link className='navigation__link' href='/kursrhp/#course-for' onClick={handleTouch}>
               Для кого курс
               <MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' duration={500} delay={200} smooth={true} spy={true} hashSpy={true} isDynamic={true} offset={-offset}
-                  to='course-format' onClick={handleTouch}>
+            <Link className='navigation__link'
+                  href='/kursrhp/#course-format' onClick={handleTouch}>
               В якому форматі проходитиме курс <MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' duration={500} delay={200} smooth={true} spy={true} hashSpy={true} isDynamic={true} offset={-offset}
-                  to='benefits' onClick={handleTouch}>
+            <Link className='navigation__link'
+                  href='/kursrhp/#benefits' onClick={handleTouch}>
               Що я отримаю <MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' duration={500} delay={200} smooth={true} spy={true} hashSpy={true} isDynamic={true} offset={-offset}
-                  to='course-structure' onClick={handleTouch}>
+            <Link className='navigation__link'
+                  href='/kursrhp/#course-structure' onClick={handleTouch}>
               Структура курсу<MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' duration={500} delay={200} smooth={true} spy={true} hashSpy={true} isDynamic={true} offset={-offset}
-                  to='prices' onClick={handleTouch}>
+            <Link className='navigation__link'
+                  href='/kursrhp/#prices' onClick={handleTouch}>
               Тарифи <MobileMenuIcon />
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link' duration={500} delay={200} smooth={true} spy={true} hashSpy={true} isDynamic={true} offset={-offset}
-                  to='faq' onClick={handleTouch}>
+            <Link className='navigation__link'
+                  href='/kursrhp/#faq' onClick={handleTouch}>
               Часті питання <MobileMenuIcon />
             </Link>
           </li>

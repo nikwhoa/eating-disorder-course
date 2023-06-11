@@ -239,6 +239,7 @@ export function SliderNextBtn() {
     </svg>
   );
 }
+
 export function SliderPrevBtn() {
   return (
     <svg
@@ -252,6 +253,23 @@ export function SliderPrevBtn() {
       <path
         fill='#202020'
         d='M6.293 28.707a1 1 0 010-1.414l6.364-6.364a1 1 0 011.414 1.414L8.414 28l5.657 5.657a1 1 0 01-1.414 1.414l-6.364-6.364zM48 29H7v-2h41v2z'
+      ></path>
+    </svg>
+  );
+}
+
+export function ArrowUp() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='26'
+      height='26'
+      fill='none'
+      viewBox='0 0 26 26'
+    >
+      <path
+        fill='#202020'
+        d='M9.166.333v2.5h12.25L.666 23.583l1.75 1.75 20.75-20.75v12.25h2.5V.333h-16.5z'
       ></path>
     </svg>
   );
