@@ -29,6 +29,7 @@ jobs:
           pm2 stop eating-disorder-course.norenko.net.ua
           git pull origin main
           git status
+          npm i
           pm2 restart eating-disorder-course.norenko.net.ua-fastify
           npm run build
           pm2 restart eating-disorder-course.norenko.net.ua
