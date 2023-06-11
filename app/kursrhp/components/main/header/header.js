@@ -19,7 +19,7 @@ export default function Header() {
     if (window.innerWidth >= 920) {
       setIsOpen(true);
       setShowBurgerIcon(false);
-      setOffset(viewportHeight * 33.5);
+      setOffset(viewportHeight * 0.06);
     } else {
       setIsOpen(false);
       setShowBurgerIcon(true);
