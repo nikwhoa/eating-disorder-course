@@ -83,7 +83,8 @@
         line-height: 1.8rem;
         //display: block;
         opacity: 1;
-        height: 60px;
+        height: 100%;
+        max-height: fit-content;
         transform: translateX(0);
       }
 
