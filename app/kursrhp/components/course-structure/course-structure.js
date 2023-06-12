@@ -7,18 +7,15 @@ export default function CourseStructure() {
   const [expand, setExpand] = useState(true);
   return (
     <section className='course-structure container' id='course-structure'>
-      <div className='course-structure__title title-primary' style={{
+      <div className='course-structure__title title-primary' onClick={() => setExpand(!expand)} style={{
         borderBottom: expand ? 'none' : ''
       }}>
         Структура курсу
-        <div className='course-structure__title-icon' onClick={() => setExpand(!expand)}>
+        <div className='course-structure__title-icon'>
           {!expand ? <ArrowUp /> : <MobileMenuIcon />}
         </div>
       </div>
-      <div className={`course-structure__content ${expand ? '' : 'animate'}`} style={{
-        // display: expand ? 'none' : ''
-        // height: expand ? 0 : ''
-      }}>
+      <div className={`course-structure__content ${expand ? '' : 'animate'}`}>
         <div className='course-structure__content-item'>
           <div className='course-structure__content-item-number'>01/</div>
           <div className='course-structure__content-item-title'>Мені страшно (проробка страхів перед початком відновлення)</div>
