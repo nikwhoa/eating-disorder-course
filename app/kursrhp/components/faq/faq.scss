@@ -51,7 +51,29 @@
       height: 0;
       opacity: 0;
       transform: translateX(20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease, height .3s ease;
+
+      a {
+        font-family: $primary-font;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        color: $primary-text;
+        text-decoration: none;
+        border-bottom: none;
+        opacity: 1;
+        transition: all .1s ease-in;
+        &:hover {
+          //opacity: .7;
+          //text-decoration: underline;
+          border-bottom: 1px solid $primary-text;
+        }
+      }
+
+      a {
+        //opacity: 1;
+      }
 
       &.show {
         font-family: $primary-font;
@@ -61,7 +83,7 @@
         line-height: 1.8rem;
         //display: block;
         opacity: 1;
-        height: initial;
+        height: 60px;
         transform: translateX(0);
       }
 
