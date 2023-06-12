@@ -10,7 +10,7 @@ export default function Page() {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
+  console.log(ACCESS_TO_DATA);
   const handleAccess = (e) => {
     e.preventDefault();
     if (password === ACCESS_TO_DATA) {

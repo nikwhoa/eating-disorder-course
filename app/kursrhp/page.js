@@ -23,8 +23,6 @@ export default function KursRHPPage() {
       <Faq />
       <Support />
       <Footer />
-
-
     </>
   );
 }
