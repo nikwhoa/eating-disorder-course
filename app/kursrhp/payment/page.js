@@ -4,6 +4,7 @@ import '@/app/kursrhp/styles.scss';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export default function Page() {
 
@@ -148,8 +149,34 @@ export default function Page() {
     }
   };
 
+  useEffect(() => {
+    window.LiqPayCheckoutCallback = function() {
+      LiqPayCheckout.init({
+        data: `${liqpay.data}`,
+        signature: `${liqpay.signature}`,
+        embedTo: '#liqpay_checkout',
+        language: 'uk',
+        mode: 'embed' // embed || popup
+      }).on('liqpay.callback', function(data) {
+        console.log(data.status);
+        console.log(data);
+      }).on('liqpay.ready', function(data) {
+        // ready
+      }).on('liqpay.close', function(data) {
+        // close
+      });
+    };
+  }, []);
+
   return (
     <div className='payment'>
+      <Script
+        src="//static.liqpay.ua/libjs/checkout.js"
+        strategy="lazyOnload"
+        onLoad={() =>
+          console.log(`script loaded correctly, window.FB has been populated`)
+        }
+      />
       <div className='payment__title title-primary'>
         Оплата
       </div>
@@ -198,6 +225,9 @@ export default function Page() {
             </div>
           </div>
           <div className='payment__form-field'>
+            <div id="liqpay_checkout"></div>
+          </div>
+          <div className='payment__form-field'>
             <form method='POST' action='https://www.liqpay.ua/api/3/checkout' acceptCharset='utf-8' id='payment-form'>
               <input type='hidden' name='data'
                      value={liqpay.data} />
@@ -208,6 +238,7 @@ export default function Page() {
             </form>
           </div>
         </div>
+
         {/*  return button */}
         <div className='payment__return'>
           <Link href='/kursrhp'>
@@ -216,6 +247,7 @@ export default function Page() {
         </div>
 
       </div>
+
     </div>
   );
 }
