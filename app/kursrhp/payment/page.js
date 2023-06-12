@@ -105,6 +105,7 @@ export default function Page() {
 
     useEffect(() => {
       setTariffTitle('Я з психологом');
+      setIsPostSuccessful(false)
     }, [tariff]);
   }
 
