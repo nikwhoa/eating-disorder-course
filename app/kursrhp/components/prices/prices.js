@@ -44,19 +44,20 @@ export default function Prices() {
             350/500<Dollar />
           </div>
           <div className='payment__buttons'>
-            <Link href={{
-              pathname: '/kursrhp/payment',
-              query: { tariff: 'solo', price: 350 }
-            }}>
+            {/*<Link href={{*/}
+            {/*  pathname: '/kursrhp/payment',*/}
+            {/*  query: { tariff: 'solo', price: 350 }*/}
+            {/*}}>*/}
+            {/*  ХОЧУ НА КУРС*/}
+            {/*  <RightArrow />*/}
+            {/*</Link>*/}
+            <a href='/kursrhp/payment?tariff=solo&price=350'>
               ХОЧУ НА КУРС
               <RightArrow />
-            </Link>
-            <Link href={{
-              pathname: '/kursrhp/payment',
-              query: { tariff: 'solo', price: 500 }
-            }} style={{ borderTop: '1px solid white' }}>
+            </a>
+            <a href='/kursrhp/payment?tariff=solo&price=350' style={{ borderTop: '1px solid white' }}>
               оплата частинами
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -92,17 +93,11 @@ export default function Prices() {
             590/700<Dollar />
           </div>
           <div className='payment__buttons'>
-            <Link href={{
-              pathname: '/kursrhp/payment',
-              query: { tariff: 'group', price: 590 }
-            }}>
+            <a href='/kursrhp/payment?tariff=group&price=590'>
               ХОЧУ НА КУРС
               <RightArrow />
-            </Link>
-            <Link href={{
-              pathname: '/kursrhp/payment',
-              query: { tariff: 'group', price: 700 }
-            }} style={{ borderTop: '1px solid white' }}>
+            </a>
+            <Link href='/kursrhp/payment?tariff=group&price=590' style={{ borderTop: '1px solid white' }}>
               оплата частинами
             </Link>
           </div>
@@ -155,7 +150,7 @@ export default function Prices() {
           </div>
         </div>
 
-        <div className='tariff bg-primary-element' style={{position: 'relative', zIndex: 1}}>
+        <div className='tariff bg-primary-element' style={{ position: 'relative', zIndex: 1 }}>
           <div className='tariff-container'>
             <div className='tariff__title'>Я з Дашею</div>
             <div className='tariff__description'>
