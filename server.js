@@ -45,7 +45,20 @@ client.connect().then((client) => {
     console.log(request.body);
     try {
       const collection = server.mongo.collection('form-data');
-      const result = await collection.insertOne({ email, phone, name, tariff, price });
+      const date = new Date();
+
+      // const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+      // const ukrainianDate = date.toLocaleDateString('uk-UA', options);
+      const ukrainianDate = date.toLocaleDateString('uk-UA', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      const result = await collection.insertOne({ email, phone, name, tariff, price, created_at: ukrainianDate });
+
+      // const result = await collection.insertOne({ email, phone, name, tariff, price });
       reply.code(200).send({ _id: result.insertedId });
     } catch (err) {
       server.log.error(err);

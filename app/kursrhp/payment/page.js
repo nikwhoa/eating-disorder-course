@@ -5,6 +5,9 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Script from 'next/script';
+import CompletePayment from '@/app/kursrhp/payment/CompletePayment';
+import { toBase64 } from 'request/lib/helpers';
+import crypto from 'crypto';
 
 export default function Page() {
 
@@ -18,6 +21,7 @@ export default function Page() {
   const [isPostSuccessful, setIsPostSuccessful] = useState(false);
   const [isError, setIsError] = useState(false);
   const [tariffTitle, setTariffTitle] = useState('');
+
 
   const router = useRouter();
   const params = useSearchParams();
@@ -34,34 +38,95 @@ export default function Page() {
   };
 
   if (tariff === 'solo') {
-    // liqpay.data = process.env.NEXT_PUBLIC_SOLO_TARIFF_DATA;
-    // liqpay.signature = process.env.NEXT_PUBLIC_SOLO_TARIFF_SIGNATURE;
-    liqpay.data = process.env.NEXT_PUBLIC_SOLO_TARIFF_DATA_TEST;
-    liqpay.signature = process.env.NEXT_PUBLIC_SOLO_TARIFF_SIGNATURE_TEST;
+    liqpay.data = toBase64(JSON.stringify({
+      'public_key': `${process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY}`,
+      'version': 3,
+      'action': 'pay',
+      'amount': 0.1,
+      'currency': 'USD',
+      'description': 'Соло',
+      'language': 'uk',
+      'order_id': `solo_tariff_${Math.floor((Math.random() * 1000000))}`,
+      'paytypes': 'paypart, apay, gpay, card, privat24'
+    }));
+    const string = liqpay.data
+    const sha = crypto.createHash('sha1')
+    sha.update(`${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}${string}${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}`)
+    const signature = sha.digest('base64');
+    liqpay.signature = signature
+
     useEffect(() => {
       setTariffTitle('Соло');
     }, [tariff]);
   }
 
   if (tariff === 'group') {
-    liqpay.data = process.env.NEXT_PUBLIC_GROUP_TARIFF_DATA;
-    liqpay.signature = process.env.NEXT_PUBLIC_GROUP_TARIFF_SIGNATURE;
+
+    liqpay.data = toBase64(JSON.stringify({
+      'public_key': `${process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY}`,
+      'version': 3,
+      'action': 'pay',
+      'amount': price,
+      'currency': 'USD',
+      'description': 'Я в групі',
+      'language': 'uk',
+      'order_id': `group_tariff_${Math.floor((Math.random() * 1000000))}`,
+      'paytypes': 'paypart, apay, gpay, card, privat24'
+    }));
+    const string = liqpay.data
+    const sha = crypto.createHash('sha1')
+    sha.update(`${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}${string}${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}`)
+    const signature = sha.digest('base64');
+    liqpay.signature = signature
+
     useEffect(() => {
       setTariffTitle('Я в групі');
     }, [tariff]);
   }
 
   if (tariff === 'with-psychologist') {
-    liqpay.data = process.env.NEXT_PUBLIC_WITH_PSYCHOLOGIST_TARIFF_DATA;
-    liqpay.signature = process.env.NEXT_PUBLIC_WITH_PSYCHOLOGIST_TARIFF_SIGNATURE;
+
+    liqpay.data = toBase64(JSON.stringify({
+      'public_key': `${process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY}`,
+      'version': 3,
+      'action': 'pay',
+      'amount': price,
+      'currency': 'USD',
+      'description': 'Я з психологом',
+      'language': 'uk',
+      'order_id': `with-psychologist_tariff_${Math.floor((Math.random() * 1000000))}`,
+      'paytypes': 'paypart, apay, gpay, card, privat24'
+    }));
+    const string = liqpay.data
+    const sha = crypto.createHash('sha1')
+    sha.update(`${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}${string}${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}`)
+    const signature = sha.digest('base64');
+    liqpay.signature = signature
+
     useEffect(() => {
       setTariffTitle('Я з психологом');
     }, [tariff]);
   }
 
   if (tariff === 'with-dasha') {
-    liqpay.data = process.env.NEXT_PUBLIC_WITH_DASHA_TARIFF_DATA;
-    liqpay.signature = process.env.NEXT_PUBLIC_WITH_DASHA_TARIFF_SIGNATURE;
+
+    liqpay.data = toBase64(JSON.stringify({
+      'public_key': `${process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY}`,
+      'version': 3,
+      'action': 'pay',
+      'amount': price,
+      'currency': 'USD',
+      'description': 'Я з Дашею',
+      'language': 'uk',
+      'order_id': `with-dasha_tariff_${Math.floor((Math.random() * 1000000))}`,
+      'paytypes': 'paypart, apay, gpay, card, privat24'
+    }));
+    const string = liqpay.data
+    const sha = crypto.createHash('sha1')
+    sha.update(`${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}${string}${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}`)
+    const signature = sha.digest('base64');
+    liqpay.signature = signature
+
     useEffect(() => {
       setTariffTitle('Я з Дашею');
     }, [tariff]);
@@ -118,12 +183,12 @@ export default function Page() {
     }
   };
 
-  useEffect(() => {
-    if (isPostSuccessful) {
-      // Now we can submit the form
-      document.getElementById('payment-form').submit();
-    }
-  }, [isPostSuccessful]);
+  // useEffect(() => {
+  //   if (isPostSuccessful) {
+  //     // Now we can submit the form
+  //     document.getElementById('payment-form').submit();
+  //   }
+  // }, [isPostSuccessful]);
 
   const handleButtonClick = async (e) => {
     e.preventDefault(); // Prevent the form from submitting
@@ -139,6 +204,7 @@ export default function Page() {
         if (!res.ok) throw new Error('Error while registering');
 
         const data = await res.json();
+
         if (data) {
           setIsPostSuccessful(true);
         }
@@ -149,34 +215,11 @@ export default function Page() {
     }
   };
 
-  useEffect(() => {
-    window.LiqPayCheckoutCallback = function() {
-      LiqPayCheckout.init({
-        data: `${liqpay.data}`,
-        signature: `${liqpay.signature}`,
-        embedTo: '#liqpay_checkout',
-        language: 'uk',
-        mode: 'embed' // embed || popup
-      }).on('liqpay.callback', function(data) {
-        console.log(data.status);
-        console.log(data);
-      }).on('liqpay.ready', function(data) {
-        // ready
-      }).on('liqpay.close', function(data) {
-        // close
-      });
-    };
-  }, []);
+
 
   return (
     <div className='payment'>
-      <Script
-        src="//static.liqpay.ua/libjs/checkout.js"
-        strategy="lazyOnload"
-        onLoad={() =>
-          console.log(`script loaded correctly, window.FB has been populated`)
-        }
-      />
+
       <div className='payment__title title-primary'>
         Оплата
       </div>
@@ -225,25 +268,29 @@ export default function Page() {
             </div>
           </div>
           <div className='payment__form-field'>
-            <div id="liqpay_checkout"></div>
+            {isPostSuccessful ? (
+              <CompletePayment tariff={tariff} price={price} formData={formData} liqpay={liqpay} />
+            ) : (
+              <div className='payment__form-field'>
+                {/*<form method='POST' action='https://www.liqpay.ua/api/3/checkout' acceptCharset='utf-8' id='payment-form'>*/}
+                {/*  <input type='hidden' name='data'*/}
+                {/*         value={liqpay.data} />*/}
+                {/*  <input type='hidden' name='signature' value={liqpay.signature} />*/}
+                {/*</form>*/}
+                <button type='button' disabled={!isFormSubmitted} onClick={handleButtonClick} className='pay-button'>
+                  Оплатити
+                </button>
+              </div>
+              )}
           </div>
-          <div className='payment__form-field'>
-            <form method='POST' action='https://www.liqpay.ua/api/3/checkout' acceptCharset='utf-8' id='payment-form'>
-              <input type='hidden' name='data'
-                     value={liqpay.data} />
-              <input type='hidden' name='signature' value={liqpay.signature} />
-              <button type='button' disabled={!isFormSubmitted} onClick={handleButtonClick} className='pay-button'>
-                Оплатити
-              </button>
-            </form>
-          </div>
+
         </div>
 
         {/*  return button */}
         <div className='payment__return'>
-          <Link href='/kursrhp'>
+          <a href='/kursrhp'>
             Повернутись на головну
-          </Link>
+          </a>
         </div>
 
       </div>
