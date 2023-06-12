@@ -27,70 +27,74 @@ export default function Faq() {
         <div className='faq__item' data-index={0}>
           <div className='question' onClick={() => openHandler(0)}>
             <span>
-              Що робити якщо не прийшов лист на пошту
+              Не можу оплатити/як сплатити карткою іноземного банку
             </span>
             {isOpen && questionIndex === 0 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 0 ? 'show' : ''}`}>
-            Курс буде проходити 2 рази на тиждень у вигляді відео семінарів, а також будуть надаватись практичні заннятя і тд.
+            Якщо ваша оплата була неуспішною або ви б хотіли змінити спосіб оплати, напишіть нам, будь ласка в службу турботи тут( додати лінк на
+            телеграм чат) або на <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>
         <div className='faq__item' data-index={1}>
           <div className='question' onClick={() => openHandler(1)}>
-            Не можу оплатити
+            Після оплати не отримала листа на пошту
             {isOpen && questionIndex === 1 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 1 ? 'show' : ''}`}>
-            Курс буде проходити 2 рази на тиждень у вигляді відео семінарів, а також будуть надаватись практичні заннятя і тд.
+            Перевірте, будь ласка, папку спам, небажана пошта та промоакції, якщо не знайшли листа, напишіть нам, будь ласка, в службу турботи тут(
+            додати лінк на телеграм чат) або на <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>
         <div className='faq__item' data-index={2}>
           <div className='question' onClick={() => openHandler(2)}>
             <span>
-              Чи можу оплатити картою іноземного банку
+              Як оформити часткову оплату
             </span>
             {isOpen && questionIndex === 2 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 2 ? 'show' : ''}`}>
-            Курс буде проходити 2 рази на тиждень у вигляді відео семінарів, а також будуть надаватись практичні заннятя і тд.
+            Оберіть бажаний вами тариф та натисніть «Оплатити частинами», зазначте кількість платежів та підтвердіть оплату.
+            Кошти автоматично списуватимуться з вашої картки щомісяця.
           </div>
         </div>
         <div className='faq__item' data-index={3}>
           <div className='question' onClick={() => openHandler(3)}>
-            Як оформити часткову оплату
+            Скільки зберігатиметься доступ до курсу
             {isOpen && questionIndex === 3 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 3 ? 'show' : ''}`}>
-            Курс буде проходити 2 рази на тиждень у вигляді відео семінарів, а також будуть надаватись практичні заннятя і тд.
+            Доступ до вебінарів зберігатиметься протягом місяця після закінчення курсу.
           </div>
         </div>
         <div className='faq__item' data-index={4}>
           <div className='question' onClick={() => openHandler(4)}>
             <span>
-              Скільки зберігатиметься доступ до курсу
+              Скільки триватиме курс
             </span>
             {isOpen && questionIndex === 4 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 4 ? 'show' : ''}`}>
-            Курс буде проходити 2 рази на тиждень у вигляді відео семінарів, а також будуть надаватись практичні заннятя і тд.
+            Курс триватиме протягом 3-х місяців. Записи ефірів будуть доступні ще місяць після завершення.
           </div>
         </div>
         <div className='faq__item' data-index={5}>
           <div className='question' onClick={() => openHandler(5)}>
-            Скільки триватиме курс
+            Чи будуть записи ефірів
             {isOpen && questionIndex === 5 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 5 ? 'show' : ''}`}>
-            Курс буде проходити 2 рази на тиждень у вигляді відео семінарів, а також будуть надаватись практичні заннятя і тд.
+            Ефіри будуть збережені, ви зможете переглянути їх в зручний час.
           </div>
         </div>
         <div className='faq__item' data-index={6}>
           <div className='question' onClick={() => openHandler(6)}>
-            Чи будуть записи ефірів
+            Чи можу я змінити тариф
             {isOpen && questionIndex === 6 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 6 ? 'show' : ''}`}>
-            Курс буде проходити 2 рази на тиждень у вигляді відео семінарів, а також будуть надаватись практичні заннятя і тд.
+            Так, ви можете змінити ваш тариф, написавши нам в службу турботи тут (додати лінк на телеграм чат) або на <a
+            href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>
         <div className='faq__item' data-index={7}>
@@ -104,11 +108,12 @@ export default function Faq() {
         </div>
         <div className='faq__item' data-index={8}>
           <div className='question' onClick={() => openHandler(8)}>
-            Інші питання
+            Інші запитання
             {isOpen && questionIndex === 8 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 8 ? 'show' : ''}`}>
-            Курс буде проходити 2 рази на тиждень у вигляді відео семінарів, а також будуть надаватись практичні заннятя і тд.
+            Якщо у вас виникли будь- які інші запитання, напишіть нам, будь ласка, в службу турботи тут або на <a
+            href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>
       </div>
