@@ -42,6 +42,12 @@
 
   &-show {
     display: block;
+    position: fixed;
+    top: 46px;
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    z-index: 100000;
   }
 
   &__list {
