@@ -269,7 +269,7 @@ export default function Page() {
           </div>
           <div className='payment__form-field'>
             {isPostSuccessful ? (
-              <CompletePayment tariff={tariff} price={price} formData={formData} liqpay={liqpay} />
+              <CompletePayment router={router} tariff={tariff} price={price} formData={formData} liqpay={liqpay} />
             ) : (
               <div className='payment__form-field'>
                 {/*<form method='POST' action='https://www.liqpay.ua/api/3/checkout' acceptCharset='utf-8' id='payment-form'>*/}

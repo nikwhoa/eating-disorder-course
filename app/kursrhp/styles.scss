@@ -348,3 +348,15 @@ section, header, footer {
 .container__block__left__amountinfo {
   background: #69899B !important;
 }
+
+.completed-page {
+  h1 {
+    font-family: $primary-text;
+    font-size: 5rem;
+  }
+
+  p {
+    font-family: $primary-text;
+    font-size: 3rem;
+  }
+}

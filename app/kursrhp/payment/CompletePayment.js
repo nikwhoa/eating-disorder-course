@@ -5,36 +5,7 @@ import crypto from 'crypto';
 
 // TODO: CHANGE ORDER_ID!!!!!!
 
-const CompletePayment = ({ liqpay, tariff, price, formData }) => {
-
-  // const [jsonString, setJsonString] = useState({});
-  // const [liqpay, setLiqpay] = useState({});
-  const [isPaymentCompleted, setPaymentCompleted] = useState(false);
-
-  // const liqpay = {
-  //   data: toBase64(JSON.stringify(jsonString)),
-  //   signature: crypto.createHash('sha1').update(`${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}${toBase64(JSON.stringify(jsonString))}${process.env.NEXT_PUBLIC_LIQPAY_PRIVATE_KEY}`).digest('base64')
-  // };
-
-
-  // if (tariff === 'group') {
-  //   liqpay.data = process.env.NEXT_PUBLIC_GROUP_TARIFF_DATA;
-  //   liqpay.signature = process.env.NEXT_PUBLIC_GROUP_TARIFF_SIGNATURE;
-  //
-  // }
-  //
-  // if (tariff === 'with-psychologist') {
-  //   liqpay.data = process.env.NEXT_PUBLIC_WITH_PSYCHOLOGIST_TARIFF_DATA;
-  //   liqpay.signature = process.env.NEXT_PUBLIC_WITH_PSYCHOLOGIST_TARIFF_SIGNATURE;
-  //
-  // }
-  //
-  // if (tariff === 'with-dasha') {
-  //   liqpay.data = process.env.NEXT_PUBLIC_WITH_DASHA_TARIFF_DATA;
-  //   liqpay.signature = process.env.NEXT_PUBLIC_WITH_DASHA_TARIFF_SIGNATURE;
-  // }
-
-
+const CompletePayment = ({ liqpay, tariff, price, formData, router }) => {
   useEffect(() => {
     window.LiqPayCheckoutCallback = function() {
       LiqPayCheckout.init({
@@ -48,8 +19,8 @@ const CompletePayment = ({ liqpay, tariff, price, formData }) => {
         if (data.status === 'success') {
           console.log(formData.email);
           console.log(formData.name);
-          // send email!
-          setPaymentCompleted(true);
+          router.push('/kursrhp/completed');
+          // TODO: send email!
         }
         console.log(data);
       }).on('liqpay.ready', function(data) {
@@ -64,22 +35,14 @@ const CompletePayment = ({ liqpay, tariff, price, formData }) => {
 
   return (
     <>
-    {isPaymentCompleted ? (<div>
-      <h1>
-        Вітаю, скоро вам прийде лист з усіми інструкціями. Якщо його немає у вашому інбоксі, перевірте папку СПАМ.
-      </h1>
-    </div>) : (
-      <>
-        <Script
-          src='//static.liqpay.ua/libjs/checkout.js'
-          strategy='lazyOnload'
-          onLoad={() =>
-            console.log(`script loaded correctly, window.FB has been populated`)
-          }
-        />
-        <div id='liqpay_checkout'></div>
-      </>
-    )}
+      <Script
+        src='//static.liqpay.ua/libjs/checkout.js'
+        strategy='lazyOnload'
+        onLoad={() =>
+          console.log(`script loaded correctly, window.FB has been populated`)
+        }
+      />
+      <div id='liqpay_checkout'></div>
     </>
   );
 };
