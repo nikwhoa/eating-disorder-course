@@ -4,7 +4,7 @@ import { useState } from 'react';
 // import Link from 'next/link';
 import Hamburger from '@/app/tools/hamburger/hamburger';
 import './header.scss';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import { MobileMenuIcon } from '@/app/tools/icons/icons';
 // import Link from 'next/link';
 
