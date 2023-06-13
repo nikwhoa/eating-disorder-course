@@ -42,13 +42,14 @@ export default function Faq() {
             {isOpen && questionIndex === 1 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 1 ? 'show' : ''}`}>
-            Перевірте, будь ласка, папку спам, якщо не знайшли листа, напишіть нам, в службу турботи тут( додати лінк на телеграм чат) або на <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
+            Перевірте, будь ласка, папку спам, якщо не знайшли листа, напишіть нам, в службу турботи тут(додати лінк на телеграм чат) або на
+            <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми завжди на зв'язку.
           </div>
         </div>
         <div className='faq__item' data-index={2}>
           <div className='question' onClick={() => openHandler(2)}>
             <span>
-              Як оформити часткову оплату
+              Як оформити розстрочку
             </span>
             {isOpen && questionIndex === 2 ? <CloseIcon /> : <OpenIcon />}
           </div>
@@ -59,41 +60,33 @@ export default function Faq() {
         </div>
         <div className='faq__item' data-index={3}>
           <div className='question' onClick={() => openHandler(3)}>
-            Скільки зберігатиметься доступ до курсу
+            Скільки триватиме курс
             {isOpen && questionIndex === 3 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 3 ? 'show' : ''}`}>
-            Доступ до вебінарів зберігатиметься протягом місяця після закінчення курсу.
+            Курс триватиме протягом 3-х місяців. Записи ефірів будуть доступні ще 3 місяці після завершення.
           </div>
         </div>
         <div className='faq__item' data-index={4}>
           <div className='question' onClick={() => openHandler(4)}>
             <span>
-              Скільки триватиме курс
+              Скільки зберігатиметься доступ до курсу
             </span>
             {isOpen && questionIndex === 4 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 4 ? 'show' : ''}`}>
-            Курс триватиме протягом 3-х місяців. Записи ефірів будуть доступні ще місяць після завершення.
+            Доступ до вебінарів зберігатиметься протягом місяця після закінчення курсу. Доступ до чатів залишається назавжди, але без зворотного
+            зв'язку.
           </div>
         </div>
         <div className='faq__item' data-index={5}>
           <div className='question' onClick={() => openHandler(5)}>
-            Чи будуть записи ефірів
+            Чи можу я зробити апгрейд тарифу
             {isOpen && questionIndex === 5 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 5 ? 'show' : ''}`}>
-            Ефіри будуть збережені, ви зможете переглянути їх в зручний час.
-          </div>
-        </div>
-        <div className='faq__item' data-index={6}>
-          <div className='question' onClick={() => openHandler(6)}>
-            Чи можу я змінити тариф
-            {isOpen && questionIndex === 6 ? <CloseIcon /> : <OpenIcon />}
-          </div>
-          <div className={`answer ${isOpen && questionIndex === 6 ? 'show' : ''}`}>
-            Так, ви можете змінити ваш тариф, написавши нам в службу турботи тут (додати лінк на телеграм чат) або на <a
-            href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
+            Так, ви можете змінити ваш тариф, написавши нам в службу турботи тут (додати лінк на телеграм чат) або на
+            <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>
         <div className='faq__item' data-index={7}>
