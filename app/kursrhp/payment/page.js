@@ -235,7 +235,7 @@ export default function Page() {
           <div className='payment__description-text'>
             <p>
               Для оплати курсу ви можете скористатися будь-яким зручним для вас способом. Після оплати ви отримаєте лист на пошту з подальшими
-              інструкціями. Якщо ви не отримали листа, напишіть нам на пошту <a href='mailto:norenkonikita@gmail.com'>email</a>.
+              інструкціями. Якщо ви не отримали листа, напишіть нам на пошту <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>.
             </p>
           </div>
         </div>

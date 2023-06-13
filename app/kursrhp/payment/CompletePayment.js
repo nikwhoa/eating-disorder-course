@@ -35,16 +35,17 @@ const CompletePayment = ({ liqpay, tariff, price, formData, router }) => {
 
   return (
     <>
-      <Script
-        src='//static.liqpay.ua/libjs/checkout.js'
-        strategy='lazyOnload'
-        onLoad={() =>
-          console.log(`script loaded correctly, window.FB has been populated`)
-        }
-      />
-      <div id='liqpay_checkout'></div>
-    </>
-  );
+    <Script
+      src='//static.liqpay.ua/libjs/checkout.js'
+      strategy='lazyOnload'
+      onLoad={() =>
+        console.log(`script loaded correctly, window.FB has been populated`)
+      }
+    />
+    <div id='liqpay_checkout'></div>
+</>
+)
+  ;
 };
 
 export default CompletePayment;
