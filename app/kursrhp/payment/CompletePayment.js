@@ -1,11 +1,42 @@
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
-import { toBase64 } from 'request/lib/helpers';
-import crypto from 'crypto';
+import emailTemplate from '@/app/kursrhp/payment/email';
 
-// TODO: CHANGE ORDER_ID!!!!!!
+const CompletePayment = ({ liqpay, tariff, formData, router }) => {
+  const sendEmail = (email, name) => {
 
-const CompletePayment = ({ liqpay, tariff, price, formData, router }) => {
+    const mailTemplate = emailTemplate(tariff, name);
+
+    return new Promise((resolve, reject) => {
+      // Send email
+      fetch(`${process.env.NEXT_PUBLIC_PATH_TO_PAYMENT_API}/api/send-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          to: `${email}`,
+          subject: 'Вітаємо вас!',
+          text: `Платіж за тариф ${tariff} було виконано. Thank you, ${name}!`,
+          html: mailTemplate
+        })
+      })
+        .then(response => {
+          console.log(response);
+          if (response.status === 200) {
+            resolve('sent'); // Resolve the Promise with 'sent'
+          } else {
+            reject('error'); // Reject the Promise with 'error'
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          reject('error'); // Reject the Promise with 'error'
+        });
+    });
+  };
+
+
   useEffect(() => {
     window.LiqPayCheckoutCallback = function() {
       LiqPayCheckout.init({
@@ -14,13 +45,26 @@ const CompletePayment = ({ liqpay, tariff, price, formData, router }) => {
         embedTo: '#liqpay_checkout',
         language: 'uk',
         mode: 'embed' // embed || popup
-      }).on('liqpay.callback', function(data) {
-        console.log(data.status);
-        if (data.status === 'success') {
+      }).on('liqpay.callback', async function(data) {
+        if (data.status === 'success' || data.status === 'wait_accept') {
+          console.log('payment succeed');
           console.log(formData.email);
           console.log(formData.name);
-          router.push('/kursrhp/completed');
-          // TODO: send email!
+
+          try {
+            const emailStatus = await sendEmail(formData.email, formData.name);
+            if (emailStatus === 'sent') {
+              router.push('/kursrhp/completed');
+            }
+          } catch (error) {
+            console.error('Error sending email:', error);
+          }
+
+          // sendEmail(formData.email, formData.name);
+          //
+          // if (emailStatus === 'sent') {
+          //   router.push('/kursrhp/completed');
+          // }
         }
         console.log(data);
       }).on('liqpay.ready', function(data) {
@@ -35,17 +79,17 @@ const CompletePayment = ({ liqpay, tariff, price, formData, router }) => {
 
   return (
     <>
-    <Script
-      src='//static.liqpay.ua/libjs/checkout.js'
-      strategy='lazyOnload'
-      onLoad={() =>
-        console.log(`script loaded correctly, window.FB has been populated`)
-      }
-    />
-    <div id='liqpay_checkout'></div>
-</>
-)
-  ;
+      <Script
+        src='//static.liqpay.ua/libjs/checkout.js'
+        strategy='lazyOnload'
+        onLoad={() =>
+          console.log(`script loaded correctly, window.FB has been populated`)
+        }
+      />
+      <div id='liqpay_checkout'></div>
+    </>
+  )
+    ;
 };
 
 export default CompletePayment;
