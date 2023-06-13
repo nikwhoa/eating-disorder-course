@@ -32,8 +32,8 @@ export default function Faq() {
             {isOpen && questionIndex === 0 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 0 ? 'show' : ''}`}>
-            Якщо ваша оплата була неуспішною або ви б хотіли змінити спосіб оплати, напишіть нам, будь ласка в службу турботи тут( додати лінк на
-            телеграм чат) або на <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
+            Якщо ви хочете оплатити карткою іноземного банку, або ваша оплата була неуспішною, напишіть нам, будь ласка, в службу турботи тут( додати
+            лінк на телеграм чат) або на <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>
         <div className='faq__item' data-index={1}>
@@ -42,8 +42,7 @@ export default function Faq() {
             {isOpen && questionIndex === 1 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 1 ? 'show' : ''}`}>
-            Перевірте, будь ласка, папку спам, небажана пошта та промоакції, якщо не знайшли листа, напишіть нам, будь ласка, в службу турботи тут(
-            додати лінк на телеграм чат) або на <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
+            Перевірте, будь ласка, папку спам, якщо не знайшли листа, напишіть нам, в службу турботи тут( додати лінк на телеграм чат) або на <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>
         <div className='faq__item' data-index={2}>

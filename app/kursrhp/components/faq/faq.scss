@@ -27,7 +27,7 @@
 
     .question {
       font-weight: 300;
-      font-size: 2rem;
+      font-size: 1.5rem;
       line-height: 2.4rem;
       cursor: pointer;
       display: flex;
@@ -42,13 +42,14 @@
     }
 
     .answer {
-      margin-top: 1rem;
+      margin-top: 1.2rem;
       font-family: $primary-font;
       font-style: normal;
       font-weight: 300;
       font-size: 1.4rem;
       line-height: 1.8rem;
       height: 0;
+      display: none;
       opacity: 0;
       transform: translateX(20px);
       transition: opacity 0.3s ease, transform 0.3s ease, height .3s ease;
@@ -81,7 +82,7 @@
         font-weight: 300;
         font-size: 1.4rem;
         line-height: 1.8rem;
-        //display: block;
+        display: block;
         opacity: 1;
         height: 100%;
         max-height: fit-content;
