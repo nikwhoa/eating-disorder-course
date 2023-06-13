@@ -21,14 +21,14 @@ export default function Main() {
           </span>
           </h1>
           <h2 className='subtitle'>
-            Вилікуватись від компульсивних переїдань, булімії, анорексії раз і назавжди
+            Вилікуватись від компульсивних переїдань, булімії, орторексії раз і назавжди
           </h2>
           <div className='course-info'>
             <div className='course-info__item'>
-              <span>СТАРТ КУРСУ:</span> 12 червня
+              <span>СТАРТ КУРСУ:</span> 29.06.2023
             </div>
             <div className='course-info__item'>
-              <span>ТРИВАЛІСТЬ:</span> 4 тижня
+              <span>ТРИВАЛІСТЬ:</span> 3 місяці
             </div>
             <div className='course-info__item'>
               <span>МОВА КУРСУ:</span> українська
