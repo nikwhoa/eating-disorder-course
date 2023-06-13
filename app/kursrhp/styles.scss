@@ -360,3 +360,41 @@ section, header, footer {
     font-size: 3rem;
   }
 }
+.user-agreement {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 5000;
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $primary-block;
+    padding: 1rem 4rem;
+    @media (max-width: 768px) {
+      padding: 1rem 2rem !important;
+    }
+    span {
+      font-size: 1.1rem;
+      font-family: $primary-text;
+      //color: $primary-text;
+    }
+    button {
+      padding: .3rem 2rem;
+      background: #69899B;
+      color: #ffffff;
+      cursor: pointer;
+      border: none;
+      font-size: 1.2rem;
+      font-family: $primary-text;
+      font-weight: 600;
+      border-radius: 10px;
+    }
+  }
+}
+
+.document {
+  margin: 0 auto;
+}
