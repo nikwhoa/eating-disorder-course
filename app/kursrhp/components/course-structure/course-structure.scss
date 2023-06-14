@@ -46,15 +46,17 @@
   }
 
   &__content {
-    margin: 2rem;
+    margin: 0;
     opacity: 0;
     height: 0;
+    padding: 0 2rem;
     transform: translateZ(20px);
     transition: opacity 0.3s ease, transform 0.3s ease, height .3s ease;
 
     &.animate {
+      margin: 2rem auto;
       opacity: 1;
-      height: 1140px;
+      height: 800px;
       transform: translateZ(0);
     }
 
@@ -141,4 +143,8 @@
       transform: translateZ(0);
     }
   }
+}
+
+.course-structure-text-wrapper {
+  padding: 0 3rem;
 }

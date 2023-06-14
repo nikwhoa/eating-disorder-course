@@ -1,0 +1,131 @@
+@import '/app/styles/variables';
+
+.completed-page {
+  background: $primary-block;
+  &-header {
+    height: 46px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #202020;
+    background: white;
+
+    &__left-column {
+      //width: ;
+      min-width: 102px;
+      width: 20%;
+      border-right: 1px solid #202020;
+    }
+
+    &__right-column {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-style: normal;
+      font-weight: 800;
+      font-size: 1.5rem;
+      line-height: 1.6rem;
+      font-family: $primary-font;
+
+      span {
+        margin-left: .5rem;
+        font-weight: 300;
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      height: initial;
+    }
+
+    .content__left-column {
+
+      background: white;
+      width: 60%;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      .text {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem;
+      }
+    }
+
+    .content__right-column {
+      box-sizing: border-box;
+      width: 40%;
+      text-align: center;
+      border-left: 1px solid $primary-text;
+
+      @media (max-width: 768px) {
+        border-left: none;
+        width: 100%;
+        border-top: 1px solid $primary-text;
+        //border-bottom: 1px solid $primary-text;
+      }
+      .photo {
+        height: 100%;
+        box-sizing: border-box;
+        img {
+          width: 100%;
+          object-fit: cover;
+          height: 100%;
+          //max-height: fit-content;
+          //max-width: 300px;
+        }
+      }
+    }
+  }
+
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  //flex-direction: column;
+  //padding: 1rem;
+  //width: 90%;
+  //height: 100vh;
+  //margin: 0 auto;
+  //
+  //@media (min-width: 768px) {
+  //  width: 60%;
+  //}
+
+  h1 {
+    font-family: $primary-font;
+    font-size: 2.5rem;
+  }
+
+  p {
+    margin: 2rem 0;
+    font-family: $primary-font;
+    font-size: 2rem;
+  }
+
+  b {
+    font-size: inherit;
+  }
+}
+
+.complete-page-footer {
+  position: relative;
+  top: -2px;
+  background: $primary-block;
+
+  .support {
+    margin: 0 auto;
+    padding-top: 5rem;
+  }
+}

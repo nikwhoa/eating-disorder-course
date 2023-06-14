@@ -69,6 +69,8 @@ export default function CourseStructure() {
             </div>
           </div>
         </div>
+      </div>
+      <div className='course-structure-text-wrapper'>
         <div className='course-structure-text'>
           Відновлення від рхп - довготривалий сеанс глубинної терапії.
           <br /><br />

@@ -349,17 +349,8 @@ section, header, footer {
   background: #69899B !important;
 }
 
-.completed-page {
-  h1 {
-    font-family: $primary-text;
-    font-size: 5rem;
-  }
 
-  p {
-    font-family: $primary-text;
-    font-size: 3rem;
-  }
-}
+
 .user-agreement {
   position: fixed;
   left: 0;
@@ -367,6 +358,7 @@ section, header, footer {
   bottom: 0;
   width: 100%;
   z-index: 5000;
+
   &-container {
     display: flex;
     align-items: center;
@@ -376,11 +368,13 @@ section, header, footer {
     @media (max-width: 768px) {
       padding: 1rem 2rem !important;
     }
+
     span {
       font-size: 1.1rem;
       font-family: $primary-text;
       //color: $primary-text;
     }
+
     button {
       padding: .3rem 2rem;
       background: #69899B;
