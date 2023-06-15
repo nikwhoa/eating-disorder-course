@@ -10,8 +10,8 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/kursrhp',
-        permanent: true
+        destination: '/test',
+        permanent: false
       }
     ];
   }
