@@ -107,7 +107,7 @@ export default function Header() {
             </Link>
           </li>
           <li className='navigation__item'>
-            <Link className='navigation__link'
+            <Link className='navigation__link' id={'reviews-link-header'}
                   duration={300} offset={offset} smooth={true} to='course-structure' onClick={handleTouch}>
               Структура курсу<MobileMenuIcon />
             </Link>

@@ -1,14 +1,16 @@
 import '@/app/kursrhp/styles.scss'
 import '@/app/kursrhp/components/support/support.scss'
 import './completed-page.scss'
-import { TelegramButton } from '@/app/tools/icons/icons';
+import { BranchIcon, TelegramButton } from '@/app/tools/icons/icons';
 import photo from './images/photo-2.jpeg'
 import Image from 'next/image';
 export default function HomePage() {
   return (
     <div className='completed-page'>
       <div className='completed-page-header'>
-        <div className='completed-page-header__left-column'></div>
+        <div className='completed-page-header__left-column'>
+          <BranchIcon />
+        </div>
         <div className='completed-page-header__right-column'>
           Розбираємося з РХП: <span>Онлайн Курс</span>
         </div>

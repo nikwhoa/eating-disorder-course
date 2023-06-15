@@ -42,8 +42,7 @@ export default function Faq() {
             {isOpen && questionIndex === 1 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 1 ? 'show' : ''}`}>
-            Перевірте, будь ласка, папку спам, якщо не знайшли листа, напишіть нам, в службу турботи тут(додати лінк на телеграм чат) або на
-            <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми завжди на зв'язку.
+            Перевірте, будь ласка, папку спам, якщо не знайшли листа, напишіть нам, в службу турботи тут(додати лінк на телеграм чат) або на{' '}<a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми завжди на зв'язку.
           </div>
         </div>
         <div className='faq__item' data-index={2}>
@@ -75,7 +74,7 @@ export default function Faq() {
             {isOpen && questionIndex === 4 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 4 ? 'show' : ''}`}>
-            Доступ до вебінарів зберігатиметься протягом місяця після закінчення курсу. Доступ до чатів залишається назавжди, але без зворотного
+            Доступ до вебінарів зберігатиметься протягом 3-х місяців після закінчення курсу. Доступ до чатів залишається назавжди, але без зворотного
             зв'язку.
           </div>
         </div>
@@ -85,17 +84,7 @@ export default function Faq() {
             {isOpen && questionIndex === 5 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 5 ? 'show' : ''}`}>
-            Так, ви можете змінити ваш тариф, написавши нам в службу турботи тут (додати лінк на телеграм чат) або на
-            <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
-          </div>
-        </div>
-        <div className='faq__item' data-index={7}>
-          <div className='question' onClick={() => openHandler(7)}>
-            Чи можу я змінити тариф
-            {isOpen && questionIndex === 7 ? <CloseIcon /> : <OpenIcon />}
-          </div>
-          <div className={`answer ${isOpen && questionIndex === 7 ? 'show' : ''}`}>
-            Курс буде проходити 2 рази на тиждень у вигляді відео семінарів, а також будуть надаватись практичні заннятя і тд.
+            Так, ви можете змінити ваш тариф, написавши нам в службу турботи тут (додати лінк на телеграм чат) або на{' '}<a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>
         <div className='faq__item' data-index={8}>
