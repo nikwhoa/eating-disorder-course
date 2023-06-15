@@ -14,6 +14,17 @@
       min-width: 102px;
       width: 20%;
       border-right: 1px solid #202020;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      svg {
+        width: 44px;
+        path  {
+        opacity: 1;
+          fill: $primary-text;
+        }
+      }
     }
 
     &__right-column {
@@ -109,9 +120,10 @@
   }
 
   p {
-    margin: 2rem 0;
+    margin: 1.1rem 0;
     font-family: $primary-font;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
   }
 
   b {

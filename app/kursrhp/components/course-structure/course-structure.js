@@ -1,10 +1,17 @@
 'use client';
 import './course-structure.scss';
 import { ArrowUp, BranchIcon, MobileMenuIcon } from '@/app/tools/icons/icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function CourseStructure() {
   const [expand, setExpand] = useState(true);
+
+  useEffect(() => {
+    document.querySelector('#reviews-link-header').addEventListener('click', () => {
+      setExpand(false);
+    });
+  }, [expand]);
+
   return (
     <section className='course-structure container' id='course-structure'>
       <div className='course-structure__title title-primary' onClick={() => setExpand(!expand)} style={{
