@@ -68,6 +68,7 @@ export default function Main() {
             <Image
               sizes='(min-width: 767px) 2000px'
               quality={70}
+              priority={true}
               placeholder='blur'
               src={dashaHarchenko} alt='Даша Харченко'  />
             <div className='about-me__photo__circle'>

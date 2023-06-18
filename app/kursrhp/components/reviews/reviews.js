@@ -72,37 +72,37 @@ export default function Reviews() {
         <swiper-container pagination={true} loop={true} init={false}>
           <swiper-slide key={'slide1'}>
             <div className='reviews__slide'>
-              <Image src={slide1} alt='Відгук 1' />
+              <Image src={slide1} quality={80} alt='Відгук 1' />
             </div>
           </swiper-slide>
           <swiper-slide key={'slide2'}>
             <div className='reviews__slide'>
-              <Image src={slide2} alt='Відгук 2' />
+              <Image src={slide2} quality={80} alt='Відгук 2' />
             </div>
           </swiper-slide>
           <swiper-slide key={'slide3'}>
             <div className='reviews__slide'>
-              <Image src={slide3} alt='Відгук 3' />
+              <Image src={slide3} quality={80} alt='Відгук 3' />
             </div>
           </swiper-slide>
           <swiper-slide key={'slide4'}>
             <div className='reviews__slide'>
-              <Image src={slide4} alt='Відгук 4' />
+              <Image src={slide4} quality={80} alt='Відгук 4' />
             </div>
           </swiper-slide>
           <swiper-slide key={'slide5'}>
             <div className='reviews__slide'>
-              <Image src={slide5} alt='Відгук 5' />
+              <Image src={slide5} quality={80} alt='Відгук 5' />
             </div>
           </swiper-slide>
           <swiper-slide key={'slide6'}>
             <div className='reviews__slide'>
-              <Image src={slide6} alt='Відгук 6' />
+              <Image src={slide6} quality={80} alt='Відгук 6' />
             </div>
           </swiper-slide>
           <swiper-slide key={'slide7'}>
             <div className='reviews__slide'>
-              <Image src={slide7} alt='Відгук 7' />
+              <Image src={slide7} quality={80} alt='Відгук 7' />
             </div>
           </swiper-slide>
         </swiper-container>
