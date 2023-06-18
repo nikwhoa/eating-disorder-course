@@ -15,10 +15,8 @@ export default function Main() {
       <div className="container desktop-container">
         <section className='main-section'>
           <h1 className='course-title'>
-            Розбираємося з РХП: <br />
-            <span>
-            Онлайн Курс
-          </span>
+            Relife
+          {/*</span>*/}
           </h1>
           <h2 className='subtitle'>
             Вилікуватись від компульсивних переїдань, булімії, орторексії раз і назавжди
