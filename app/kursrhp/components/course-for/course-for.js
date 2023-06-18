@@ -62,7 +62,7 @@ export default function CourseFor() {
           <Image src={dashaHarchenkoCourseFor}
                  placeholder='blur'
                  sizes='(max-width: 767px) 100%'
-                 quality={100} alt='Для кого курс' width={312} height={400} />
+                 quality={70} alt='Для кого курс' width={312} height={400} />
         </div>
       </div>
     </section>
