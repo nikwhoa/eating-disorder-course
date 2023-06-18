@@ -5,7 +5,7 @@ import '@/app/kursrhp/components/main/main-section.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import dashaHarchenko from '@/app/kursrhp/components/main/images/dasha-harchenko.jpg';
-import { BranchIcon, CloseIcon, OpenIcon } from '@/app/tools/icons/icons';
+import { BranchIcon, CloseIcon, OpenIcon, TitleIcon, TitleIcon2 } from '@/app/tools/icons/icons';
 
 export default function Main() {
   const [isDegreeOpen, setIsDegreeOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function Main() {
       <div className="container desktop-container">
         <section className='main-section'>
           <h1 className='course-title'>
-            Relife
+            <TitleIcon />
           {/*</span>*/}
           </h1>
           <h2 className='subtitle'>

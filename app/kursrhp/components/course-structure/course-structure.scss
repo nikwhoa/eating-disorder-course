@@ -85,6 +85,10 @@
         font-size: 1.4rem;
         color: $primary-font;
         line-height: 1.8rem;
+
+        div {
+          font-size: inherit;
+        }
       }
     }
   }
