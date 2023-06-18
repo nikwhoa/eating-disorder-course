@@ -10,7 +10,7 @@ import { toBase64 } from 'request/lib/helpers';
 import crypto from 'crypto';
 
 export default function Page() {
-
+  // TODO: pass to CompletePayment tariffTitle for email
   const [formData, setFormData] = useState({
       name: '',
       email: '',
@@ -261,6 +261,7 @@ export default function Page() {
               {isError && <div style={{
                 color: 'red',
                 fontSize: '16px',
+                fontFamily: 'Railway, sans-serif',
                 fontWeight: 'bold',
                 border: '1px solid #e06b5b',
                 padding: '10px',

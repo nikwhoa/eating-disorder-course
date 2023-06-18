@@ -12,7 +12,20 @@ export default function HomePage() {
           <BranchIcon />
         </div>
         <div className='completed-page-header__right-column'>
-          Розбираємося з РХП: <span>Онлайн Курс</span>
+          <span style={{
+            fontSize: '2rem',
+            fontWeight: '400',
+            fontFamily: "Raleway, sans-serif"
+          }}>
+            Курс:
+          </span>
+          <span style={{
+            fontSize: '2rem',
+            fontWeight: '700',
+            fontFamily: "Raleway, sans-serif"
+          }}>
+             Relife
+          </span>
         </div>
       </div>
       <div className='completed-page__content'>
@@ -20,7 +33,7 @@ export default function HomePage() {
           <div className='text'>
             <h1>Дуже рада тобі!</h1>
             <p>
-              Дякую за купівлю курсу "Розбираємось з РХП" 🙏
+              Дякую за купівлю курсу «Relife» 🙏
               <br /><br />
               Я щаслива, що ти вирішила(в) довіритися мені та моєму досвіду!
               <br /><br />
