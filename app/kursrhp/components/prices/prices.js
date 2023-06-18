@@ -41,7 +41,7 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__price'>
-            350/500<Dollar />
+            350/<span className='strikethrough'>500</span><Dollar />
           </div>
           <div className='payment__buttons'>
             {/*<Link href={{*/}
@@ -90,7 +90,7 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__price'>
-            590/700<Dollar />
+            590/<span className='strikethrough'>700</span><Dollar />
           </div>
           <div className='payment__buttons'>
             <a href='/kursrhp/payment?tariff=group&price=590'>
@@ -131,7 +131,7 @@ export default function Prices() {
             Залишилось <b>40</b> місць
           </div>
           <div className='tariff__price'>
-            950/1150<Dollar />
+            950/<span className='strikethrough'>1150</span><Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
@@ -178,7 +178,7 @@ export default function Prices() {
             Залишилось <b>10</b> місць
           </div>
           <div className='tariff__price'>
-            2500/3150<Dollar />
+            2500/<span className='strikethrough'>3150</span><Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
