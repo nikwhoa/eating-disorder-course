@@ -193,3 +193,21 @@
     padding: 5rem 8rem 8rem;
   }
 }
+
+
+.strikethrough {
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.strikethrough::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -15%;
+  transform: rotate(-12deg);
+  height: 3px;
+  width: 125%;
+  background: black;
+}
