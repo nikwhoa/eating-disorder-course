@@ -7,7 +7,7 @@ export default function Benefits() {
     <section className='benefits container' id='benefits'>
       <div className='benefits__container'>
         <div className='benefits-photo'>
-          <Image src={benefitsPhoto} alt='Що я отримаю' quality={100} />
+          <Image src={benefitsPhoto} alt='Що я отримаю' quality={70} />
         </div>
         <div className='padding-left'>
           <div className='benefits__title title-primary'>
