@@ -15,7 +15,7 @@ export default function Prices() {
             <div className='tariff__title'>Соло</div>
             <div className='tariff__description'>
               <ul>
-                <li>8 вебінарів + запис 1 місяць</li>
+                <li>8 вебінарів + запис 3 місяці</li>
                 <li>
                   8 Q&A сесії <br />
                   <span>
@@ -66,7 +66,7 @@ export default function Prices() {
             <div className='tariff__title'>Я в групі</div>
             <div className='tariff__description'>
               <ul>
-                <li>8 вебінарів + запис 1 місяць</li>
+                <li>8 вебінарів + запис 3 місяці</li>
                 <li>
                   8 Q&A сесії <br />
                   <span>
@@ -109,7 +109,7 @@ export default function Prices() {
             <div className='tariff__description'>
               <ul>
                 <li>
-                  8 вебінарів + запис 1 місяць
+                  8 вебінарів + запис 3 місяці
                 </li>
                 <li>
                   8 Q&A сесії
@@ -156,7 +156,7 @@ export default function Prices() {
             <div className='tariff__description'>
               <ul>
                 <li>
-                  8 вебінарів + запис 1 місяць
+                  8 вебінарів + запис 3 місяці
                 </li>
                 <li>
                   8 Q&A сесії

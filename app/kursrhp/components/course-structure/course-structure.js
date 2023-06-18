@@ -79,6 +79,7 @@ export default function CourseStructure() {
       </div>
       <div className='course-structure-text-wrapper'>
         <div className='course-structure-text'>
+          Саме такий комплексний підхід допомагає прийти до глобальних змін в найкоротший терміни.
           Коли ти йдеш в свій найбільший страх - ти здобуваєш свою найбільшу силу
           <div className='course-structure-text-icon'>
             <BranchIcon />
