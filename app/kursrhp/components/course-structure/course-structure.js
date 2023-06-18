@@ -14,6 +14,20 @@ export default function CourseStructure() {
 
   return (
     <section className='course-structure container' id='course-structure'>
+      <div className='course-structure-text-wrapper'>
+        <div className='course-structure-text'>
+          Відновлення від рхп - довготривалий сеанс глубинної терапії.
+          <br /><br />
+          Замість взаємодії з психологом загальної практики - ти зможеш попрацювати з експертом з розладів харчової поведінки,
+          отримати підтримуюче ком’юніті однодумців, і спробувати на собі різні терапевтичні техніки.
+          <br /><br />
+          Саме такий комплексний підхід допомагає прийти до глобальних змін в найкоротші терміни.
+          <div className='course-structure-text-icon'>
+            <BranchIcon />
+          </div>
+        </div>
+      </div>
+      <br/><br/>
       <div className='course-structure__title title-primary' onClick={() => setExpand(!expand)} style={{
         borderBottom: expand ? 'none' : ''
       }}>
@@ -65,7 +79,7 @@ export default function CourseStructure() {
             <div>
               - як екологічно проживати злість та агресію
               - що робити якщо не можу плакати
-              - як перестати бути хорошою
+              - як перестати бути хорошою(им)
             </div>
           </div>
         </div>
@@ -74,19 +88,6 @@ export default function CourseStructure() {
           <div className='course-structure__content-item-title'>«Випускний в нове життя»
             <div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className='course-structure-text-wrapper'>
-        <div className='course-structure-text'>
-          Відновлення від рхп - довготривалий сеанс глубинної терапії.
-          <br /><br />
-          Замість взаємодії з психологом загальної практики - ти зможеш попрацювати з експертом з розладів харчової поведінки
-          Отримати підтримуюче ком’юніті однодумців, і спробувати на собі різні терапевтичні техніки.
-          <br /><br />
-          Саме такий комплексний підхід допомагає прийти до глобальних змін в найкоротший терміни.
-          <div className='course-structure-text-icon'>
-            <BranchIcon />
           </div>
         </div>
       </div>

@@ -45,7 +45,7 @@ export default function Main() {
           <div className='about-me__text'>
             <h2 className='about-me__text__name'>Даша Харченко</h2>
             <p className='about-me__text__description'>
-              Досвід відновлення після 8 років рхп практикуючий психолог, психосоматолог, експерт з розладів харчової поведінки
+              Досвід відновлення після 8 років рхп, клінічний психолог, психосоматолог, експерт з розладів харчової поведінки
             </p>
             <div className='about-me__text__degree'>
               <div className='degree-header'>
