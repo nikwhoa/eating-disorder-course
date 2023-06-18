@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dashaHarchenko from '@/app/kursrhp/components/main/images/dasha-harchenko.jpg';
 import { BranchIcon, CloseIcon, OpenIcon, TitleIcon, TitleIcon2 } from '@/app/tools/icons/icons';
-
+import courseTitle from './images/title.png';
 export default function Main() {
   const [isDegreeOpen, setIsDegreeOpen] = useState(false);
   return (
@@ -15,8 +15,11 @@ export default function Main() {
       <div className="container desktop-container">
         <section className='main-section'>
           <h1 className='course-title'>
-            <TitleIcon />
+            {/*<TitleIcon />*/}
           {/*</span>*/}
+            <div className='image'>
+              <Image src={courseTitle} alt='Relife' />
+            </div>
           </h1>
           <h2 className='subtitle'>
             Вилікуватись від компульсивних переїдань, булімії, орторексії раз і назавжди
