@@ -10,6 +10,8 @@ export default function Page() {
           color: '#202020',
           fontWeight: '600'
         }}>Повернутись назад</a>
+        <br/>
+        <br/>
       </div>
       <p className='c0'><span className='c1'>ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</span></p><p
       className='c8'

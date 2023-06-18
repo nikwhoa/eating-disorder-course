@@ -8,7 +8,7 @@ export default function Support() {
         <div className='support-title'>Служба піклування</div>
         <div className='support-subtitle'>Якщо у вас залишились ще запитання</div>
         <div className='support-button'>
-          <a className='btn' href='#'>
+          <a className='btn' target='_blank' href='https://t.me/relifesupport'>
             Зв’язатись
             <TelegramButton />
           </a>

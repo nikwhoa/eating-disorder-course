@@ -32,8 +32,9 @@ export default function Faq() {
             {isOpen && questionIndex === 0 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 0 ? 'show' : ''}`}>
-            Якщо ви хочете оплатити карткою іноземного банку, або ваша оплата була неуспішною, напишіть нам, будь ласка, в службу турботи тут( додати
-            лінк на телеграм чат) або на <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
+            Якщо ви хочете оплатити карткою іноземного банку, або ваша оплата була неуспішною, напишіть нам, будь ласка, в службу турботи <a
+            href='https://t.me/relifesupport' target='_blank'>тут</a> або на <a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>,
+            ми з радістю допоможемо.
           </div>
         </div>
         <div className='faq__item' data-index={1}>
@@ -42,7 +43,9 @@ export default function Faq() {
             {isOpen && questionIndex === 1 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 1 ? 'show' : ''}`}>
-            Перевірте, будь ласка, папку спам, якщо не знайшли листа, напишіть нам, в службу турботи тут(додати лінк на телеграм чат) або на{' '}<a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми завжди на зв'язку.
+            Перевірте, будь ласка, папку спам, якщо не знайшли листа, напишіть нам, в службу турботи <a
+            href='https://t.me/relifesupport' target='_blank'>тут</a> або на{' '}<a
+            href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми завжди на зв'язку.
           </div>
         </div>
         <div className='faq__item' data-index={2}>
@@ -84,7 +87,9 @@ export default function Faq() {
             {isOpen && questionIndex === 5 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 5 ? 'show' : ''}`}>
-            Так, ви можете змінити ваш тариф, написавши нам в службу турботи тут (додати лінк на телеграм чат) або на{' '}<a href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
+            Так, ви можете змінити ваш тариф, написавши нам в службу турботи <a
+            href='https://t.me/relifesupport' target='_blank'>тут</a> або на{' '}<a
+            href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>
         <div className='faq__item' data-index={8}>
@@ -93,7 +98,8 @@ export default function Faq() {
             {isOpen && questionIndex === 8 ? <CloseIcon /> : <OpenIcon />}
           </div>
           <div className={`answer ${isOpen && questionIndex === 8 ? 'show' : ''}`}>
-            Якщо у вас виникли будь- які інші запитання, напишіть нам, будь ласка, в службу турботи тут або на <a
+            Якщо у вас виникли будь- які інші запитання, напишіть нам, будь ласка, в службу турботи <a
+            href='https://t.me/relifesupport' target='_blank'>тут</a> або на <a
             href='mailto:info.harchenko@gmail.com'>info.harchenko@gmail.com</a>, ми з радістю допоможемо.
           </div>
         </div>

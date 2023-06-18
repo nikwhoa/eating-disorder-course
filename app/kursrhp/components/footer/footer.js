@@ -16,7 +16,7 @@ export default function Footer() {
           Політика конфіденційності
         </a>
         <br />
-        <a href='#'>
+        <a href='/kursrhp/public-offer' target='_blank'>
           Публічна оферта
         </a>
         <br /><br /><br />

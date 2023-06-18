@@ -391,4 +391,28 @@ section, header, footer {
 
 .document {
   margin: 0 auto;
+  padding: 2rem !important;
+  p {
+    font-size: 1.8rem !important;
+    font-family: $primary-font !important;
+    font-weight: 400 !important;
+    line-height: 3rem !important;
+  }
+  span {
+    font-size: 1.4rem !important;
+    line-height: 3rem !important;
+  }
+  a {
+    line-height: 3rem !important;
+    font-size: 1.4rem !important;
+    font-family: $primary-font !important;
+    font-weight: 400 !important;
+    color: #69899B !important;
+    text-decoration: underline !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  b {
+    font-weight: 700 !important;
+  }
 }
