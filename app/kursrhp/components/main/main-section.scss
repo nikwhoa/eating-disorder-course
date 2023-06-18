@@ -12,6 +12,13 @@
     font-size: 3rem;
     line-height: 3.6rem;
 
+    .image {
+      img {
+        max-width: 240px;
+        height: auto;
+      }
+    }
+
     span {
       //display: inline-block;
       font-weight: 300;
