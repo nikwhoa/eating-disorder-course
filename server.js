@@ -36,10 +36,10 @@ const client = new MongoClient(`${process.env.MONGODB_URI}`, {
   serverApi: ServerApiVersion.v1
 });
 
-console.log(client);
+// console.log(client);
 
 client.connect().then((client) => {
-  console.log(client);
+  // console.log(client);
   console.log('Connected successfully to mongodb server');
   // store the db connection in the fastify instance
   server.decorate('mongo', client.db('rhp-course'));
