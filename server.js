@@ -37,6 +37,7 @@ const client = new MongoClient(`${process.env.MONGODB_URI}`, {
 });
 
 client.connect().then((client) => {
+  console.log('Connected successfully to mongodb server');
   // store the db connection in the fastify instance
   server.decorate('mongo', client.db('rhp-course'));
 
