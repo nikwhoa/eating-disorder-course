@@ -46,16 +46,16 @@ client.connect().then((client) => {
 
   // get info from the db collection form-data
 
-  server.get('/api/form-data', async (request, reply) => {
-    try {
-      const collection = server.mongo.collection('form-data');
-      const result = await collection.find().toArray();
-      reply.code(200).send(result);
-    } catch (err) {
-      server.log.error(err);
-      reply.code(500).send({ error: 'Failed to get data' });
-    }
-  });
+  // server.get('/api/form-data', async (request, reply) => {
+  //   try {
+  //     const collection = server.mongo.collection('form-data');
+  //     const result = await collection.find().toArray();
+  //     reply.code(200).send(result);
+  //   } catch (err) {
+  //     server.log.error(err);
+  //     reply.code(500).send({ error: 'Failed to get data' });
+  //   }
+  // });
 
   // Create the route
   server.post('/api/payment', async (request, reply) => {
