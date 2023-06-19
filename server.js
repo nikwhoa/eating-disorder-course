@@ -93,9 +93,11 @@ client.connect().then((client) => {
   server.post('/api/send-email', async (req, res) => {
 
     let transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
       service: 'gmail',
+      port: 465,
       auth: {
-        user: `${process.env.GMAIL_EMAIL}}`,
+        user: `${process.env.GMAIL_EMAIL}`,
         pass: `${process.env.GMAIL_PASSWORD}`
       }
     });
