@@ -95,13 +95,13 @@ client.connect().then((client) => {
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'norenkonikita@gmail.com',
-        pass: 'juxaryggtouvajhk'
+        user: `${process.env.GMAIL_EMAIL}}`,
+        pass: `${process.env.GMAIL_PASSWORD}`
       }
     });
 
     let mailOptions = {
-      from: 'norenkonikita@gmail.com',
+      from: 'info.harchenko@gmail.com',
       to: req.body.to,
       subject: req.body.subject,
       text: req.body.text,
