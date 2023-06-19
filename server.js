@@ -43,6 +43,8 @@ client.connect().then((client) => {
 
   // Create the route
   server.post('/api/payment', async (request, reply) => {
+    console.log('request.body');
+    console.log(request.body);
     const { email, phone, name, tariff, price } = request.body;
     console.log(request.body);
     try {
