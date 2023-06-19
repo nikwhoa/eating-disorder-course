@@ -193,9 +193,10 @@ export default function Page() {
 
   const handleButtonClick = async (e) => {
     e.preventDefault(); // Prevent the form from submitting
-
+    console.log('button clicked');
     if (!isPostSuccessful) {
       try {
+        console.log('making request to payment api');
         const res = await fetch(`${process.env.NEXT_PUBLIC_PATH_TO_PAYMENT_API}/api/payment`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
