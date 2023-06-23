@@ -18,7 +18,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const server = fastify(fastifyOptions);
-
 server.register(cors, {
   origin: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -80,6 +79,7 @@ server.post('/api/send-email', async (req, res) => {
         })
       });
       if (response.status === 200) {
+        server.log.info('Email added successfully');
         const eventResponse = await fetch('https://events.sendpulse.com/events/name/purchase_2', {
           method: 'POST',
           headers: {
@@ -92,6 +92,7 @@ server.post('/api/send-email', async (req, res) => {
           })
         });
         if (eventResponse.status === 200) {
+          server.log.info('Email sent successfully');
           res.status(200).send({ message: 'Email sent successfully' });
         }
       }
@@ -104,7 +105,7 @@ server.post('/api/send-email', async (req, res) => {
     const token = await getToken();
     await sendEmail(token);
   } catch (error) {
-    // Handle error
+    server.log.error(error);
   }
 
 
