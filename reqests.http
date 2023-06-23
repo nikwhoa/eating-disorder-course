@@ -1,0 +1,12 @@
+POST http://localhost:4000/api/send-email
+Content-Type: application/json
+
+{
+  "to": "norenkonikita@gmail.com",
+  "name": "Nikita",
+  "tariff": "solo",
+  "phone": "123456789"
+}
+
+### GET
+GET http://localhost:4000
