@@ -4,6 +4,7 @@ import fs from 'fs';
 // require('dotenv').config();
 // const fs = require('fs');
 import path from 'path';
+import { fileURLToPath } from 'url';
 import cors from '@fastify/cors';
 import fastify from 'fastify';
 // const path = require('path');
@@ -11,6 +12,10 @@ import fastify from 'fastify';
 // const fastify = require('fastify');
 
 let fastifyOptions = { logger: true };
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 if (process.env.NODE_ENV === 'production') {
   console.info('Production mode');
