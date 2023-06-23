@@ -50,7 +50,7 @@ client.connect().then((client) => {
 
     const API_USER_ID = process.env.NEXT_PUBLIC_SENDPULSE_USER_ID;
     const API_SECRET = process.env.NEXT_PUBLIC_SENDPULSE_SECRET;
-    const TOKEN_STORAGE = fs.readFileSync(path.join(__dirname, '.token-storage'));
+    const TOKEN_STORAGE = fs.readdirSync('/tmp/');
 
     sendpulse.init(API_USER_ID, API_SECRET, TOKEN_STORAGE, (token) => {
       if (token && token.is_error) {
