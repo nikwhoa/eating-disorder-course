@@ -46,6 +46,8 @@ client.connect().then((client) => {
   * */
   server.post('/api/send-email', async (req, res) => {
 
+    console.log(req.body);
+
     const API_USER_ID = process.env.NEXT_PUBLIC_SENDPULSE_USER_ID;
     const API_SECRET = process.env.NEXT_PUBLIC_SENDPULSE_SECRET;
     const TOKEN_STORAGE = '/tmp/';
@@ -112,10 +114,10 @@ client.connect().then((client) => {
 
   // Create the route
   server.post('/api/payment', async (request, reply) => {
-    console.log('request.body');
-    console.log(request.body);
+    // console.log('request.body');
+    // console.log(request.body);
     const { email, phone, name, tariff, price } = request.body;
-    console.log(request.body);
+    // console.log(request.body);
     try {
       const collection = server.mongo.collection('form-data');
       const date = new Date();
