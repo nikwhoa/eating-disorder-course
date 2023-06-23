@@ -38,8 +38,9 @@ server.post('/api/send-email', async (req, res) => {
   const API_USER_ID = process.env.NEXT_PUBLIC_SENDPULSE_USER_ID;
   const API_SECRET = process.env.NEXT_PUBLIC_SENDPULSE_SECRET;
 
-  const token = await new Promise((resolve, reject) => {
-    fetch('https://api.sendpulse.com/oauth/access_token', {
+  const getToken = async () => {
+    try {
+      const response = await fetch('https://api.sendpulse.com/oauth/access_token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -49,52 +50,63 @@ server.post('/api/send-email', async (req, res) => {
           client_id: API_USER_ID,
           client_secret: API_SECRET
         })
-      }
-    ).then(res => res.json()).then((data) => {
-      resolve(data.access_token);
-    }).catch((error) => {
-      reject(error);
-    });
-  });
+      });
+      const data = await response.json();
+      return data.access_token;
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
 
-  fetch('https://api.sendpulse.com/addressbooks/238442/emails', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    },
-    body: JSON.stringify({
-      emails: [
-        {
-          email: req.body.to,
-          variables: {
-            'Імʼя': req.body.name,
-            phone: req.body.phone,
-            tariff: req.body.tariff
-          }
-        }
-      ]
-    })
-  }).then((response) => {
-    if (response.status === 200) {
-      // res.status(200).send({ message: 'Email sent successfully' });
-      fetch('https://events.sendpulse.com/events/name/purchase_2', {
+  const sendEmail = async (token) => {
+    try {
+      const response = await fetch('https://api.sendpulse.com/addressbooks/238442/emails', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-          'email': req.body.to,
-          'tariff': req.body.tariff
+          emails: [
+            {
+              email: req.body.to,
+              variables: {
+                'Імʼя': req.body.name,
+                phone: req.body.phone,
+                tariff: req.body.tariff
+              }
+            }
+          ]
         })
-      }).then((response) => {
-        if (response.status === 200) {
+      });
+      if (response.status === 200) {
+        const eventResponse = await fetch('https://events.sendpulse.com/events/name/purchase_2', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            'email': req.body.to,
+            'tariff': req.body.tariff
+          })
+        });
+        if (eventResponse.status === 200) {
           res.status(200).send({ message: 'Email sent successfully' });
         }
-      });
+      }
+    } catch (error) {
+      throw new Error(error);
     }
-  });
+  };
+
+  try {
+    const token = await getToken();
+    await sendEmail(token);
+  } catch (error) {
+    // Handle error
+  }
+
 
 });
 
