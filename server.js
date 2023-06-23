@@ -7,6 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import cors from '@fastify/cors';
 import fastify from 'fastify';
+import { log } from 'console';
 // const path = require('path');
 // const cors = require('@fastify/cors');
 // const fastify = require('fastify');
@@ -50,12 +51,9 @@ server.post('/api/send-email', async (req, res) => {
   const getToken = async () => {
     try {
       const response = await fetch('https://api.sendpulse.com/oauth/access_token', {
-        method: 'POST',
+        method: 'post',
         headers: {
-          'Content-Type': 'application/json',
-          'append_header': 'Access-Control-Allow-Origin: * ',
-          'append_header': 'Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS',
-          'append_header': 'Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           grant_type: 'client_credentials',
@@ -63,6 +61,7 @@ server.post('/api/send-email', async (req, res) => {
           client_secret: API_SECRET,
         }),
       });
+      server.log.info(response);
       const data = await response.json();
       return data.access_token;
     } catch (error) {
@@ -116,8 +115,8 @@ server.post('/api/send-email', async (req, res) => {
 
   try {
     const token = await getToken();
-    server.log.info('Token received successfully');
-    server.log.info(token);
+    // server.log.info('Token received successfully');
+    // server.log.info(token);
     await sendEmail(token);
   } catch (error) {
     server.log.error(error);

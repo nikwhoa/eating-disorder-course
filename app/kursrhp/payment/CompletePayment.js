@@ -183,21 +183,6 @@ const CompletePayment = ({ liqpay, tariff, formData, router }) => {
 
   return (
     <>
-      <div>
-        <span
-          onClick={() =>
-            sendEmail(formData.email, formData.name, tariff, formData.phone)
-            // sendEmailToSendPulse(
-            //   formData.email,
-            //   formData.name,
-            //   tariff,
-            //   formData.phone
-            // )
-          }
-        >
-          Pay
-        </span>
-      </div>
       <Script
         src="//static.liqpay.ua/libjs/checkout.js"
         strategy="lazyOnload"
