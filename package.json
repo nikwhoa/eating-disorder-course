@@ -1,6 +1,7 @@
 {
   "name": "eating-disorder-course",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "browserslist": [
     ">0.3%",
