@@ -111,7 +111,7 @@ const CompletePayment = ({ liqpay, tariff, formData, router }) => {
       const token = await getToken();
       await sendEmail(token);
     } catch (error) {
-      server.log.error(error);
+      console.error(error);
     }
   };
 
@@ -138,8 +138,18 @@ const CompletePayment = ({ liqpay, tariff, formData, router }) => {
               //   formData.phone
               // );
 
-              sendEmailToSendPulse(formData.email, formData.name, tariff, formData.phone);
-              router.push('/kursrhp/completed');
+              async function sendingEmail() {
+                await sendEmailToSendPulse(formData.email, formData.name, tariff, formData.phone);
+
+                //   set timer
+                setTimeout(() => {
+                  router.push('/kursrhp/completed');
+                }, [3000]);
+              }
+
+              sendingEmail();
+
+              // router.push('/kursrhp/completed');
               // if (emailStatus === 'sent') {
               // }
             } catch (error) {
