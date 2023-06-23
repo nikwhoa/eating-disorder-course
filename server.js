@@ -82,7 +82,7 @@ server.post('/api/send-email', async (req, res) => {
             {
               email: req.body.to,
               variables: {
-                Імʼя: req.body.name,
+                "Ім'я": req.body.name,
                 phone: req.body.phone,
                 tariff: req.body.tariff,
               },

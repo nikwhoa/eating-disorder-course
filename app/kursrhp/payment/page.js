@@ -42,7 +42,7 @@ export default function Page() {
       'public_key': `${process.env.NEXT_PUBLIC_LIQPAY_PUBLIC_KEY}`,
       'version': 3,
       'action': 'pay',
-      'amount': 0.1,
+      'amount': 350,
       'currency': 'USD',
       'description': 'Соло',
       'language': 'uk',
