@@ -53,6 +53,9 @@ server.post('/api/send-email', async (req, res) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'append_header': 'Access-Control-Allow-Origin: * ',
+          'append_header': 'Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS',
+          'append_header': 'Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
         },
         body: JSON.stringify({
           grant_type: 'client_credentials',
@@ -113,6 +116,8 @@ server.post('/api/send-email', async (req, res) => {
 
   try {
     const token = await getToken();
+    server.log.info('Token received successfully');
+    server.log.info(token);
     await sendEmail(token);
   } catch (error) {
     server.log.error(error);
