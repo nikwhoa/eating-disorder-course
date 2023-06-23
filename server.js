@@ -1,5 +1,6 @@
 require('dotenv').config();
 const fs = require('fs');
+const sendpulse = require('sendpulse-api');
 const nodemailer = require('nodemailer');
 const path = require('path');
 const cors = require('@fastify/cors');
@@ -39,6 +40,58 @@ const client = new MongoClient(`${process.env.MONGODB_URI}`, {
 // console.log(client);
 
 client.connect().then((client) => {
+
+  /*
+  * Sending emails
+  * */
+  server.post('/api/send-email', async (req, res) => {
+
+    const API_USER_ID = process.env.NEXT_PUBLIC_SENDPULSE_USER_ID;
+    const API_SECRET = process.env.NEXT_PUBLIC_SENDPULSE_SECRET;
+    const TOKEN_STORAGE = '/tmp/';
+
+    sendpulse.init(API_USER_ID, API_SECRET, TOKEN_STORAGE, (token) => {
+      if (token && token.is_error) {
+        throw new Error('Error: ', token.errors);
+      }
+
+      /**
+       * Function to process response data
+       *
+       * @param data
+       */
+      const answerGetter = function(data) {
+        console.log(data);
+      };
+
+      sendpulse.addEmails(answerGetter, 238442, [{
+        email: req.body.to, variables: {
+          'Ім\'я': req.body.name,
+          tariff: req.body.tariff,
+          Phone: req.body.phone
+        }
+      }]);
+
+      fetch('https://events.sendpulse.com/events/name/purchase_2', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          'email': req.body.to,
+          'tariff': req.body.tariff
+        })
+      }).then((response) => {
+        if (response.status === 200) {
+          res.status(200).send({ message: 'Email sent successfully' });
+        }
+      });
+    });
+
+
+  });
+
   // console.log(client);
   console.log('Connected successfully to mongodb server');
   // store the db connection in the fastify instance
@@ -87,39 +140,7 @@ client.connect().then((client) => {
   });
 
 
-  /*
-  * Sending emails
-  * */
-  server.post('/api/send-email', async (req, res) => {
 
-    let transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      service: 'gmail',
-      port: 465,
-      auth: {
-        user: `${process.env.GMAIL_EMAIL}`,
-        pass: `${process.env.GMAIL_PASSWORD}`
-      }
-    });
-
-    let mailOptions = {
-      from: 'info.harchenko@gmail.com',
-      to: req.body.to,
-      subject: req.body.subject,
-      text: req.body.text,
-      html: req.body.html
-    };
-
-    transporter.sendMail(mailOptions, function(error, info) {
-      if (error) {
-        console.log(error);
-        res.status(500).send(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-        res.status(200).send('Email sent: ' + info.response);
-      }
-    });
-  });
 
   // start the server
   server.listen({ port: 4000, host: '0.0.0.0' }, function(err, address) {
