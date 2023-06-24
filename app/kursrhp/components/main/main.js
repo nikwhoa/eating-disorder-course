@@ -26,7 +26,7 @@ export default function Main() {
           </h2>
           <div className='course-info'>
             <div className='course-info__item'>
-              <span>СТАРТ КУРСУ:</span> 05.07.2023
+              <span>СТАРТ КУРСУ:</span> 06.07.2023
             </div>
             <div className='course-info__item'>
               <span>ТРИВАЛІСТЬ:</span> 3 місяці
