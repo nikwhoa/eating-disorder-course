@@ -89,6 +89,9 @@ export default function Prices() {
               </ul>
             </div>
           </div>
+          <div className='tariff__counter'>
+            Залишилось <b>20</b> місць
+          </div>
           <div className='tariff__price'>
           <span className='strikethrough'>590</span>/700<Dollar />
           </div>
