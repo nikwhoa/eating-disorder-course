@@ -40,9 +40,6 @@ export default function Prices() {
               </ul>
             </div>
           </div>
-          <div className='tariff__counter'>
-            Залишилось <b>17</b> місць
-          </div>
           <div className='tariff__price'>
           <span className='strikethrough'>350</span>/500<Dollar />
           </div>
@@ -131,7 +128,7 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__counter'>
-            Залишилось <b>40</b> місць
+            Залишилось <b>17</b> місць
           </div>
           <div className='tariff__price'>
           <span className='strikethrough'>950</span>/1150<Dollar />
