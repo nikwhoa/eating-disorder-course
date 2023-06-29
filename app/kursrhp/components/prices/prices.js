@@ -41,7 +41,7 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__price'>
-          <span className='strikethrough'>350</span>/500<Dollar />
+          350/<span className='strikethrough'>500</span><Dollar />
           </div>
           <div className='payment__buttons'>
             {/*<Link href={{*/}
@@ -51,11 +51,11 @@ export default function Prices() {
             {/*  ХОЧУ НА КУРС*/}
             {/*  <RightArrow />*/}
             {/*</Link>*/}
-            <a href='/kursrhp/payment?tariff=solo&price=500'>
+            <a href='/kursrhp/payment?tariff=solo&price=350'>
               ХОЧУ НА КУРС
               <RightArrow />
             </a>
-            <a href='/kursrhp/payment?tariff=solo&price=500' style={{ borderTop: '1px solid white' }}>
+            <a href='/kursrhp/payment?tariff=solo&price=350' style={{ borderTop: '1px solid white' }}>
               оплата частинами
             </a>
           </div>
@@ -93,14 +93,14 @@ export default function Prices() {
             Залишилось <b>20</b> місць
           </div>
           <div className='tariff__price'>
-          <span className='strikethrough'>590</span>/700<Dollar />
+          590/<span className='strikethrough'>700</span><Dollar />
           </div>
           <div className='payment__buttons'>
-            <a href='/kursrhp/payment?tariff=group&price=700'>
+            <a href='/kursrhp/payment?tariff=group&price=590'>
               ХОЧУ НА КУРС
               <RightArrow />
             </a>
-            <Link href='/kursrhp/payment?tariff=group&price=700' style={{ borderTop: '1px solid white' }}>
+            <Link href='/kursrhp/payment?tariff=group&price=590' style={{ borderTop: '1px solid white' }}>
               оплата частинами
             </Link>
           </div>
@@ -134,19 +134,19 @@ export default function Prices() {
             Залишилось <b>17</b> місць
           </div>
           <div className='tariff__price'>
-          <span className='strikethrough'>950</span>/1150<Dollar />
+          950/<span className='strikethrough'>1150</span><Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
               pathname: '/kursrhp/payment',
-              query: { tariff: 'with-psychologist', price: 1150 }
+              query: { tariff: 'with-psychologist', price: 950 }
             }}>
               ХОЧУ НА КУРС
               <RightArrow />
             </Link>
             <Link href={{
               pathname: '/kursrhp/payment',
-              query: { tariff: 'with-psychologist', price: 1150 }
+              query: { tariff: 'with-psychologist', price: 950 }
             }} style={{ borderTop: '1px solid white' }}>
               оплата частинами
             </Link>
@@ -181,19 +181,19 @@ export default function Prices() {
             Залишилось <b>10</b> місць
           </div>
           <div className='tariff__price'>
-          <span className='strikethrough'>2500</span>/3150<Dollar />
+          2500/<span className='strikethrough'>3150</span><Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
               pathname: '/kursrhp/payment',
-              query: { tariff: 'with-dasha', price: 3150 }
+              query: { tariff: 'with-dasha', price: 2500 }
             }}>
               ХОЧУ НА КУРС
               <RightArrow />
             </Link>
             <Link href={{
               pathname: '/kursrhp/payment',
-              query: { tariff: 'with-dasha', price: 3150 }
+              query: { tariff: 'with-dasha', price: 2500 }
             }} style={{ borderTop: '1px solid white' }}>
               оплата частинами
             </Link>
