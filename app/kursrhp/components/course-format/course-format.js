@@ -45,7 +45,7 @@ export default function CourseFormat() {
               Чек листи:
             </div>
             <div className='course-format__column__text'>
-              - компульсивних дії <br />
+              - компульсивних дій <br />
               - підготовка до медитації
             </div>
           </div>
