@@ -131,7 +131,7 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__counter'>
-            Залишилось <b>17</b> місць
+            Залишилось <b>16</b> місць
           </div>
           <div className='tariff__price'>
           950<Dollar />
