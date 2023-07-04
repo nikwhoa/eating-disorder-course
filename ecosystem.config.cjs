@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "eating-disorder-course.norenko.net.ua-fastify",
+      name: "eating-disorder-course-fastify",
       script: "npm",
       args: "run fastify",
       env: {
@@ -9,8 +9,8 @@ module.exports = {
       },
     },
     {
-      dependencies: ["eating-disorder-course.norenko.net.ua-fastify"],
-      name: "eating-disorder-course.norenko.net.ua",
+      dependencies: ["eating-disorder-course-fastify"],
+      name: "eating-disorder-course",
       script: "npm",
       args: "start",
       env: {
