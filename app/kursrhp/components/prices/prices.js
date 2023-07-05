@@ -23,9 +23,7 @@ export default function Prices() {
                 </span>
                 </li>
                 <li>
-                  <s>
-                    доступ до групового чату
-                  </s>
+                  доступ до групового чату
                 </li>
                 <li>
                   <s>
@@ -41,7 +39,7 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__price'>
-          350<Dollar />
+            350<Dollar />
           </div>
           <div className='payment__buttons'>
             {/*<Link href={{*/}
@@ -77,9 +75,7 @@ export default function Prices() {
                   доступ до групового чату
                 </li>
                 <li>
-                  <s>
-                    7 годин групової терапії
-                  </s>
+                  7 годин групової терапії
                 </li>
                 <li>
                   <s>
@@ -90,10 +86,10 @@ export default function Prices() {
             </div>
           </div>
           <div className='tariff__counter'>
-            Залишилось <b>20</b> місць
+            Залишилось <b>19</b> місць
           </div>
           <div className='tariff__price'>
-          590<Dollar />
+            590<Dollar />
           </div>
           <div className='payment__buttons'>
             <a href='/kursrhp/payment?tariff=group&price=590'>
@@ -134,7 +130,7 @@ export default function Prices() {
             Залишилось <b>15</b> місць
           </div>
           <div className='tariff__price'>
-          950<Dollar />
+            950<Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
@@ -181,7 +177,7 @@ export default function Prices() {
             Залишилось <b>10</b> місць
           </div>
           <div className='tariff__price'>
-          2500<Dollar />
+            2500<Dollar />
           </div>
           <div className='payment__buttons'>
             <Link href={{
