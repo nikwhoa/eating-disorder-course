@@ -38,9 +38,6 @@ export default function Prices() {
               </ul>
             </div>
           </div>
-          <div className='tariff__price'>
-            350<Dollar />
-          </div>
           <div className='payment__buttons'>
             {/*<Link href={{*/}
             {/*  pathname: '/kursrhp/payment',*/}
@@ -49,12 +46,9 @@ export default function Prices() {
             {/*  ХОЧУ НА КУРС*/}
             {/*  <RightArrow />*/}
             {/*</Link>*/}
-            <a href='/kursrhp/payment?tariff=solo&price=350'>
-              ХОЧУ НА КУРС
+            <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPQkQjCeSue2TEZlz9Z4sTQhLXzE7HMDH0NlCkITyPA__cIQ/viewform'>
+              Дізнатись більше
               <RightArrow />
-            </a>
-            <a href='/kursrhp/payment?tariff=solo&price=350' style={{ borderTop: '1px solid white' }}>
-              оплата частинами
             </a>
           </div>
         </div>
@@ -85,20 +79,11 @@ export default function Prices() {
               </ul>
             </div>
           </div>
-          <div className='tariff__counter'>
-            Залишилось <b>19</b> місць
-          </div>
-          <div className='tariff__price'>
-            590<Dollar />
-          </div>
           <div className='payment__buttons'>
-            <a href='/kursrhp/payment?tariff=group&price=590'>
-              ХОЧУ НА КУРС
+            <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPQkQjCeSue2TEZlz9Z4sTQhLXzE7HMDH0NlCkITyPA__cIQ/viewform'>
+              Дізнатись більше
               <RightArrow />
             </a>
-            <Link href='/kursrhp/payment?tariff=group&price=590' style={{ borderTop: '1px solid white' }}>
-              оплата частинами
-            </Link>
           </div>
         </div>
 
@@ -126,26 +111,11 @@ export default function Prices() {
               </ul>
             </div>
           </div>
-          <div className='tariff__counter'>
-            Залишилось <b>15</b> місць
-          </div>
-          <div className='tariff__price'>
-            950<Dollar />
-          </div>
           <div className='payment__buttons'>
-            <Link href={{
-              pathname: '/kursrhp/payment',
-              query: { tariff: 'with-psychologist', price: 950 }
-            }}>
-              ХОЧУ НА КУРС
+            <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPQkQjCeSue2TEZlz9Z4sTQhLXzE7HMDH0NlCkITyPA__cIQ/viewform'>
+              Дізнатись більше
               <RightArrow />
-            </Link>
-            <Link href={{
-              pathname: '/kursrhp/payment',
-              query: { tariff: 'with-psychologist', price: 950 }
-            }} style={{ borderTop: '1px solid white' }}>
-              оплата частинами
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -173,26 +143,11 @@ export default function Prices() {
               </ul>
             </div>
           </div>
-          <div className='tariff__counter'>
-            Залишилось <b>10</b> місць
-          </div>
-          <div className='tariff__price'>
-            2500<Dollar />
-          </div>
           <div className='payment__buttons'>
-            <Link href={{
-              pathname: '/kursrhp/payment',
-              query: { tariff: 'with-dasha', price: 2500 }
-            }}>
-              ХОЧУ НА КУРС
+            <a href='https://docs.google.com/forms/d/e/1FAIpQLSfPQkQjCeSue2TEZlz9Z4sTQhLXzE7HMDH0NlCkITyPA__cIQ/viewform'>
+              Дізнатись більше
               <RightArrow />
-            </Link>
-            <Link href={{
-              pathname: '/kursrhp/payment',
-              query: { tariff: 'with-dasha', price: 2500 }
-            }} style={{ borderTop: '1px solid white' }}>
-              оплата частинами
-            </Link>
+            </a>
           </div>
         </div>
         <div className='prices__container-text'>
