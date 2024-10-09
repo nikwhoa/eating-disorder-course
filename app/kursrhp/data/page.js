@@ -67,7 +67,7 @@ export default function Page() {
           style={{ background: '#FFFFFF', border: 'none', borderRadius: '2px', boxShadow: '0 2px 10px 0 rgba(70, 76, 79, .2)' }}
           width={'100%'}
           height={480}
-          src='https://charts.mongodb.com/charts-harchenko-com-ua-dszuz/embed/charts?id=64837dfa-8dce-4078-85f8-cc77b3184a7a&maxDataAge=3600&theme=light&autoRefresh=true'
+          src={process.env.NEXT_PUBLIC_ACCESS_TO_DATA}
         />
       )}
     </div>
